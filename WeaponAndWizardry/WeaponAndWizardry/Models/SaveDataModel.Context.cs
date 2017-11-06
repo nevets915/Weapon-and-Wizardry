@@ -13,10 +13,10 @@ namespace WeaponAndWizardry.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WwdatabaseEntities : DbContext
+    public partial class WwdatabaseContext : DbContext
     {
-        public WwdatabaseEntities()
-            : base("name=WwdatabaseEntities")
+        public WwdatabaseContext()
+            : base("name=WwdatabaseContext")
         {
         }
     

@@ -27,7 +27,7 @@
           <Property Name="Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Savedata" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="WwdatabaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WwdatabaseContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
         </EntityContainer>
       </Schema>
@@ -35,7 +35,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WwdatabaseModelStoreContainer" CdmEntityContainer="WwdatabaseEntities">
+        <EntityContainerMapping StorageEntityContainer="WwdatabaseModelStoreContainer" CdmEntityContainer="WwdatabaseContext">
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="WwdatabaseModel.User">
               <MappingFragment StoreEntitySet="Users">
