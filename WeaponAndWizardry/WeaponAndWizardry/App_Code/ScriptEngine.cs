@@ -11,10 +11,14 @@ namespace WeaponAndWizardry.App_Code
     public partial class ScriptEngine
     {
         private int _currentExecutingLine;
-        private TextBox _display;
+        private Panel _imageDisplay;
+        private TextBox _textDisplay;
         private List<ScriptLine> _scriptLines;
         private List<Button> _choiceButtons;
         private uint _choicePicked;
+        private Image _currentBackgroundImage;
+        private List<Image> _currentForegroundImages;
+
         private delegate void ScriptLine();
 
         /// <summary>
@@ -24,11 +28,16 @@ namespace WeaponAndWizardry.App_Code
         /// first index in the collection.
         /// </summary>
         /// <param name="gui"></param>
-        public ScriptEngine(TextBox display, List<Button> choiceButtons)
+        public ScriptEngine(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
         {
             _currentExecutingLine = 0;
-            _display = display;
+            _imageDisplay = imageDisplay;
+            _imageDisplay.Style["position"] = "relative";
+            _imageDisplay.Width = 800;
+            _imageDisplay.Height = 600;
+            _textDisplay = textDisplay;
             _scriptLines = new List<ScriptLine>();
+            _currentForegroundImages = new List<Image>();
             _choiceButtons = choiceButtons;
             LoadScripts();
         }
@@ -42,7 +51,7 @@ namespace WeaponAndWizardry.App_Code
         public void PrintTextDialogue(string message)
         {
             System.Diagnostics.Debug.WriteLine(message);
-            _display.Text = message;            
+            _textDisplay.Text = message;            
         }
         
         public void SetChoiceButtons(Choices choices)
@@ -56,6 +65,51 @@ namespace WeaponAndWizardry.App_Code
                     _choiceButtons[i].Enabled = false;
                 }
             }
+        }
+
+        public void ClearImageDisplay()
+        {
+            _imageDisplay.Controls.Clear();
+            _currentBackgroundImage = null;
+            _currentForegroundImages.Clear();
+        }
+
+        public void ClearForegroundImages()
+        {
+            foreach(Image image in _currentForegroundImages)
+            {
+                _imageDisplay.Controls.Remove(image);
+            }
+            _currentForegroundImages.Clear();
+        }
+
+        public void SetBackgroundImage(string imageFileName)
+        {
+            _imageDisplay.Controls.Remove(_currentBackgroundImage);
+            Image image = new Image();
+            image.Style["position"] = "absolute";
+            image.Style["z-index"] = "0";
+            image.Style["left"] = "0px";
+            image.Style["top"] = "0px";
+            image.Width = 800;
+            image.Height = 600;
+            image.ImageUrl = "~/Content/backgrounds/" + imageFileName;
+            _currentBackgroundImage = image;
+            _imageDisplay.Controls.Add(_currentBackgroundImage);
+        }
+
+        public void AddForegroundImage(string url, int xPos, int yPos, int zPos, int width, int height)
+        {
+            Image image = new Image();
+            image.Style["position"] = "absolute";
+            image.Style["z-index"] = zPos.ToString();
+            image.Style["left"] = xPos.ToString() + "px";
+            image.Style["top"] = yPos.ToString() + "px";
+            image.Width = width;
+            image.Height = height;
+            image.ImageUrl = "~/Content/" + url;
+            _currentForegroundImages.Add(image);
+            _imageDisplay.Controls.Add(image);
         }
     }
 }
