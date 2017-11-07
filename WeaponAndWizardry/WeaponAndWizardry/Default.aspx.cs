@@ -14,7 +14,7 @@ namespace WeaponAndWizardry
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _engine = new ScriptEngine(TextDisplay, new List<Button> {ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4});
+            _engine = new ScriptEngine(ImageDisplay, TextDisplay, new List<Button> {ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4});
             _engine.ExecuteLine(0);
         }
 

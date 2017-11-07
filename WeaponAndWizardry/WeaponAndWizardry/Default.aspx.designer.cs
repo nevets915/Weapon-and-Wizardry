@@ -22,6 +22,15 @@ namespace WeaponAndWizardry {
         protected global::System.Web.UI.WebControls.TextBox TextDisplay;
         
         /// <summary>
+        /// ImageDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ImageDisplay;
+        
+        /// <summary>
         /// ButtonChoice1 control.
         /// </summary>
         /// <remarks>

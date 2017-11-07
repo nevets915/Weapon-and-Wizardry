@@ -176,10 +176,21 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\backgrounds\original.jpg" />
+    <Content Include="Content\bgm\CampTheme.mp3" />
+    <Content Include="Content\bgm\OpeningTheme1.mp3" />
+    <Content Include="Content\bgm\OpeningTheme2.mp3" />
+    <Content Include="Content\bgm\PeaceTheme.mp3" />
     <Content Include="Content\bgm_crystal_waver.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Neet.jpg" />
+    <Content Include="Content\images\original.jpg" />
+    <Content Include="Content\images\Shiki.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\ui\buttonHighLight.png" />
+    <Content Include="Content\ui\buttonNormal.png" />
+    <Content Include="Content\ui\buttonPressed.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

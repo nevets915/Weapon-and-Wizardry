@@ -117,6 +117,9 @@ namespace WeaponAndWizardry.App_Code
 
         private void Line99()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("original.jpg");
+            AddForegroundImage("images/Neet.jpg", 400, 300, 12, 120, 120);
             switch (_choicePicked)
             {
                 case 1:
