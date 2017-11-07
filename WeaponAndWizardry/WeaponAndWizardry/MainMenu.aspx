@@ -2,10 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
-    <div style="background:url(../Images/main_menu_bg.png) no-repeat; width: 100% 0;height:100% 0; background-position: right center;">
+    <div style="background:url(../Content/Images/backgrounds/main_menu_bg.png) no-repeat; width: 100% 0;height:100% 0; background-position: right center;">
         <div>
             <div class ="row center">
-                <img alt="logo" longdesc="MA's Weapons&amp;Wizardry" src="Images/logo_3.png" style="width: 100%;" />
+                <img alt="logo" longdesc="MA's Weapons&amp;Wizardry" src="Content/Images/ui/logo_3.png" style="width: 100%;" />
             </div>
         </div>
 

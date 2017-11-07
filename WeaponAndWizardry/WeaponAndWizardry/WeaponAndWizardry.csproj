@@ -176,19 +176,25 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
-    <Content Include="Content\bgm\CampTheme.mp3" />
-    <Content Include="Content\bgm\OpeningTheme1.mp3" />
-    <Content Include="Content\bgm\OpeningTheme2.mp3" />
-    <Content Include="Content\bgm\PeaceTheme.mp3" />
-    <Content Include="Content\bgm_crystal_waver.mp3" />
+    <Content Include="Content\Images\backgrounds\main_menu_bg.png" />
+    <Content Include="Content\sounds\bgm\CampTheme.mp3" />
+    <Content Include="Content\sounds\bgm\OpeningTheme1.mp3" />
+    <Content Include="Content\sounds\bgm\OpeningTheme2.mp3" />
+    <Content Include="Content\sounds\bgm\PeaceTheme.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\styles\MainMenu.css" />
+    <Content Include="Content\Images\ui\buttonHighLight.png" />
+    <Content Include="Content\Images\ui\buttonNormal.png" />
+    <Content Include="Content\Images\ui\buttonPressed.png" />
+    <Content Include="Content\Images\ui\logo_3.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="MainMenu.aspx" />
     <Content Include="Models\SaveDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SaveDataModel.edmx</DependentUpon>
@@ -367,6 +373,13 @@
     <Compile Include="App_Code\Choices.cs" />
     <Compile Include="App_Code\ScriptEngine.cs" />
     <Compile Include="App_Code\Scripts\Scripts.cs" />
+    <Compile Include="MainMenu.aspx.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainMenu.aspx.designer.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\SaveDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -450,10 +463,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\backgrounds\" />
-    <Folder Include="Content\characters\" />
-    <Folder Include="Content\sounds\" />
-    <Folder Include="Content\ui\" />
+    <Folder Include="Content\Images\characters\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
