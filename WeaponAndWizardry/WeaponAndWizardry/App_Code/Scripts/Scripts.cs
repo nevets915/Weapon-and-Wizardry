@@ -88,6 +88,14 @@ namespace WeaponAndWizardry.App_Code
             _currentExecutingLine++;
         }
 
+        private void Line9()
+        {
+            SetChoiceButtons(new Choices("I'm not very strong...(Strength--)", "I'm a little slow (Dexterity--)",
+                "I've never been very bright.(Intelligence--)", "I'm super unlucky.(Luck--)"));
+            PrintTextDialogue("What would you say is your biggest weakness?");
+            _currentExecutingLine++;
+        }
+
         private void Line99()
         {
             switch (_choicePicked)
