@@ -19,6 +19,9 @@ namespace WeaponAndWizardry.App_Code
 
         private void Line1()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("original.jpg");
+            AddForegroundImage("images/Shiki.png", 400, 300, 12, 120, 120);
             SetChoiceButtons(new Choices("Fight", "Run"));
             PrintTextDialogue("Enemy appears");
             _currentExecutingLine++;
@@ -26,6 +29,9 @@ namespace WeaponAndWizardry.App_Code
         
         private void Line2()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("original.jpg");
+            AddForegroundImage("images/Neet.jpg", 400, 300, 12, 120, 120);
             switch (_choicePicked)
             {
                 case 1:
