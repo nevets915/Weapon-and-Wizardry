@@ -176,10 +176,6 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
-    <Content Include="Content\bgm\CampTheme.mp3" />
-    <Content Include="Content\bgm\OpeningTheme1.mp3" />
-    <Content Include="Content\bgm\PeaceTheme.mp3" />
-    <Content Include="Content\bgm\OpeningTheme2.mp3" />
     <Content Include="Content\bgm_crystal_waver.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -451,6 +447,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\backgrounds\" />
+    <Folder Include="Content\bgm\" />
     <Folder Include="Content\characters\" />
     <Folder Include="Content\sounds\" />
     <Folder Include="Content\ui\" />
