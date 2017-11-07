@@ -183,9 +183,6 @@
     <Content Include="Content\sounds\bgm\PeaceTheme.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\images\Neet.jpg" />
-    <Content Include="Content\images\original.jpg" />
-    <Content Include="Content\images\Shiki.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\styles\MainMenu.css" />
     <Content Include="Content\Images\ui\buttonHighLight.png" />
@@ -467,7 +464,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\characters\" />
-    <Folder Include="Content\sounds\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
