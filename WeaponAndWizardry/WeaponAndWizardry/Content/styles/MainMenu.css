@@ -1,0 +1,31 @@
+﻿/**
+ * Module: MainMenu.css
+ * Team: Group7
+ * Description: Own customized css file for mainmenu
+ * Author: 
+ *  	 Name: Dongwon(Shawn) Kim    Date: 2017-11-06
+ * Modified by:	
+ *  	 Name: N/A  Change:	N/A Date: N/A
+ * Based on:
+ * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+**/
+.imageButton{
+    background-image: url();
+}
+
+.imageButton:after {
+    background-image: url();
+}
+
+.imageButton:active:after {
+    background-image: url();
+}
+
+.center {
+    margin: auto;
+    padding: 10px;
+}
+
+.center_text {
+    text-align: center;
+}
