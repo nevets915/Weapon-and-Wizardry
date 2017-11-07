@@ -176,6 +176,7 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\backgrounds\original.jpg" />
     <Content Include="Content\bgm\CampTheme.mp3" />
     <Content Include="Content\bgm\OpeningTheme1.mp3" />
     <Content Include="Content\bgm\OpeningTheme2.mp3" />
@@ -183,6 +184,9 @@
     <Content Include="Content\bgm_crystal_waver.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Neet.jpg" />
+    <Content Include="Content\images\original.jpg" />
+    <Content Include="Content\images\Shiki.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\ui\buttonHighLight.png" />
     <Content Include="Content\ui\buttonNormal.png" />
@@ -453,7 +457,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\backgrounds\" />
     <Folder Include="Content\characters\" />
     <Folder Include="Content\sounds\" />
     <Folder Include="Controllers\" />
