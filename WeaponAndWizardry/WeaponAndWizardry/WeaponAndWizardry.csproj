@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -170,7 +171,12 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="App_Data\Wwdatabase.mdf" />
+    <Content Include="App_Data\Wwdatabase_log.ldf">
+      <DependentUpon>Wwdatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bgm_crystal_waver.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -179,6 +185,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Models\SaveDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SaveDataModel.edmx</DependentUpon>
+      <LastGenOutput>SaveDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SaveDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SaveDataModel.edmx</DependentUpon>
+      <LastGenOutput>SaveDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\sounds.js" />
+    <Content Include="TestJson.aspx" />
+    <EntityDeploy Include="Models\SaveDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SaveDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SaveDataModel.edmx.diagram">
+      <DependentUpon>SaveDataModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -214,7 +239,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -336,6 +363,32 @@
     <Compile Include="App_Code\Choices.cs" />
     <Compile Include="App_Code\ScriptEngine.cs" />
     <Compile Include="App_Code\Scripts\Scripts.cs" />
+    <Compile Include="Models\SaveDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaveDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaveDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>SaveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestJson.aspx.cs">
+      <DependentUpon>TestJson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestJson.aspx.designer.cs">
+      <DependentUpon>TestJson.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\UsersSaveDataController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -390,6 +443,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
