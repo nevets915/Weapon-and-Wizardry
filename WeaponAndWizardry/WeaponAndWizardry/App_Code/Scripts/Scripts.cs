@@ -11,12 +11,14 @@ namespace WeaponAndWizardry.App_Code
     /// </summary>
     public partial class ScriptEngine
     {
-        static Choices nextChoice = new Choices("Next");
+        static Choices nextChoice = new Choices("Next", "test");
 
         private void LoadScripts()
         {
             _scriptLines.Add(Line1);
             _scriptLines.Add(Line2);
+            _scriptLines.Add(Line3);
+            _scriptLines.Add(Line4);
         }
 
         private void Line1()
@@ -32,7 +34,7 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Oh brave hero…\nYou hear a beautiful voice begin to call you.\n" 
                 + "The great goddess Ilias suddenly appears before you.");
-            _currentExecutingLine++;
+            _currentExecutingLine++;                       
         }
 
         private void Line3()
@@ -90,9 +92,26 @@ namespace WeaponAndWizardry.App_Code
 
         private void Line9()
         {
-            SetChoiceButtons(new Choices("I'm not very strong...(Strength--)", "I'm a little slow (Dexterity--)",
-                "I've never been very bright.(Intelligence--)", "I'm super unlucky.(Luck--)"));
-            PrintTextDialogue("What would you say is your biggest weakness?");
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("Farewell, brave hero.\n  Know that I will always be watching over you, " + 
+                "even in the tutorial section.");
+            _currentExecutingLine++;
+        }
+
+        private void Line10()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You suddenly wake up to see the camp you made last night.\n" +
+                "Your possessions include: your sword, your monster slaying medallion, a monster" +
+                "slaying contract and typical camping necessities.");
+            _currentExecutingLine++;
+        }
+
+        private void Line11()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You open the contract scroll among your belongings.\n" +
+                "Contract: Slay the beast of Granberia");
             _currentExecutingLine++;
         }
 
