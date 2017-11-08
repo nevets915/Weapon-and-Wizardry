@@ -20,6 +20,8 @@ namespace WeaponAndWizardry.App_Code
 
         private const string _textDisplay = "textdisplay";
 
+        private const string _choiceButtons = "choicebuttons";
+
         /// <summary>
         /// Returns the Session object of type Script Engine
         /// </summary>
@@ -78,6 +80,22 @@ namespace WeaponAndWizardry.App_Code
             set
             {
                 HttpContext.Current.Session[_textDisplay] = value;
+            }
+        }
+
+        public static string[] ChoiceButtons
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_choiceButtons] == null)
+                {
+                    HttpContext.Current.Session[_choiceButtons] = new string[4];
+                }
+                return (string[])HttpContext.Current.Session[_choiceButtons];
+            }
+            set
+            {
+                HttpContext.Current.Session[_choiceButtons] = value;
             }
         }
     }
