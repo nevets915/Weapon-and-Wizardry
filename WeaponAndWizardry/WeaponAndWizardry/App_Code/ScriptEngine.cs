@@ -32,14 +32,18 @@ namespace WeaponAndWizardry.App_Code
         {
             _currentExecutingLine = 0;
             _imageDisplay = imageDisplay;
-            _imageDisplay.Style["position"] = "relative";
-            _imageDisplay.Width = 800;
-            _imageDisplay.Height = 600;
             _textDisplay = textDisplay;
             _scriptLines = new List<ScriptLine>();
             _currentForegroundImages = new List<Image>();
             _choiceButtons = choiceButtons;
             LoadScripts();
+        }
+
+        public void UpdateReferences(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
+        {
+            _imageDisplay = imageDisplay;
+            _textDisplay = textDisplay;
+            _choiceButtons = choiceButtons;
         }
 
         public void ExecuteLine(uint choicePicked)
