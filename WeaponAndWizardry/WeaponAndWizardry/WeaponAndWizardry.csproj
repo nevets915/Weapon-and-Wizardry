@@ -176,8 +176,10 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\images\backgrounds\1.png" />
     <Content Include="Content\images\backgrounds\Camp.png" />
     <Content Include="Content\images\backgrounds\main_menu_bg.png" />
+    <Content Include="Content\images\characters\Illia.png" />
     <Content Include="Content\sounds\bgm\CampTheme.mp3" />
     <Content Include="Content\sounds\bgm\OpeningTheme1.mp3" />
     <Content Include="Content\sounds\bgm\OpeningTheme2.mp3" />
@@ -467,7 +469,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\bgm\" />
-    <Folder Include="Content\images\characters\" />
     <Folder Include="Content\ui\" />
     <Folder Include="Controllers\" />
   </ItemGroup>

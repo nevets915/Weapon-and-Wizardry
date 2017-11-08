@@ -111,7 +111,7 @@ namespace WeaponAndWizardry.App_Code
             image.Style["top"] = yPos.ToString() + "px";
             image.Width = width;
             image.Height = height;
-            image.ImageUrl = "~/Content/" + url;
+            image.ImageUrl = "~/Content/images/characters/" + url;
             _currentForegroundImages.Add(image);
             _imageDisplay.Controls.Add(image);
         }
