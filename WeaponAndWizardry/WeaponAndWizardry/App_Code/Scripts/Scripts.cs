@@ -11,7 +11,7 @@ namespace WeaponAndWizardry.App_Code
     /// </summary>
     public partial class ScriptEngine
     {
-        static Choices nextChoice = new Choices("Next", "test");
+        static Choices nextChoice = new Choices("Next");
 
         private void LoadScripts()
         {
@@ -23,6 +23,9 @@ namespace WeaponAndWizardry.App_Code
 
         private void Line1()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("Camp.png");
+            //AddForegroundImage("images/Shiki.png", 400, 300, 12, 120, 120);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Where am I…?\nA soft light fills the area," +
                 "giving the atmosphere a solemn feel.\n ... Is this a dream?");
@@ -293,7 +296,7 @@ namespace WeaponAndWizardry.App_Code
             _currentExecutingLine++;
         }
 
-        private void Line3()
+        private void Line100()
         {
             ClearImageDisplay();
             SetBackgroundImage("original.jpg");
