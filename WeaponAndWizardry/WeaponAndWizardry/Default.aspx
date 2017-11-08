@@ -6,7 +6,7 @@
         <h1>ASP.NET</h1>
         <asp:TextBox ID="TextDisplay" runat="server"></asp:TextBox>
         
-        <asp:Panel ID="ImageDisplay" runat="server" Height="480px" Width="800px">
+        <asp:Panel ID="ImageDisplay" runat="server" Height="600px" Width="800px">
         </asp:Panel>
         
         <p>
