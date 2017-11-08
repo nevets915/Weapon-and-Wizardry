@@ -115,6 +115,166 @@ namespace WeaponAndWizardry.App_Code
             _currentExecutingLine++;
         }
 
+        private void Line12()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You decide to head towards Granberia to attempt to complete the contract. \n" +
+                "Man’s gotta eat after all.");
+            _currentExecutingLine++;
+        }
+
+        private void Line13()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You make your way along the road to the city of Granberia.");
+            _currentExecutingLine++;
+        }
+
+        private void Line14()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("HELP ME!");
+            _currentExecutingLine++;
+        }
+
+        private void Line15()
+        {
+            SetChoiceButtons(new Choices("Rush over to find out who's calling for help", "Ignore it"));
+            PrintTextDialogue("You hear someone shouting nearby");
+            _currentExecutingLine++;
+        }
+
+        private void Line16()
+        {
+            SetChoiceButtons(new Choices("Attempt to rescue the soldier", "Ignore"));
+            PrintTextDialogue("You rush over and see a soldier tied up, being attacked by goblins.\n" +
+                "What do you do?");
+            _currentExecutingLine++;
+        }
+
+        private void Line17()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You rush over with your sword in hand.The goblins are alerted to your presence. \n"
+                + "KREEE!KREEE!");
+            _currentExecutingLine++;
+        }
+
+        private void Line18()
+        {
+            SetChoiceButtons(new Choices("Attack with your sword", "Flee", "Intimidate them with a battle-cry (Strength)" ));
+            PrintTextDialogue("You’re outnumbered 3-to-1.  However, you know that goblins are generally cowards" +
+                " and will flee if they think the odds are against them.\n  What do you do?");
+            _currentExecutingLine++;
+        }
+
+        private void Line19()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You’ve decided that the incident was more trouble than it’s worth.\n" +  
+                "You continue on your way towards Granberia. ");
+            _currentExecutingLine++;
+        }
+
+        private void Line20()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("With your sword in hand, you attempt to slice the biggest goblin in two.\n" +  
+            "However, you swing doesn’t go clean through and the goblin is able to retaliate ");
+            _currentExecutingLine++;
+        }
+
+        private void Line21()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The goblin is now badly wounded and is open " +
+                "for your next attack which cleaves the goblin in two.\n  KREEE!Kree... ");
+            _currentExecutingLine++;
+        }
+
+        private void Line22()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The big goblin goes crashing down.  His two companions now fear stricken," +
+                "flee for their lives.  \nTired from the ordeal, you decide not to give chase.");
+            _currentExecutingLine++;
+        }
+
+        private void Line23()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You decide the best course of action would be to bluff your way to victory.\n" +  
+            "You bellow a battle cry with all your might.");
+            _currentExecutingLine++;
+        }
+
+        private void Line24()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("COME FORTH YOU SHALL FIND NO HONOUR IN DEATH!");
+            _currentExecutingLine++;
+        }
+
+        private void Line25()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("Your cry succeeds in intimidating the three goblins." +
+                "They all look to each other in fear and run away." +
+                "You decide not pursue them since you’ve already won the battle.  ");
+            _currentExecutingLine++;
+        }
+
+        private void Line27()
+        {
+            SetChoiceButtons(new Choices("Untie him", "Ask him why he’s tied up", "Leave him to the monsters", 
+                "Kill him and loot him"));
+            PrintTextDialogue("Thank you.  My name is John Verdan.  Now quick, untie me!\n" +
+                "The tied up soldier is now asking for your assistance.  His fate is in your hands.\n" +
+                "What do you do?");
+            _currentExecutingLine++;
+        }
+
+        private void Line28()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You decide to untie the ropes around the soldier's arms and legs. \n" + 
+                "Thanks. Now, I’m gonna get out of here before more of those goblins show up. " +
+                "\nI promise I’ll pay you back someday.The soldier leaves."
+            );
+            _currentExecutingLine++;
+        }
+
+        private void Line29()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You decide to continue onwards with your journey.");
+            _currentExecutingLine++;
+        }
+
+        private void Line30()
+        {
+            SetChoiceButtons(new Choices("No", "Fine, fine"));
+            PrintTextDialogue("What? Can’t you just untie me first?");
+            _currentExecutingLine++;
+        }
+
+        private void Line31()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("But I… Ugh, okay fine.  I’m tied up because I’m a deserter.\n" +
+                "I left the army because I’m a coward who doesn’t want to die.  \n" +
+                "With so much political instability, nations aren’t so keen on sharing at the moment. ");
+            _currentExecutingLine++;
+        }
+
+        private void Line32()
+        {
+            SetChoiceButtons(new Choices("Untie him", "Leave him to the monsters", "Kill him and loot him"));
+            PrintTextDialogue("I’m not that nationalistic, but I needed money to buy food to survive.  \n" +
+            "It’s hard making a living in this day and age.  I joined the army to make ends meet, but… well you know.");
+            _currentExecutingLine++;
+        }
+
         private void Line99()
         {
             ClearImageDisplay();
