@@ -176,7 +176,7 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
-    <Content Include="Content\Images\backgrounds\main_menu_bg.png" />
+    <Content Include="Content\images\backgrounds\main_menu_bg.png" />
     <Content Include="Content\sounds\bgm\CampTheme.mp3" />
     <Content Include="Content\sounds\bgm\OpeningTheme1.mp3" />
     <Content Include="Content\sounds\bgm\OpeningTheme2.mp3" />
@@ -373,6 +373,8 @@
     <Compile Include="App_Code\Choices.cs" />
     <Compile Include="App_Code\ScriptEngine.cs" />
     <Compile Include="App_Code\Scripts\Scripts.cs" />
+    <Compile Include="App_Code\SessionHandler.cs" />
+    <Compile Include="App_Code\Utility.cs" />
     <Compile Include="MainMenu.aspx.cs">
       <DependentUpon>MainMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -463,8 +465,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Images\characters\" />
-    <Folder Include="Content\sounds\" />
+    <Folder Include="Content\images\characters\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>

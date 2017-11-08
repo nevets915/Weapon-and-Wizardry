@@ -15,6 +15,7 @@ namespace WeaponAndWizardry.App_Code
         {
             _scriptLines.Add(Line1);
             _scriptLines.Add(Line2);
+            _scriptLines.Add(Line3);
         }
 
         private void Line1()
@@ -35,12 +36,30 @@ namespace WeaponAndWizardry.App_Code
             switch (_choicePicked)
             {
                 case 1:
-                    SetChoiceButtons(new Choices());
                     PrintTextDialogue("You attack!");
                     break;
                 case 2:
-                    SetChoiceButtons(new Choices());
                     PrintTextDialogue("You Run!");
+                    break;
+            }
+            SetChoiceButtons(new Choices("Fight More", "Run more"));
+            _currentExecutingLine++;
+        }
+
+        private void Line3()
+        {
+            ClearImageDisplay();
+            SetBackgroundImage("original.jpg");
+            AddForegroundImage("images/Shiki.png", 400, 300, 12, 120, 120);
+            switch (_choicePicked)
+            {
+                case 1:
+                    SetChoiceButtons(new Choices());
+                    PrintTextDialogue("You Die!");
+                    break;
+                case 2:
+                    SetChoiceButtons(new Choices());
+                    PrintTextDialogue("You Slip!");
                     break;
             }
             _currentExecutingLine++;
