@@ -97,7 +97,7 @@ namespace WeaponAndWizardry.App_Code
             image.Style["top"] = "0px";
             image.Width = 800;
             image.Height = 600;
-            image.ImageUrl = "~/Content/backgrounds/" + imageFileName;
+            image.ImageUrl = "~/Content/images/backgrounds/" + imageFileName;
             _currentBackgroundImage = image;
             _imageDisplay.Controls.Add(_currentBackgroundImage);
         }

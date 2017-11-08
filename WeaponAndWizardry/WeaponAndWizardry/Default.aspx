@@ -7,8 +7,8 @@
         <asp:TextBox ID="TextDisplay" runat="server"></asp:TextBox>
         
         <asp:Panel ID="ImageDisplay" runat="server" Height="600px" Width="800px">
+            
         </asp:Panel>
-        
         <p>
             <asp:Button ID="ButtonChoice1" runat="server" OnClick="ButtonChoice1_Click" Text="Choice 1" />
             <asp:Button ID="ButtonChoice2" runat="server" OnClick="ButtonChoice2_Click" Text="Choice 2" />

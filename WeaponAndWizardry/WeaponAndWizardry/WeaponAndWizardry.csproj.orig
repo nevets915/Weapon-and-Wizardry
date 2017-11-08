@@ -176,7 +176,6 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
-    <Content Include="Content\images\backgrounds\Camp.png" />
     <Content Include="Content\images\backgrounds\main_menu_bg.png" />
     <Content Include="Content\sounds\bgm\CampTheme.mp3" />
     <Content Include="Content\sounds\bgm\OpeningTheme1.mp3" />
@@ -466,9 +465,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Folder Include="Content\Images\characters\" />
     <Folder Include="Content\bgm\" />
-    <Folder Include="Content\images\characters\" />
+    <Folder Include="Content\sounds\" />
     <Folder Include="Content\ui\" />
+=======
+    <Folder Include="Content\images\characters\" />
+>>>>>>> 1b22d392c0550347f007178c5efbc7d934af7ade
     <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
