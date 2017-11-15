@@ -375,6 +375,7 @@
     </Compile>
     <Compile Include="App_Code\Choices.cs" />
     <Compile Include="App_Code\ScriptEngine.cs" />
+    <Compile Include="App_Code\Scripts\PrologueScripts.cs" />
     <Compile Include="App_Code\Scripts\Scripts.cs" />
     <Compile Include="App_Code\SessionHandler.cs" />
     <Compile Include="App_Code\Utility.cs" />
