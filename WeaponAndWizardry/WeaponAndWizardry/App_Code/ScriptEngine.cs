@@ -47,7 +47,7 @@ namespace WeaponAndWizardry.App_Code
         }
 
         public void ExecuteLine(uint choicePicked)
-        {
+        {         
             _choicePicked = choicePicked;
             _scriptLines[_currentExecutingLine].Invoke();
         }
@@ -55,9 +55,15 @@ namespace WeaponAndWizardry.App_Code
         public void PrintTextDialogue(string message)
         {
             System.Diagnostics.Debug.WriteLine(message);
-            _textDisplay.Text = message;            
+            _textDisplay.Text += message;            
         }
-        
+
+        public void PrintLineTextDialogue(string message)
+        {
+            System.Diagnostics.Debug.WriteLine(message);
+            _textDisplay.Text += message + "\n";
+        }
+
         public void SetChoiceButtons(Choices choices)
         {
             for (int i = 0; i < _choiceButtons.Count; i++)

@@ -2,13 +2,20 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <asp:TextBox ID="TextDisplay" runat="server"></asp:TextBox>
+    <div class="panel panel-default">
         
         <asp:Panel ID="ImageDisplay" runat="server" Height="600px" Width="800px">
             
         </asp:Panel>
+        <p>
+        <asp:TextBox ID="TextDisplay" runat="server" Height="100px" TextMode="MultiLine" Width="800px"></asp:TextBox>
+         <script type="text/javascript">
+            window.onload = function () {
+                var textarea = document.getElementById('<%=TextDisplay.ClientID %>');
+                textarea.scrollTop = textarea.scrollHeight - 1;
+            }
+        </script>
+        </p>
         <p>
             <asp:Button ID="ButtonChoice1" runat="server" OnClick="ButtonChoice1_Click" Text="Choice 1" />
             <asp:Button ID="ButtonChoice2" runat="server" OnClick="ButtonChoice2_Click" Text="Choice 2" />

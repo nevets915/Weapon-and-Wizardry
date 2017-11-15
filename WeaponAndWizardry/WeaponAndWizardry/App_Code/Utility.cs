@@ -30,28 +30,41 @@ namespace WeaponAndWizardry.App_Code
         /// Saves the GUI State to Session Variables
         /// </summary>
         /// <param name="imageDisplay">The panel control state to save</param>
-        public static void SaveGuiState(Panel imageDisplay, string textDisplay)
+        public static void SaveGuiState(Panel imageDisplay, string textDisplay, List<Button> buttons)
         {
+            //TODO: Cleanup save state to require only the page
             SessionHandler.ImageDisplay.Controls.Clear();
             foreach (Image image in imageDisplay.Controls)
             {
                 SessionHandler.ImageDisplay.Controls.Add(Utility.CopyImage(image));
             }
+
             SessionHandler.TextDisplay = textDisplay;
+
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                SessionHandler.ChoiceButtons[i] = buttons[i].Text;
+            }
         }
 
         /// <summary>
         /// Restores the Session state back to the ImageDisplay
         /// </summary>
         /// <param name="display">The panel control to retore to</param>
-        public static void RestoreGuiState(Panel display, TextBox textDisplay)
+        public static void RestoreGuiState(Panel display, TextBox textDisplay, List<Button> buttons)
         {
             display.Controls.Clear();
             foreach (Image image in SessionHandler.ImageDisplay.Controls)
             {
                 display.Controls.Add(Utility.CopyImage(image));
             }
+
             textDisplay.Text = SessionHandler.TextDisplay;
+
+            for (int i = 0; i < SessionHandler.ChoiceButtons.Length; i++)
+            {
+                buttons[i].Text = SessionHandler.ChoiceButtons[i];
+            }
         }
     }
 }

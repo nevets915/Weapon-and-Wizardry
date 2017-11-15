@@ -13,15 +13,6 @@ namespace WeaponAndWizardry {
     public partial class _Default {
         
         /// <summary>
-        /// TextDisplay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDisplay;
-        
-        /// <summary>
         /// ImageDisplay control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace WeaponAndWizardry {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel ImageDisplay;
+        
+        /// <summary>
+        /// TextDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextDisplay;
         
         /// <summary>
         /// ButtonChoice1 control.
