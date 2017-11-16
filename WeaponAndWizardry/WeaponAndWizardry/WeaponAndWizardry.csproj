@@ -195,6 +195,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="MainScene.aspx" />
     <Content Include="MainMenu.aspx" />
     <Content Include="Models\SaveDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -376,6 +377,13 @@
     <Compile Include="App_Code\Scripts\Scripts.cs" />
     <Compile Include="App_Code\SessionHandler.cs" />
     <Compile Include="App_Code\Utility.cs" />
+    <Compile Include="MainScene.aspx.cs">
+      <DependentUpon>MainScene.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainScene.aspx.designer.cs">
+      <DependentUpon>MainScene.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.aspx.cs">
       <DependentUpon>MainMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

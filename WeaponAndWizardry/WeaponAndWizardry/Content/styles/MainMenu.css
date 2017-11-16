@@ -9,16 +9,72 @@
  * Based on:
  * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
 **/
-.imageButton{
-    background-image: url();
+#MainContent_Button_New_Game {
+    background: url(/Content/Images/ui/buttonNormal.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height:55px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
-.imageButton:after {
-    background-image: url();
+    #MainContent_Button_New_Game:hover {
+        background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+        border: 0;
+        background-size: 100%;
+        width: 20%;
+        height: 55px;
+        color: #ffffff;
+        font-weight: 600;
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 10px #ffd800;
+    }
+#MainContent_Button_Load_Game {
+    background: url(/Content/Images/ui/buttonNormal.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
-.imageButton:active:after {
-    background-image: url();
+#MainContent_Button_Load_Game:hover {
+    background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #ffd800;
+}
+
+#MainContent_Button_Credits {
+    background: url(/Content/Images/ui/buttonNormal.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#MainContent_Button_Credits:hover {
+    background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #ffd800;
 }
 
 .center {
