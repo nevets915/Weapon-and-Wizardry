@@ -61,16 +61,16 @@ namespace WeaponAndWizardry.App_Code
 
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Where am I…?\"\nA soft light fills the area," +
-                "giving the atmosphere a solemn feel.\n ... \"Is this a dream?\"\n\n");
+                "giving the atmosphere a solemn feel.\n ... \"Is this a dream?\"");
             _currentExecutingLine++;
         }
 
         private void Prologue2()
         {
-            AddForegroundImage("Ilias.png", 75, 110, 12, 640, 480);
+            
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Oh brave hero…\"\nYou hear a beautiful voice begin to call you.\n"
-                + "The great goddess Ilias suddenly appears before you.\n\n");
+                + "The great goddess Ilias suddenly appears before you.");
             _currentExecutingLine++;
         }
 
@@ -78,9 +78,8 @@ namespace WeaponAndWizardry.App_Code
         {
             ClearImageDisplay();
             SetBackgroundImage("13.png");
-            AddForegroundImage("character_05.png", 75, 110, 12, 640, 480);
             SetChoiceButtons(new Choices("\"I can!\"", "\"Nope.\"", "\"...\""));
-            PrintTextDialogue("\"Oh great hero… can you hear my voice?\"\n\n");
+            PrintTextDialogue("\"Oh great hero… can you hear my voice?\"");
             _currentExecutingLine++;
         }
 
@@ -90,26 +89,29 @@ namespace WeaponAndWizardry.App_Code
             {
                 case 1:
                     SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("\"I can!\"");
                     PrintTextDialogue("You begin to tremble at the sound of Ilias‘s voice.\n" +
                 "The goddess whom created the world, who extends her love to humanity.\n" +
                 "You feel both relaxed and awed with such an amazing figure before you.\n" +
-                "Even if it’s just a dream.\n\n");
+                "Even if it’s just a dream.");
                     _currentExecutingLine++;
                     break;
                 case 2:
                     SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("\"Nope.\"");
                     PrintTextDialogue("You begin to tremble at the sound of Ilias‘s voice.\n" +
                 "The goddess whom created the world, who extends her love to humanity.\n" +
                 "You feel both relaxed and awed with such an amazing figure before you.\n" +
-                "Even if it’s just a dream.\n\n");
+                "Even if it’s just a dream.");
                     _currentExecutingLine++;
                     break;
                 case 3:
                     SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("\"...\"");
                     PrintTextDialogue("You begin to tremble at the sound of Ilias‘s voice.\n" +
                 "The goddess whom created the world, who extends her love to humanity.\n" +
                 "You feel both relaxed and awed with such an amazing figure before you.\n" +
-                "Even if it’s just a dream.\n\n");
+                "Even if it’s just a dream.");
                     _currentExecutingLine++;
                     break;
             }
@@ -122,7 +124,7 @@ namespace WeaponAndWizardry.App_Code
                 + "in bringing harmony or calamity to men and beast alike.\n" +
                 "Whether your destiny leads to that of rightous paragon or" +
                 "a ruthless renagede. I am here to help guide you, so that " +
-                "you may live up to your full potential.\"\n\n");
+                "you may live up to your full potential.\"");
             _currentExecutingLine++;
         }
 
@@ -131,13 +133,13 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(new Choices("\"I'm the strongest there is.(Strength++)\"", "\"Speed's my game.(Dexterity++)\"",
                 "\"I know everything.(Intelligence++)\"", "\"I've always been very lucky (Luck++)\""));
             PrintTextDialogue("\"Before we begin, I want to know more about you, oh great hero.\n" +
-                "How would you describe yourself?\"\n\n");
+                "How would you describe yourself?\"");
             _currentExecutingLine++;
         }
 
         private void Prologue7()
         {
-            PrintTextDialogue("\"What would you say is your biggest weakness?\"\n\n");
+            PrintTextDialogue("\"What would you say is your biggest weakness?\"");
             switch (_choicePicked)
             {
                 case 1:
@@ -186,7 +188,7 @@ namespace WeaponAndWizardry.App_Code
                     break;
             }
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("More text added here for tutorial\n\n");
+            PrintTextDialogue("More text added here for tutorial");
             _currentExecutingLine++;
         }
 
@@ -196,7 +198,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Farewell, brave hero.\n  Know that I will always be watching over you, " +
-                "even in the tutorial section.\"\n\n");
+                "even in the tutorial section.\"");
             _currentExecutingLine++;
         }
 
@@ -204,11 +206,10 @@ namespace WeaponAndWizardry.App_Code
         {
             ClearImageDisplay();
             SetBackgroundImage("13.png");
-            AddForegroundImage("VillageChief.png", 75, 110, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You suddenly wake up to see the camp you made last night.\n" +
                 "A dream about Ilias.\n \"I wonder what sort of great destiny " +
-                "I could possibly have.\"\n\n");
+                "I could possibly have.\"");
             _currentExecutingLine++;
         }
 
@@ -217,7 +218,7 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You check around your camp belongings as you ponder your thoughts. \n" +
                 "Your possessions include: your sword, a monster" +
-                "slaying contract and typical camping necessities.\n\n");
+                "slaying contract and typical camping necessities.");
             _currentExecutingLine++;
         }
 
@@ -225,7 +226,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You open the contract scroll among your belongings.\n" +
-                "\"Contract: Slay the beast of Granberia.\n Reward will be given by Granberia's village chief.\"\n\n");
+                "\"Contract: Slay the beast of Granberia.\n Reward will be given by Granberia's village chief.\"");
             _currentExecutingLine++;
         }
 
@@ -235,7 +236,7 @@ namespace WeaponAndWizardry.App_Code
             PrintTextDialogue("You recall that you camped near the Granberia city to hopefully slay the beast " +
                 "and collect the bounty." +
                 "\nTo make ends meet, you took up your sword and began slaying monsters for a living for a couple years now." +
-                "\"Man’s gotta eat after all.\"\n\n");
+                "\"Man’s gotta eat after all.\"");
             _currentExecutingLine++;
         }
 
@@ -243,21 +244,21 @@ namespace WeaponAndWizardry.App_Code
         {
             SetBackgroundImage("11.png");
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You make your way along the road to the city of Granberia.\n\n");
+            PrintTextDialogue("You make your way along the road to the city of Granberia.");
             _currentExecutingLine++;
         }
 
         private void Prologue15()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"HELP ME!\"\n\n");
+            PrintTextDialogue("\"HELP ME!\"");
             _currentExecutingLine++;
         }
 
         private void Prologue16()
         {
             SetChoiceButtons(new Choices("Rush over to find out who's calling for help", "Ignore it"));
-            PrintTextDialogue("You hear someone shouting nearby\n\n");
+            PrintTextDialogue("You hear someone shouting nearby");
             _currentExecutingLine++;
         }
 
@@ -268,13 +269,13 @@ namespace WeaponAndWizardry.App_Code
                 case 1:
                     SetChoiceButtons(new Choices("Attempt to rescue the soldier", "Ignore"));
                     PrintTextDialogue("You rush over and see a soldier tied up, being attacked by goblins.\n" +
-                "What do you do?\n\n");
+                "What do you do?");
                     _currentExecutingLine++;
                     break;
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You’ve decided that the incident was more trouble than it’s worth.\n" +
-                        "You continue on your way towards Granberia. \n\n");
+                        "You continue on your way towards Granberia. ");
                     _currentExecutingLine = _currentExecutingLine + 17;
                     break;
             }
@@ -284,7 +285,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You rush over with your sword in hand.The goblins are alerted to your presence.\n"
-                + "\"KREEE!KREEE!\"\n\n");
+                + "\"KREEE!KREEE!\"");
             _currentExecutingLine++;
         }
 
@@ -292,7 +293,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(new Choices("Attack with your sword", "Flee", "Intimidate them with a battle-cry (Strength)"));
             PrintTextDialogue("You’re outnumbered 3-to-1.  However, you know that goblins are generally cowards" +
-                " and will flee if they think the odds are against them.\n  What do you do?\n\n");
+                " and will flee if they think the odds are against them.\n  What do you do?");
             _currentExecutingLine++;
         }
 
@@ -303,19 +304,19 @@ namespace WeaponAndWizardry.App_Code
                 case 1:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("With your sword in hand, you attempt to slice the biggest goblin in two.\n" +
-                    "However, you swing doesn’t go clean through and the goblin is able to retaliate \n\n");
+                    "However, you swing doesn’t go clean through and the goblin is able to retaliate.");
                     _currentExecutingLine++;
                     break;
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You’ve decided that the incident was more trouble than it’s worth.\n" +
-                        "You continue on your way towards Granberia. \n\n");
+                        "You continue on your way towards Granberia. ");
                     _currentExecutingLine = _currentExecutingLine + 14;
                     break;
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide the best course of action would be to bluff your way to victory.\n" +
-                    "You bellow a battle cry with all your might.\n\n");
+                    "You bellow a battle cry with all your might.");
                     _currentExecutingLine = _currentExecutingLine + 4;
                     break;
             }
@@ -325,7 +326,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("With your sword in hand, you attempt to slice the biggest goblin in two.\n" +
-            "However, you swing doesn’t go clean through and the goblin is able to retaliate \n\n");
+            "However, you swing doesn’t go clean through and the goblin is able to retaliate ");
             _currentExecutingLine++;
         }
 
@@ -333,7 +334,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The goblin is now badly wounded and is open " +
-                "for your next attack which cleaves the goblin in two.\n  \"KREEE!Kree... \"\n\n");
+                "for your next attack which cleaves the goblin in two.\n  \"KREEE!Kree... \"");
             _currentExecutingLine++;
         }
 
@@ -341,14 +342,14 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The big goblin goes crashing down.  His two companions now fear stricken," +
-                "flee for their lives.  \nTired from the ordeal, you decide not to give chase.\n\n");
+                "flee for their lives.  \nTired from the ordeal, you decide not to give chase.");
             _currentExecutingLine++;
         }
 
         private void Prologue24()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"COME FORTH YOU SHALL FIND NO HONOUR IN DEATH!\"\n\n");
+            PrintTextDialogue("\"COME FORTH YOU SHALL FIND NO HONOUR IN DEATH!\"");
             _currentExecutingLine++;
         }
 
@@ -358,7 +359,7 @@ namespace WeaponAndWizardry.App_Code
             PrintTextDialogue("Your cry succeeds in intimidating the three goblins.\n" +
                 "They all look to each other in fear and run away.\n" +
                 "You decide not pursue them since you’ve already won the battle.\n" +
-                "\"That was some shout,\" you hear the soldier comment.\n\n");
+                "\"That was some shout,\" you hear the soldier comment.");
             _currentExecutingLine++;
         }
 
@@ -368,7 +369,7 @@ namespace WeaponAndWizardry.App_Code
                 "Kill him and loot him"));
             PrintTextDialogue("\"Thank you.  My name is John Verdan.  Now quick, untie me!  More of those things could appear\"\n" +
                 "The tied up soldier is now asking for your assistance.  His fate is in your hands.\n" +
-                "What do you do?\n\n");
+                "What do you do?");
             _currentExecutingLine++;
         }
 
@@ -380,19 +381,19 @@ namespace WeaponAndWizardry.App_Code
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to untie the ropes around the soldier's arms and legs. \n" +
                         "\"Thanks. Now, I’m gonna get out of here before more of those goblins show up. " +
-                        "\nI promise I’ll pay you back someday.The soldier rushs away, quick to leave the area.\"\n\n"
+                        "\nI promise I’ll pay you back someday.The soldier rushs away, quick to leave the area.\""
                     );
                     _currentExecutingLine++;
                     break;
                 case 2:
                     SetChoiceButtons(new Choices("\"No\"", "\"Fine, fine.  I'll untie you.\""));
-                    PrintTextDialogue("\"What? Can’t you just untie me first?\"\n\n");
+                    PrintTextDialogue("\"What? Can’t you just untie me first?\"");
                     _currentExecutingLine++;
                     break;
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide the best course of action would be to bluff your way to victory.\n" +
-                    "You bellow a battle cry with all your might.\n\n");
+                    "You bellow a battle cry with all your might.");
                     _currentExecutingLine = _currentExecutingLine + 4;
                     break;
             }
@@ -401,14 +402,14 @@ namespace WeaponAndWizardry.App_Code
         private void Prologue28()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You decide to continue onwards with your journey.\n\n");
+            PrintTextDialogue("You decide to continue onwards with your journey.");
             _currentExecutingLine++;
         }
 
         private void Prologue29()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You decide to continue onwards with your journey.\n\n");
+            PrintTextDialogue("You decide to continue onwards with your journey.");
             _currentExecutingLine++;
         }
 
@@ -417,7 +418,7 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"But I… Ugh, okay fine.  I’m tied up because I’m a deserter.\n" +
                 "I left the army because I’m a coward who doesn’t want to die.  \n" +
-                "With so much political instability, nations aren’t so keen on sharing at the moment.\"\n\n");
+                "With so much political instability, nations aren’t so keen on sharing at the moment.\"");
             _currentExecutingLine++;
         }
 
@@ -425,7 +426,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(new Choices("Untie him", "Leave him to the monsters", "Kill him and loot him"));
             PrintTextDialogue("\"I’m not that nationalistic, but I needed money to buy food to survive.  \n" +
-            "It’s hard making a living in this day and age.  I joined the army to make ends meet, but… well you know.\"\n\n");
+            "It’s hard making a living in this day and age.  I joined the army to make ends meet, but… well you know.\"");
             switch (_choicePicked)
             {
                 case 1:
@@ -435,7 +436,7 @@ namespace WeaponAndWizardry.App_Code
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to leave the soldier tied up as you begin to leave." +
                         "\n \"What? Hey, you can't leave me here! Please, please don't let me die! I don't wanna die!" +
-                        "Despite the soldier's cries, you leave and continue on your journey.\n\n");
+                        "Despite the soldier's cries, you leave and continue on your journey.");
                     _currentExecutingLine = _currentExecutingLine + 3;
                     break;
                 case 3:
@@ -443,7 +444,7 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("You slowly walk around the tired up soldier, inspecting him from behind.\n" +
                         "\"So... how about it? Free me please?\"\n " +
                         "You raise your sword and aim for a quick execution-style cut. \n" +
-                        "\"What the - !What are you doing ? I…-\"\n\n");
+                        "\"What the - !What are you doing ? I…-\"");
                     _currentExecutingLine++;
                     break;
             }
@@ -454,14 +455,14 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You swing your sword and decapitate the soldier.\n" +
                 "The soldier's head comes clean off and his body lands lifeless on the floor.\n" +
-                "Unmoved by your recent murder, you search the soldier's body for loot.\n\n");
+                "Unmoved by your recent murder, you search the soldier's body for loot.");
             _currentExecutingLine++;
         }
 
         private void Prologue33()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Unsurprisingly, the body has nothing of value.\n You decide to continue on your journey. \n\n");
+            PrintTextDialogue("Unsurprisingly, the body has nothing of value.\n You decide to continue on your journey.");
             _currentExecutingLine++;
         }
 
@@ -471,7 +472,7 @@ namespace WeaponAndWizardry.App_Code
             SetBackgroundImage("3.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You finally arrive in Granberia.  The town is decently sized compared to your expectations.\n" +
-                "The town seemed to contain no more than 100 citizens and they ranged from children to the elderly.\n\n");
+                "The town seemed to contain no more than 100 citizens and they ranged from children to the elderly.");
             _currentExecutingLine++;
         }
 
@@ -479,7 +480,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You begin exploring the village and eventually spot the village chief's house. \n" +
-                "The door isn't locked, so you let yourself in.\n\n");
+                "The door isn't locked, so you let yourself in.");
             _currentExecutingLine++;
         }
 
@@ -487,7 +488,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Upon entering, you meant a very elderly man. \n" +
-                "He seemed a little anxious from his pacing back and forth. \n\n");
+                "He seemed a little anxious from his pacing back and forth.");
             _currentExecutingLine++;
         }
 
@@ -495,7 +496,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Ah, you must be a slayer who accepted the contract.  I can tell from your monster-slaying medallion.\n" +
-            "\"Please have a seat.\" \nThe old man motions to a seat before him. \n\"My name is \n\n");
+            "\"Please have a seat.\" \nThe old man motions to a seat before him. \n\"My name is Merle.");
             _currentExecutingLine++;
         }
 
@@ -504,7 +505,7 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(new Choices("\"Double the reward or I walk, old man.\"", "\"I accept the contract.\""));
             PrintTextDialogue("\"As you know, our village is currently being attacked by an unknown monster.\n" +
                 "It seems to happen at random times.  The most recent attack was near the stables of our village.\n" +
-                "Please I beg you to help us.\n  The reward of 500 gold pieces.  \n\n");
+                "Please I beg you to help us.\n  The reward of 500 gold pieces.  ");
             _currentExecutingLine++;
         }
 
@@ -515,19 +516,19 @@ namespace WeaponAndWizardry.App_Code
                 case 1:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("\"D-Double?!? But I... The village...\"\n The village chief sighs.\n " +
-                        "\"If it will save our village, I will pay any price.\n You have a deal.\"\n\n");
+                        "\"If it will save our village, I will pay any price.\n You have a deal.\"");
                     _currentExecutingLine = _currentExecutingLine + 2;
                     break;
                 case 2:
                     SetChoiceButtons(new Choices("\"Fine, I'll do the deed for 500 gold.\""));
                     PrintTextDialogue("\"D-Double?!? That's outragous. \nI could hire 10 mercenaries for that kind " +
-                        "of money.  \nNo deal.\" \nThe old man looks sternly back at you.  It's unlikely he will change his mind.\n\n");
+                        "of money.  \nNo deal.\" \nThe old man looks sternly back at you.  It's unlikely he will change his mind.");
                     _currentExecutingLine++;
                     break;
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("\"Very good.  \nPlease slay the beast and bring me it's head as proof.  " +
-                        "\nOnly then will you be paid.\" The old man motions you to leave as he has other matters to attend to.\n\n");
+                        "\nOnly then will you be paid.\" The old man motions you to leave as he has other matters to attend to.");
                     _currentExecutingLine = _currentExecutingLine + 2;
                     break;
             }
@@ -541,70 +542,246 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue41()
         {
-            SetChoiceButtons(new Choices("Ask around the village", "Go to the most recent murder scene"));
+            SetChoiceButtons(new Choices("Ask around the village marketplace for information.", "Ask for info around the center of town.", "Go to the most recent murder scene to search for clues."));
             PrintTextDialogue("With the deal set, you leave the village chief's house.\n" +
-                "You need to somehow find and slay the beast that's been kill all the villagers.\n What do you do?\n\n");
+                "You need to slay the beast that's been kill all the villagers.\nHowever, you'll need to find the beast first.\nWhat do you do?");
             _currentExecutingLine++;
         }
 
         private void Prologue42()
         {
-            
+            switch (_choicePicked)
+            {
+                case 1:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to head to the marketplace to ask around for information.");
+                    _currentExecutingLine = _currentExecutingLine++;
+                    break;
+                case 2:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to ask around the center of town.");
+                    _currentExecutingLine = _currentExecutingLine + 7;
+                    break;
+                case 3:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to go to the area of town where the most recent villager death was.");
+                    _currentExecutingLine = _currentExecutingLine + 13;
+                    break;
+            }
         }
 
         private void Prologue43()
         {
-            
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The marketplace is bustling with people of all ages, buying and selling goods.\n" +
+                "You spot one of the free shopkeepers and ecide to ask them about.");
+            _currentExecutingLine++;
         }
 
         private void Prologue44()
         {
-            
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("\"Selling the finest clothes in all of Granberia! Get 'em quick before they're gone!\"\n"
+                + "The store owner does'nt seems to notice you at first.");
+            _currentExecutingLine++;
         }
 
         private void Prologue45()
         {
-            SetChoiceButtons(new Choices("Ask around the village", "Go to the most recent murder scene"));
-            PrintTextDialogue("With the deal set, you leave the village chief's house.\n"+
-                "You need to somehow find and slay the beast that's been kill all the villagers.\n What do you do?\n\n");
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("\"Selling the finest clothes in all of Granberia! Get 'em quick before they're gone!\"\n"
+                + "The store owner doesn't seems to notice you at first.\"");
             _currentExecutingLine++;
         }
 
-        private void Line99()
+        private void Prologue46()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("original.jpg");
-            AddForegroundImage("images/Neet.jpg", 400, 300, 12, 120, 120);
-            switch (_choicePicked)
-            {
-                case 1:
-                    PrintTextDialogue("You attack!");
-                    break;
-                case 2:
-                    PrintTextDialogue("You Run!");
-                    break;
-            }
-            SetChoiceButtons(new Choices("Fight More", "Run more"));
+            SetChoiceButtons(new Choices("I'm looking for information", "How's business?", "..."));
+            PrintTextDialogue("\"Eh? Now what do you want?  I don't suppose you're gonna buy something.  \"");
             _currentExecutingLine++;
         }
 
-        private void Line100()
+        /// <summary>
+        /// Choice doesn't matter here, shopkeeper is uncooperative.  
+        /// </summary>
+        private void Prologue47()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("original.jpg");
-            AddForegroundImage("images/Shiki.png", 400, 300, 12, 120, 120);
+            SetChoiceButtons(new Choices("Ask for info around the center of town.", "Go to the most recent murder scene to search for clues."));
+            PrintTextDialogue("\"I'm not here to make conversation, pal.  Either buy something or leave\"\n" +
+                "Another wave of customers come by and the store owner immediately ignores you to tend to them.\n" +
+                "Seems the marketplace is far too busy to get any useful information.\nWhat wilil you try next?");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue48()
+        {
             switch (_choicePicked)
             {
                 case 1:
-                    SetChoiceButtons(new Choices());
-                    PrintTextDialogue("You Die!");
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to ask around the center of town.");
+                    _currentExecutingLine++;
                     break;
                 case 2:
-                    SetChoiceButtons(new Choices());
-                    PrintTextDialogue("You Slip!");
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to go to the area of town where the most recent villager death was.");
+                    _currentExecutingLine = _currentExecutingLine + 7;
                     break;
             }
+        }
+
+        private void Prologue49()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The center of town fairly empty at the moment.\n" +
+                "The only people you see are a couple of kids playing with a softball.");
             _currentExecutingLine++;
+        }
+
+        private void Prologue50()
+        {
+            SetChoiceButtons(new Choices("\"Sure!\"", "\"Beat it,kid\""));
+            PrintTextDialogue("You are about to leave when the halfing children approach you." +
+                "\"Hey, you wanna play ball? C'mon it'll be fun!\"");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue51()
+        {
+            switch (_choicePicked)
+            {
+                case 1:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to play with the children for a bit.\n"+
+                        "Despite their small size, the children are quite good.\n"+
+                        "\"You're not bad. Best adult I've ever played with.\"");
+                    _currentExecutingLine++;
+                    break;
+                case 2:
+                    SetChoiceButtons(new Choices("Ask around the village marketplace for information.", "Go to the most recent murder scene to search for clues."));
+                    PrintTextDialogue("\"Aww, you're no fun. Adults are so boring.\"" +
+                        "\nThe children leave you. Seems there's nothing else here that will help you progress.\n" +
+                        "Where should you head next?");
+                    _currentExecutingLine = _currentExecutingLine + 3;
+                    break;
+            }
+        }
+
+        private void Prologue52()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The children all begin asking you about your sword, what you do for a living, etc.\n"+
+                "\"A monster hunter? So cool.  Hope you can slay the one that's been attacking our village. "+
+                "You should check by the stables, that's where the last monster attack was.\""+
+                "The children wave good-bye as they called back by their mother.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue53()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The children made a good point about where you should search next. " +
+                "You decide to take their advice and head towards the village stables.");
+            _currentExecutingLine = _currentExecutingLine + 2;
+        }
+
+        private void Prologue54()
+        {
+            switch (_choicePicked)
+            {
+                case 1:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to head to the marketplace to ask around for information.");
+                    _currentExecutingLine = _currentExecutingLine - 11;
+                    break;
+                case 2:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to go to the area of town where the most recent villager death was.");
+                    _currentExecutingLine++;
+                    break;
+            }
+        }
+
+        private void Prologue55()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You arrive at the village stables.\nNothing seems out of the ordinary.\n"+
+                "Lots of horses, hay and the occassional farmer.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue56()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You notice, however that there is a faint trail of dried blood on the ground.\n"+
+                "Curious, you begin to follow it as it leads you outside the village.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue57()
+        {
+            SetBackgroundImage("14.png");
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The trail leads you deeper and deeper into the forest.\n"+
+                "Eventually, the trail ends as you reach a large oak tree.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue58()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The trail leads you deeper and deeper into the forest.\n" +
+                "Eventually, the trail ends as you reach a large oak tree.\n"+
+                "Everything seems to be very still, but somehow you feel uneasy.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue59()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("ROAR!");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue60()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("Suddenly a behemoth of crashs down in front of you.\n"+
+                "In it's jaws appears to be the leftover villager shirt of an unfortunate victim.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue61()
+        {
+            SetChoiceButtons(new Choices("Slash it with your sword.","Stab it with your sword.","Attempt to run away.","Stay on the defensive."));
+            PrintTextDialogue("The beast must've used one of the villager's bodies to draw you here. \n"+
+                "You're surprised it it's intelligence, but quickly draw your sword to defend yourself.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue62()
+        {
+
+        }
+
+        private void Prologue63()
+        {
+
+        }
+
+        private void Prologue64()
+        {
+
+        }
+
+        private void Prologue65()
+        {
+
+        }
+
+        private void Prologue66()
+        {
+
         }
 
     }

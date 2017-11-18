@@ -54,6 +54,7 @@ namespace WeaponAndWizardry.App_Code
 
         public void PrintTextDialogue(string message)
         {
+            message = "\n\n" + message;
             System.Diagnostics.Debug.WriteLine(message);
             _textDisplay.Text += message;            
         }
