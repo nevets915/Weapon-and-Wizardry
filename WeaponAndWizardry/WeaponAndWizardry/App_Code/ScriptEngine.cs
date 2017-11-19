@@ -54,6 +54,7 @@ namespace WeaponAndWizardry.App_Code
 
         public void PrintTextDialogue(string message)
         {
+            message = "\n\n" + message;
             System.Diagnostics.Debug.WriteLine(message);
             _textDisplay.Text += message;            
         }
@@ -117,7 +118,7 @@ namespace WeaponAndWizardry.App_Code
             image.Style["top"] = yPos.ToString() + "px";
             image.Width = width;
             image.Height = height;
-            image.ImageUrl = "~/Content/" + url;
+            image.ImageUrl = "~/Content/images/characters/" + url;
             _currentForegroundImages.Add(image);
             _imageDisplay.Controls.Add(image);
         }
