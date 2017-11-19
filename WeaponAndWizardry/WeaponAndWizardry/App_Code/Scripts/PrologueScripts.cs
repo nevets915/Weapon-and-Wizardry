@@ -5,8 +5,14 @@ using System.Web;
 
 namespace WeaponAndWizardry.App_Code
 {
+    /// <summary>
+    /// Container for the Script methods for the Prologue.
+    /// </summary>
     public partial class ScriptEngine
     {
+        /// <summary>
+        /// Region containing a method for loading the scripts needed.  
+        /// </summary>
         #region Script Load
         public void LoadPrologueScripts()
         {
@@ -79,6 +85,10 @@ namespace WeaponAndWizardry.App_Code
         }
         #endregion
 
+        /// <summary>
+        /// Region containing the script methods, each containing what's needed for the next
+        /// line of dialogue.  
+        /// </summary>
         #region Scripts
         private void Prologue1()
         {
