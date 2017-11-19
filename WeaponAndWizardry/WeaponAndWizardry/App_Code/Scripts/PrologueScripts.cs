@@ -208,14 +208,12 @@ namespace WeaponAndWizardry.App_Code
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
-
                     break;
                 case 4:
                     PrintTextDialogue("\"I've always been very lucky\"");
                     PrintTextDialogue("\"What would you say is your biggest weakness?\"");
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
-
 
                     break;
             }
@@ -431,6 +429,8 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue24()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("11.png");
             AddForegroundImage("Redgoblin_scared.png", -100, 120, 12, 640, 480);
             AddForegroundImage("Redgoblin_scared.png", 300, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
@@ -440,6 +440,8 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue25()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("11.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Your cry succeeds in intimidating the two goblins.\n" +
                 "They all look to each other in fear and run away.\n" +
@@ -450,7 +452,7 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue26()
         {
-            AddForegroundImage("Soldier_scared1.png", 0, 120, 12, 640, 480);
+            AddForegroundImage("Soldier_scared1.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(new Choices("Untie him", "Ask him why he’s tied up", "Leave him to the monsters",
                 "Kill him and loot him"));
             PrintTextDialogue("\"Thank you.  My name is John Verdan.  Now quick, untie me!  More of those things could appear\"\n" +
@@ -464,7 +466,7 @@ namespace WeaponAndWizardry.App_Code
             switch (_choicePicked)
             {
                 case 1:
-                    AddForegroundImage("Soldier_happy.png", 0, 120, 12, 640, 480);
+                    AddForegroundImage("Soldier_happy.png", 100, 120, 12, 640, 480);
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to untie the ropes around the soldier's arms and legs.\n" +
                         "\"Thanks. Now, I’m gonna get out of here before more of those goblins show up." +
@@ -475,7 +477,7 @@ namespace WeaponAndWizardry.App_Code
                 case 2:
                     ClearImageDisplay();
                     SetBackgroundImage("11.png");
-                    AddForegroundImage("Soldier_scared2.png", 0, 120, 12, 640, 480);
+                    AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
                     SetChoiceButtons(new Choices("\"No\"", "\"Fine, fine.  I'll untie you.\""));
                     PrintTextDialogue("\"What? Can’t you just untie me first?\"");
                     _currentExecutingLine = _currentExecutingLine + 3;
@@ -491,7 +493,7 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(nextChoice);
             ClearImageDisplay();
             SetBackgroundImage("11.png");
-            AddForegroundImage("Soldier_scared2.png", 0, 120, 12, 640, 480);
+            AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
             PrintTextDialogue("You decide to leave the soldier tied up as you begin to leave." +
                 "\n \"What? Hey, you can't leave me here! Please, please don't let me die! I don't wanna die!" +
                 "Despite the soldier's cries, you leave and continue on your journey.");
@@ -509,7 +511,7 @@ namespace WeaponAndWizardry.App_Code
         {
             ClearImageDisplay();
             SetBackgroundImage("11.png");
-            AddForegroundImage("Soldier_frustrated.png", 0, 120, 12, 640, 480);
+            AddForegroundImage("Soldier_frustrated.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"But I… Ugh, okay fine.  I’m tied up because I’m a deserter.\n" +
                 "I left the army because I’m a coward who doesn’t want to die.\n" +
@@ -521,7 +523,7 @@ namespace WeaponAndWizardry.App_Code
         {
             ClearImageDisplay();
             SetBackgroundImage("11.png");
-            AddForegroundImage("Soldier_neutral.png", 0, 120, 12, 640, 480);
+            AddForegroundImage("Soldier_neutral.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(new Choices("Untie him", "Leave him to the monsters", "Kill him and loot him"));
             PrintTextDialogue("\"I’m not that nationalistic, but I needed money to buy food to survive.  \n" +
             "It’s hard making a living in this day and age.  I joined the army to make ends meet, but… well you know.\"");
@@ -535,7 +537,7 @@ namespace WeaponAndWizardry.App_Code
                     break;
                 case 3:
                     SetChoiceButtons(nextChoice);
-                    AddForegroundImage("Soldier_scared2.png", 0, 120, 12, 640, 480);
+                    AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
                     PrintTextDialogue("You slowly walk around the tired up soldier, inspecting him from behind.\n" +
                         "\"So... how about it? Free me please?\"\n " +
                         "You raise your sword and aim for a quick execution-style cut. \n" +
