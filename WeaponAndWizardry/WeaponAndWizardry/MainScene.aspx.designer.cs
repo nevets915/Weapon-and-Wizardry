@@ -11,5 +11,59 @@ namespace WeaponAndWizardry {
     
     
     public partial class MainMenu {
+        
+        /// <summary>
+        /// ImageDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ImageDisplay;
+        
+        /// <summary>
+        /// ButtonChoice1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonChoice1;
+        
+        /// <summary>
+        /// ButtonChoice2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonChoice2;
+        
+        /// <summary>
+        /// ButtonChoice3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonChoice3;
+        
+        /// <summary>
+        /// ButtonChoice4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonChoice4;
+        
+        /// <summary>
+        /// TextDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextDisplay;
     }
 }

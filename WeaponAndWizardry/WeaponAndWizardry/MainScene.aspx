@@ -5,32 +5,34 @@
 
     
     <div style="background:url(../Content/Images/backgrounds/main_menu_bg.png) no-repeat; width: 100% 0;height:100% 0; background-position: right center;">
-        <div>
-            <div class ="row center">
-                <img alt="logo" longdesc="MA's Weapons&amp;Wizardry" src="Content/Images/ui/logo_3.png" style="width: 100%;" />
+        <div class="wrapper">
+            <div class="row">
+                <asp:Panel ID="ImageDisplay" runat="server" style="min-height:600px; min-width:800px" >
+            
+                </asp:Panel>
+
+                <div class="button_warpper" style="position:absolute; z-index: 10; left:50%; top:30%;">
+                    <div class="row">
+                        <asp:Button ID="ButtonChoice1" runat="server" Text="Choice1" />
+                    </div>
+                    <div class="row">
+                        <asp:Button ID="ButtonChoice2" runat="server" Text="Choice2" />
+                    </div>
+                    <div class="row">
+                        <asp:Button ID="ButtonChoice3" runat="server" Text="Choice3" />
+                    </div>
+                    <div class="row">
+                        <asp:Button ID="ButtonChoice4" runat="server" Text="Choice4" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <asp:TextBox ID="TextDisplay" runat="server" BackColor="Transparent" TextMode="MultiLine">
+                    TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
+                    TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
+                    TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
+                </asp:TextBox>
             </div>
         </div>
-
-        <table style="width: 100%">
-            <tr><td><div class="row"></div></td></tr>
-            <tr><td><div class="row"></div></td></tr>
-            <tr>
-                <td style="width: 100%" align="center">
-                    &nbsp;</td>
-            </tr>
-            <tr><td><div class="row"></div></td></tr>
-            <tr>
-                <td style="width: 100%" align="center">
-                    <br />
-                </td>
-            </tr>
-            <tr><td><div class="row"></div></td></tr>
-            <tr>
-                <td style="width: 100%" align="center">
-                    <br />
-                </td>
-            </tr>
-            <tr><td><div class="row"><br /><br /><br /><br /><br /><br /><br /></div></td></tr>
-        </table>
     </div>
 </asp:Content>
