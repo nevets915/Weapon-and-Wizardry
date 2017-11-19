@@ -7,11 +7,11 @@
     <div style="background:url(../Content/Images/backgrounds/main_menu_bg.png) no-repeat; width: 100% 0;height:100% 0; background-position: right center;">
         <div class="wrapper">
             <div class="row">
-                <asp:Panel ID="ImageDisplay" runat="server" >
+                <asp:Panel ID="ImageDisplay" runat="server" style="min-height:600px; min-width:800px" >
             
                 </asp:Panel>
 
-                <div class="button_warpper" style="position:absolute; z-index: 10; margin:auto; ">
+                <div class="button_warpper" style="position:absolute; z-index: 10; left:50%; top:30%;">
                     <div class="row">
                         <asp:Button ID="ButtonChoice1" runat="server" Text="Choice1" />
                     </div>
@@ -33,5 +33,6 @@
                     TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
                 </asp:TextBox>
             </div>
+        </div>
     </div>
 </asp:Content>
