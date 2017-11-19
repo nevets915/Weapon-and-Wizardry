@@ -38,6 +38,13 @@
                     <asp:Button ID="Button_Load" runat="server" Text="Load" style="width:100%;"/>
                     <asp:Button ID="Button_Back" runat="server" Text="Quit" PostBackUrl="~/MainMenu.aspx" style="width:100%;"/>
                 </div>
+                <asp:TextBox ID="TextDisplay" runat="server" TextMode="MultiLine" style="width:97.5%;margin-left:15px;min-height:200px;min-width:800px;color: white; background-color: rgba(128, 128, 128, 0.6);"></asp:TextBox>
+                <script type="text/javascript">
+                    window.onload = function () {
+                        var textarea = document.getElementById('<%=TextDisplay.ClientID %>');
+                        textarea.scrollTop = textarea.scrollHeight - 1;
+                    }
+                </script>
                 <div class="row" style="width:94%;margin:auto;">
                     <div class="row">
                         <asp:Button ID="ButtonChoice1" CssClass="btn btn-primary" runat="server" Text="Choice1" OnClick="ButtonChoice1_Click" style="width:100%" />
@@ -52,13 +59,7 @@
                         <asp:Button ID="ButtonChoice4" CssClass="btn btn-primary" runat="server" Text="Choice4" OnClick="ButtonChoice4_Click" style="width:100%" />
                     </div>
                 </div>
-                <asp:TextBox ID="TextDisplay" runat="server" TextMode="MultiLine" style="width:97.5%;margin-left:15px;min-height:200px;min-width:800px;color: white; background-color: rgba(128, 128, 128, 0.6);"></asp:TextBox>
-                <script type="text/javascript">
-                    window.onload = function () {
-                        var textarea = document.getElementById('<%=TextDisplay.ClientID %>');
-                        textarea.scrollTop = textarea.scrollHeight - 1;
-                    }
-                </script>
+                
             </div>
                 
             </div>
