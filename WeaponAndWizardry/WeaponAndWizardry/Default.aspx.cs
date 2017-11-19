@@ -12,7 +12,7 @@ namespace WeaponAndWizardry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack && SessionHandler.ScriptEngine == null)
+            if (!IsPostBack && WeaponAndWizardry.App_Code.SessionHandler.ScriptEngine == null)
             {
                 SessionHandler.ScriptEngine = new ScriptEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });                
                 SessionHandler.ScriptEngine.ExecuteLine(0);

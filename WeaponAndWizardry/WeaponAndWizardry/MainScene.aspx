@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MainMenu.aspx.cs" Inherits="WeaponAndWizardry.MainMenu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MainScene.aspx.cs" Inherits="WeaponAndWizardry.MainMenu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <link href="../Content/styles/MainMenu.css" rel="stylesheet" type="text/css" />
+
     
     <div style="background:url(../Content/Images/backgrounds/main_menu_bg.png) no-repeat; width: 100% 0;height:100% 0; background-position: right center;">
         <div>
@@ -14,21 +16,18 @@
             <tr><td><div class="row"></div></td></tr>
             <tr>
                 <td style="width: 100%" align="center">
-                    <asp:Button ID="Button_New_Game" CssClass="image_button_new" runat="server" Text="New Game" PostBackUrl="~/MainScene.aspx"/>
+                    &nbsp;</td>
+            </tr>
+            <tr><td><div class="row"></div></td></tr>
+            <tr>
+                <td style="width: 100%" align="center">
+                    <br />
                 </td>
             </tr>
             <tr><td><div class="row"></div></td></tr>
             <tr>
                 <td style="width: 100%" align="center">
                     <br />
-                    <asp:Button ID="Button_Load_Game" CssClass="image_button_load" runat="server" Text="Load Game" PostBackUrl="~/MainScene.aspx"/>
-                </td>
-            </tr>
-            <tr><td><div class="row"></div></td></tr>
-            <tr>
-                <td style="width: 100%" align="center">
-                    <br />
-                    <asp:Button ID="Button_Credits" CssClass="image_button_credits" runat="server" Text="Credits" PostBackUrl="~/About.aspx"/>
                 </td>
             </tr>
             <tr><td><div class="row"><br /><br /><br /><br /><br /><br /><br /></div></td></tr>
