@@ -24,8 +24,6 @@
             <div>
                 <asp:TextBox ID="TextDisplay" runat="server" Height="100px" TextMode="MultiLine" Width="800px"></asp:TextBox>
             </div>
-
-
         </div>
     </div>
 </asp:Content>
