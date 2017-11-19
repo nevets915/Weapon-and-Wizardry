@@ -16,10 +16,19 @@ namespace WeaponAndWizardry.App_Code
         /// </summary>
         private const string _engine = "engine";
 
+        /// <summary>
+        /// Strongly-typed Image Display string index
+        /// </summary>
         private const string _imageDisplay = "imagedisplay";
 
+        /// <summary>
+        /// Strongly-typed Text Display string index
+        /// </summary>
         private const string _textDisplay = "textdisplay";
 
+        /// <summary>
+        /// Strongly-typed Choice Buttons string index
+        /// </summary>
         private const string _choiceButtons = "choicebuttons";
 
         /// <summary>
@@ -64,6 +73,10 @@ namespace WeaponAndWizardry.App_Code
             }
         }
 
+        /// <summary>
+        /// Returns the Session object of type string
+        /// Which is the text data for text display
+        /// </summary>
         public static string TextDisplay
         {
             get
@@ -83,6 +96,10 @@ namespace WeaponAndWizardry.App_Code
             }
         }
 
+        /// <summary>
+        /// Returns the Session object of type string[]
+        /// Which is the text data for each choice button
+        /// </summary>
         public static string[] ChoiceButtons
         {
             get

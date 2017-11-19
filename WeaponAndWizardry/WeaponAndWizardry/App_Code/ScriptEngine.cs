@@ -39,6 +39,14 @@ namespace WeaponAndWizardry.App_Code
             LoadScripts();
         }
 
+        /// <summary>
+        /// Updates the references to the GUI controls.
+        /// Used when a the html page is refreshed and the reference to the new
+        /// controls is needed
+        /// </summary>
+        /// <param name="imageDisplay">The new panel to refer to</param>
+        /// <param name="textDisplay">The new text box to refer to</param>
+        /// <param name="choiceButtons">The buttons to refer to</param>
         public void UpdateReferences(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
         {
             _imageDisplay = imageDisplay;
@@ -46,25 +54,41 @@ namespace WeaponAndWizardry.App_Code
             _choiceButtons = choiceButtons;
         }
 
+        /// <summary>
+        /// Execute the next line of the script loaded
+        /// </summary>
+        /// <param name="choicePicked">The user choice picked in the previous line</param>
         public void ExecuteLine(uint choicePicked)
-        {         
+        {
             _choicePicked = choicePicked;
             _scriptLines[_currentExecutingLine].Invoke();
         }
 
+        /// <summary>
+        /// Outputs text to the Text Display
+        /// </summary>
+        /// <param name="message">The string message to output</param>
         public void PrintTextDialogue(string message)
         {
             message = "\n\n" + message;
             System.Diagnostics.Debug.WriteLine(message);
-            _textDisplay.Text += message;            
+            _textDisplay.Text += message;
         }
 
+        /// <summary>
+        /// Outputs text to the Text Display with a new line appended
+        /// </summary>
+        /// <param name="message">The string message to output</param>
         public void PrintLineTextDialogue(string message)
         {
             System.Diagnostics.Debug.WriteLine(message);
             _textDisplay.Text += message + "\n";
         }
 
+        /// <summary>
+        /// Sets the choice button text labels in the GUI
+        /// </summary>
+        /// <param name="choices">The choices to give to the user</param>
         public void SetChoiceButtons(Choices choices)
         {
             for (int i = 0; i < _choiceButtons.Count; i++)
@@ -78,6 +102,9 @@ namespace WeaponAndWizardry.App_Code
             }
         }
 
+        /// <summary>
+        /// Clears the image display
+        /// </summary>
         public void ClearImageDisplay()
         {
             _imageDisplay.Controls.Clear();
@@ -85,18 +112,47 @@ namespace WeaponAndWizardry.App_Code
             _currentForegroundImages.Clear();
         }
 
+        /// <summary>
+        /// Clears all foreground images in the image display
+        /// </summary>
         public void ClearForegroundImages()
         {
-            foreach(Image image in _currentForegroundImages)
+            for (int i = 0; i < _imageDisplay.Controls.Count; i++)
             {
-                _imageDisplay.Controls.Remove(image);
+                if (_imageDisplay.Controls[i] is Image)
+                {
+                    foreach (Image image in _currentForegroundImages)
+                    {
+                        if (image.ImageUrl == ((Image)_imageDisplay.Controls[i]).ImageUrl)
+                        {
+                            _imageDisplay.Controls.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
             }
             _currentForegroundImages.Clear();
         }
 
+        /// <summary>
+        /// Sets the backgroud image of the image display,
+        /// replacing the previous background image.
+        /// The image file needs to be in the ~/Content/images/backgrounds/ folder.
+        /// </summary>
+        /// <param name="imageFileName">The filename of the image to set.</param>
         public void SetBackgroundImage(string imageFileName)
         {
-            _imageDisplay.Controls.Remove(_currentBackgroundImage);
+            for (int i = 0; i < _imageDisplay.Controls.Count; i++)
+            {
+                if (_imageDisplay.Controls[i] is Image)
+                {
+                    if (_currentBackgroundImage.ImageUrl == ((Image)_imageDisplay.Controls[i]).ImageUrl)
+                    {
+                        _imageDisplay.Controls.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
             Image image = new Image();
             image.Style["position"] = "absolute";
             image.Style["z-index"] = "0";
@@ -109,6 +165,17 @@ namespace WeaponAndWizardry.App_Code
             _imageDisplay.Controls.Add(_currentBackgroundImage);
         }
 
+        /// <summary>
+        /// Adds a foreground image to the image display
+        /// May display foreground multiple images by calling this method more than once.
+        /// The image file needs to be in the ~/Content/images/characters/ folder.
+        /// </summary>
+        /// <param name="url">The url of the image file</param>
+        /// <param name="xPos">the x position of where the image should be placed in the image display</param>
+        /// <param name="yPos">the y position of where the image should be placed in the image display</param>
+        /// <param name="zPos">the z position of where the image should be placed in the image display</param>
+        /// <param name="width">the desired width size of the image</param>
+        /// <param name="height">the desired height size of the image</param>
         public void AddForegroundImage(string url, int xPos, int yPos, int zPos, int width, int height)
         {
             Image image = new Image();
