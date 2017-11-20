@@ -493,21 +493,60 @@ namespace WeaponAndWizardry.App_Code
                     _currentExecutingLine = _currentExecutingLine + 3;
                     break;
                 case 3:
-                    _currentExecutingLine++;
+                    SetChoiceButtons(nextChoice);
+                    ClearImageDisplay();
+                    SetBackgroundImage("11.png");
+                    AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
+                    PrintTextDialogue("You decide to leave the soldier tied up as you begin to leave." +
+                        "\n\"What? Hey, you can't leave me here! Please, please don't let me die! I don't wanna die! " +
+                        "Despite the soldier's cries, you leave and continue on your journey.");
+                    _currentExecutingLine = _currentExecutingLine + 7;
+                    break;
+                case 4:
+                    SetChoiceButtons(nextChoice);
+                    AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
+                    PrintTextDialogue("You slowly walk around the tired up soldier, inspecting him from behind.\n" +
+                        "\"So... how about it? Free me please?\"\n " +
+                        "You raise your sword and aim for a quick execution-style cut. \n" +
+                        "\"What the - !What are you doing ? I…-\"");
+                    _currentExecutingLine = _currentExecutingLine + 5;
                     break;
             }
         }
 
         private void Prologue28()
         {
-            SetChoiceButtons(nextChoice);
-            ClearImageDisplay();
-            SetBackgroundImage("11.png");
-            AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
-            PrintTextDialogue("You decide to leave the soldier tied up as you begin to leave." +
-                "\n \"What? Hey, you can't leave me here! Please, please don't let me die! I don't wanna die!" +
-                "Despite the soldier's cries, you leave and continue on your journey.");
-            _currentExecutingLine = _currentExecutingLine + 6;
+            switch (_choicePicked)
+            {
+                case 1:
+                    AddForegroundImage("Soldier_happy.png", 100, 120, 12, 640, 480);
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to untie the ropes around the soldier's arms and legs.\n" +
+                        "\"Thanks. Now, I’m gonna get out of here before more of those goblins show up." +
+                        "\nI promise I’ll pay you back someday. The soldier rushes away, quick to leave the area.\""
+                    );
+                    _currentExecutingLine++;
+                    break;
+                case 2:
+                    SetChoiceButtons(nextChoice);
+                    ClearImageDisplay();
+                    SetBackgroundImage("11.png");
+                    AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
+                    PrintTextDialogue("You decide to leave the soldier tied up as you begin to leave." +
+                        "\n \"What? Hey, you can't leave me here! Please, please don't let me die! I don't wanna die! " +
+                        "Despite the soldier's cries, you leave and continue on your journey.");
+                    _currentExecutingLine = _currentExecutingLine + 6;
+                    break;
+                case 3:
+                    SetChoiceButtons(nextChoice);
+                    AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
+                    PrintTextDialogue("You slowly walk around the tired up soldier, inspecting him from behind.\n" +
+                        "\"So... how about it? Free me please?\"\n " +
+                        "You raise your sword and aim for a quick execution-style cut. \n" +
+                        "\"What the - !What are you doing ? I…-\"");
+                    _currentExecutingLine = _currentExecutingLine + 4;
+                    break;
+            }
         }
 
         private void Prologue29()
@@ -519,14 +558,28 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue30()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("11.png");
-            AddForegroundImage("Soldier_frustrated.png", 100, 120, 12, 640, 480);
-            SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"But I… Ugh, okay fine.  I’m tied up because I’m a deserter.\n" +
-                "I left the army because I’m a coward who doesn’t want to die.\n" +
-                "With so much political instability, nations aren’t so keen on sharing at the moment.\"");
-            _currentExecutingLine++;
+            switch (_choicePicked)
+            {
+                case 1:
+                    ClearImageDisplay();
+                    SetBackgroundImage("11.png");
+                    AddForegroundImage("Soldier_frustrated.png", 100, 120, 12, 640, 480);
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("\"But I… Ugh, okay fine.  I’m tied up because I’m a deserter.\n" +
+                        "I left the army because I’m a coward who doesn’t want to die.\n" +
+                        "With so much political instability, nations aren’t so keen on sharing at the moment.\"");
+                    _currentExecutingLine++;
+                    break;
+                case 2:
+                    AddForegroundImage("Soldier_happy.png", 100, 120, 12, 640, 480);
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to untie the ropes around the soldier's arms and legs.\n" +
+                        "\"Thanks. Now, I’m gonna get out of here before more of those goblins show up." +
+                        "\nI promise I’ll pay you back someday. The soldier rushes away, quick to leave the area.\""
+                    );
+                    _currentExecutingLine = _currentExecutingLine + 4;
+                    break;
+            }
         }
 
         private void Prologue31()
@@ -537,24 +590,7 @@ namespace WeaponAndWizardry.App_Code
             SetChoiceButtons(new Choices("Untie him", "Leave him to the monsters", "Kill him and loot him"));
             PrintTextDialogue("\"I’m not that nationalistic, but I needed money to buy food to survive.  \n" +
             "It’s hard making a living in this day and age.  I joined the army to make ends meet, but… well you know.\"");
-            switch (_choicePicked)
-            {
-                case 1:
-                    _currentExecutingLine = _currentExecutingLine - 2;
-                    break;
-                case 2:
-                    _currentExecutingLine = _currentExecutingLine - 3;
-                    break;
-                case 3:
-                    SetChoiceButtons(nextChoice);
-                    AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
-                    PrintTextDialogue("You slowly walk around the tired up soldier, inspecting him from behind.\n" +
-                        "\"So... how about it? Free me please?\"\n " +
-                        "You raise your sword and aim for a quick execution-style cut. \n" +
-                        "\"What the - !What are you doing ? I…-\"");
-                    _currentExecutingLine++;
-                    break;
-            }
+            _currentExecutingLine = _currentExecutingLine - 3;
         }
 
         private void Prologue32()
@@ -778,7 +814,7 @@ namespace WeaponAndWizardry.App_Code
         {
             AddForegroundImage("Halfling_neutral.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(new Choices("\"Sure!\"", "\"Beat it, kid\""));
-            PrintTextDialogue("You are about to leave when the halfing child approaches you." +
+            PrintTextDialogue("You are about to leave when the halfing child approaches you. " +
                 "\"Hey, you wanna play ball? C'mon it'll be fun!\"");
             _currentExecutingLine++;
         }
