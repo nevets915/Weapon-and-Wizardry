@@ -31,11 +31,10 @@ namespace WeaponAndWizardry
                 // if it is, assign new game
                 SessionHandler.ScriptEngine = new ScriptEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
                 SessionHandler.ScriptEngine.ExecuteLine(0);
-                Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
             }
             else
             {
-                // ii not check it is game over and restore the previouse scene
                 //if(Session["_gameover"] != null)
                 //    try
                 //    {
@@ -48,10 +47,12 @@ namespace WeaponAndWizardry
                 //    {
 
                 //    }
-                Utility.RestoreGuiState(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+
+                // if not check it is game over and restore the previouse scene
+                SessionHandler.RestoreGuiState(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
                 SessionHandler.ScriptEngine.UpdateReferences(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
             }
-
+            SessionHandler.MainScene = this;
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace WeaponAndWizardry
         protected void ButtonChoice1_Click(object sender, EventArgs e)
         {
             SessionHandler.ScriptEngine.ExecuteLine(1);
-            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
         }
 
 
@@ -74,7 +75,7 @@ namespace WeaponAndWizardry
         protected void ButtonChoice2_Click(object sender, EventArgs e)
         {
             SessionHandler.ScriptEngine.ExecuteLine(2);
-            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace WeaponAndWizardry
         protected void ButtonChoice3_Click(object sender, EventArgs e)
         {
             SessionHandler.ScriptEngine.ExecuteLine(3);
-            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
         }
 
         /// <summary>
@@ -96,7 +97,17 @@ namespace WeaponAndWizardry
         protected void ButtonChoice4_Click(object sender, EventArgs e)
         {
             SessionHandler.ScriptEngine.ExecuteLine(4);
-            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+        }
+
+        /// <summary>
+        /// Quit the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button_Back_Click(object sender, EventArgs e)
+        {
+            SessionHandler.ScriptEngine.QuitGame();
         }
     }
 }

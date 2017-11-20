@@ -18,10 +18,10 @@
                         <asp:Button ID="ButtonChoice2" CssClass="btn btn-default" runat="server" Text="Choice2" OnClick="ButtonChoice2_Click" style="background-color:rgba(150,150,150,0.7)" />
                     </div>
                     <div class="row">
-                        <asp:Button ID="ButtonChoice3" CssClass="btn btn-default" runat="server" Text="Choice3" OnClick="ButtonChoice3_Click" style="background-color:rgba(150,150,150,0.7)"/>
+                        <asp:Button ID="ButtonChoice3" CssClass="btn btn-default" runat="server" Text="Choice3" OnClick="ButtonChoice3_Click" style="background-color:rgba(150,150,150,0.7)" />
                     </div>
                     <div class="row">
-                        <asp:Button ID="ButtonChoice4" CssClass="btn btn-default" runat="server" Text="Choice4" OnClick="ButtonChoice4_Click" style="background-color:rgba(150,150,150,0.7)"/>
+                        <asp:Button ID="ButtonChoice4" CssClass="btn btn-default" runat="server" Text="Choice4" OnClick="ButtonChoice4_Click" style="background-color:rgba(150,150,150,0.7)" />
                     </div>
                 </div>--%>
                 </div>
@@ -34,9 +34,9 @@
                     <asp:Label ID="Label_Luck" runat="server" Text="Luck: " Font-Size="Medium"></asp:Label>  <br />
                     <br /><br /><br /><br /><br /><br /><br /><br /><br />
                     <br /><br /><br /><br /><br /><br /><br /><br />
-                    <asp:Button ID="Button_Save" runat="server" Text="Save" style="width:100%;"/>
-                    <asp:Button ID="Button_Load" runat="server" Text="Load" style="width:100%;"/>
-                    <asp:Button ID="Button_Back" runat="server" Text="Quit" PostBackUrl="~/MainMenu.aspx" style="width:100%;"/>
+                    <asp:Button ID="Button_Save" runat="server" Text="Save" style="width:100%;" />
+                    <asp:Button ID="Button_Load" runat="server" Text="Load" style="width:100%;" />
+                    <asp:Button ID="Button_Back" runat="server" Text="Quit" PostBackUrl="~/MainMenu.aspx" style="width:100%;" OnClick="Button_Back_Click" />
                 </div>
                 <asp:TextBox ID="TextDisplay" runat="server" TextMode="MultiLine" style="width:97.5%;margin-left:15px;min-height:200px;min-width:800px;color: white; background-color: rgba(128, 128, 128, 0.6);"></asp:TextBox>
                 <script type="text/javascript">
@@ -50,18 +50,16 @@
                         <asp:Button ID="ButtonChoice1" CssClass="btn btn-primary" runat="server" Text="Choice1" OnClick="ButtonChoice1_Click" style="width:100%" />
                     </div>
                     <div class="row">
-                        <asp:Button ID="ButtonChoice2" CssClass="btn btn-primary" runat="server" Text="Choice2" OnClick="ButtonChoice2_Click" style="width:100%"  />
-                    </div>                                                                                                                     
-                    <div class="row">                                                                                                          
+                        <asp:Button ID="ButtonChoice2" CssClass="btn btn-primary" runat="server" Text="Choice2" OnClick="ButtonChoice2_Click" style="width:100%" />
+                    </div>
+                    <div class="row">
                         <asp:Button ID="ButtonChoice3" CssClass="btn btn-primary" runat="server" Text="Choice3" OnClick="ButtonChoice3_Click" style="width:100%" />
-                    </div>                                                                                                                    
-                    <div class="row">                                                                                                         
+                    </div>
+                    <div class="row">
                         <asp:Button ID="ButtonChoice4" CssClass="btn btn-primary" runat="server" Text="Choice4" OnClick="ButtonChoice4_Click" style="width:100%" />
                     </div>
                 </div>
-                
             </div>
-                
             </div>
         </div>
 </asp:Content>

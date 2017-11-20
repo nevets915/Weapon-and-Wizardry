@@ -11,9 +11,11 @@ namespace WeaponAndWizardry.App_Code
     public partial class ScriptEngine
     {
         /// <summary>
-        /// Region containing a method for loading the scripts needed.  
+        /// Region containing a method for loading the scripts needed.
         /// </summary>
+
         #region Script Load
+
         public void LoadPrologueScripts()
         {
             _scriptLines.Add(Prologue1);
@@ -83,13 +85,16 @@ namespace WeaponAndWizardry.App_Code
             _scriptLines.Add(Prologue65);
             _scriptLines.Add(Prologue66);
         }
-        #endregion
+
+        #endregion Script Load
 
         /// <summary>
         /// Region containing the script methods, each containing what's needed for the next
-        /// line of dialogue.  
+        /// line of dialogue.
         /// </summary>
+
         #region Scripts
+
         private void Prologue1()
         {
             ClearImageDisplay();
@@ -261,12 +266,10 @@ namespace WeaponAndWizardry.App_Code
                 case 3:
                     PrintTextDialogue("\"I've never been very bright.\"");
 
-
                     break;
 
                 case 4:
                     PrintTextDialogue("\"I'm super unlucky.\"");
-
 
                     break;
             }
@@ -373,6 +376,7 @@ namespace WeaponAndWizardry.App_Code
                         + "\"KREEE!KREEE!\"");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You’ve decided that the incident was more trouble than it’s worth.\n" +
@@ -380,7 +384,7 @@ namespace WeaponAndWizardry.App_Code
                     _currentExecutingLine = _currentExecutingLine + 16;
                     break;
             }
-
+            
         }
 
         private void Prologue19()
@@ -515,6 +519,7 @@ namespace WeaponAndWizardry.App_Code
                         "Despite the soldier's cries, you leave and continue on your journey.");
                     _currentExecutingLine = _currentExecutingLine + 7;
                     break;
+
                 case 4:
                     SetChoiceButtons(nextChoice);
                     AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
@@ -540,6 +545,7 @@ namespace WeaponAndWizardry.App_Code
                     );
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     ClearImageDisplay();
@@ -550,6 +556,7 @@ namespace WeaponAndWizardry.App_Code
                         "Despite the soldier's cries, you leave and continue on your journey.");
                     _currentExecutingLine = _currentExecutingLine + 6;
                     break;
+
                 case 3:
                     SetChoiceButtons(nextChoice);
                     AddForegroundImage("Soldier_scared2.png", 100, 120, 12, 640, 480);
@@ -583,6 +590,7 @@ namespace WeaponAndWizardry.App_Code
                         "With so much political instability, nations aren’t so keen on sharing at the moment.\"");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     AddForegroundImage("Soldier_happy.png", 100, 120, 12, 640, 480);
                     SetChoiceButtons(nextChoice);
@@ -604,8 +612,6 @@ namespace WeaponAndWizardry.App_Code
             PrintTextDialogue("\"I’m not that nationalistic, but I needed money to buy food to survive.  \n" +
             "It’s hard making a living in this day and age.  I joined the army to make ends meet, but… well you know.\"");
             _currentExecutingLine = _currentExecutingLine - 3;
-
-
         }
 
         private void Prologue32()
@@ -1011,9 +1017,9 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue66()
         {
-            //    //Redirect to title screen.
-            //    HttpContext.Current.Session["_gameover"] = "true";
+            //Redirect to title screen.
         }
-        #endregion
+
+        #endregion Scripts
     }
 }

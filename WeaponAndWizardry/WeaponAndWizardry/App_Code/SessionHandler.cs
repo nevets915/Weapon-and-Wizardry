@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace WeaponAndWizardry.App_Code
@@ -32,6 +33,11 @@ namespace WeaponAndWizardry.App_Code
         private const string _choiceButtons = "choicebuttons";
         
         /// <summary>
+        /// Strongly-typed Main Scene string index
+        /// </summary>
+        private const string _mainScene = "mainscene";
+
+        /// <summary>
         /// Returns the Session object of type Script Engine
         /// </summary>
         public static ScriptEngine ScriptEngine
@@ -50,6 +56,30 @@ namespace WeaponAndWizardry.App_Code
             set
             {
                 HttpContext.Current.Session[_engine] = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the Session object of type Page
+        /// This is stores the reference of the main scene
+        /// for the script engine to use.
+        /// </summary>
+        public static Page MainScene
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_mainScene] == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return (Page)HttpContext.Current.Session[_mainScene];
+                }
+            }
+            set
+            {
+                HttpContext.Current.Session[_mainScene] = value;
             }
         }
 
@@ -113,6 +143,47 @@ namespace WeaponAndWizardry.App_Code
             set
             {
                 HttpContext.Current.Session[_choiceButtons] = value;
+            }
+        }
+
+        /// <summary>
+        /// Saves the GUI State to Session Variables
+        /// </summary>
+        /// <param name="imageDisplay">The panel control state to save</param>
+        public static void SaveGuiState(Panel imageDisplay, string textDisplay, List<Button> buttons)
+        {
+            //TODO: Cleanup save state to require only the page
+            ImageDisplay.Controls.Clear();
+            foreach (Image image in imageDisplay.Controls)
+            {
+                ImageDisplay.Controls.Add(Utility.CopyImage(image));
+            }
+
+            TextDisplay = textDisplay;
+
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                ChoiceButtons[i] = buttons[i].Text;
+            }
+        }
+
+        /// <summary>
+        /// Restores the Session state back to the ImageDisplay
+        /// </summary>
+        /// <param name="display">The panel control to retore to</param>
+        public static void RestoreGuiState(Panel display, TextBox textDisplay, List<Button> buttons)
+        {
+            display.Controls.Clear();
+            foreach (Image image in ImageDisplay.Controls)
+            {
+                display.Controls.Add(Utility.CopyImage(image));
+            }
+
+            textDisplay.Text = TextDisplay;
+
+            for (int i = 0; i < ChoiceButtons.Length; i++)
+            {
+                buttons[i].Text = ChoiceButtons[i];
             }
         }
     }
