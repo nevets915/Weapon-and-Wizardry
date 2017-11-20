@@ -9,9 +9,9 @@
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
+    <link href="../Content/styles/MainMenu.css" rel="stylesheet" type="text/css" />
     <form id="form1" runat="server">
     <div>
-        <h1>Mobile Master Page</h1>
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />
