@@ -32,6 +32,8 @@
                    <asp:Label ID="Label_Dex" runat="server" Text="Dex" Font-Size="Small"></asp:Label>  <br />
                    <asp:Label ID="Label_Int" runat="server" Text="Int" Font-Size="Small"></asp:Label>  <br />
                    <asp:Label ID="Label_Luck" runat="server" Text="Luck" Font-Size="Small"></asp:Label>  <br />
+                   <asp:Button ID="Button_Back" runat="server" Text="Go Back To Main" PostBackUrl="~/MainMenu.aspx"/>
+
                </div>
                 <asp:TextBox ID="TextDisplay" runat="server" TextMode="MultiLine" style="width:100%;margin-left:15px;min-height:200px;min-width:800px;color: white; background-color: rgba(128, 128, 128, 0.6);"></asp:TextBox>
                 <script type="text/javascript">
