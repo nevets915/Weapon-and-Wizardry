@@ -384,7 +384,6 @@ namespace WeaponAndWizardry.App_Code
                     _currentExecutingLine = _currentExecutingLine + 16;
                     break;
             }
-            
         }
 
         private void Prologue19()
@@ -1017,7 +1016,12 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue66()
         {
+            //    //Redirect to title screen.
+            //    HttpContext.Current.Session["_gameover"] = "true";
+
             //Redirect to title screen.
+            QuitGame();
+
         }
 
         #endregion Scripts
