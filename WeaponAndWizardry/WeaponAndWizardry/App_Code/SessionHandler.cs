@@ -30,7 +30,7 @@ namespace WeaponAndWizardry.App_Code
         /// Strongly-typed Choice Buttons string index
         /// </summary>
         private const string _choiceButtons = "choicebuttons";
-
+        
         /// <summary>
         /// Returns the Session object of type Script Engine
         /// </summary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.UI.WebControls;
 
 namespace WeaponAndWizardry.App_Code
@@ -189,5 +190,7 @@ namespace WeaponAndWizardry.App_Code
             _currentForegroundImages.Add(image);
             _imageDisplay.Controls.Add(image);
         }
+
+        
     }
 }

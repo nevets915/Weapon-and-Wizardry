@@ -157,7 +157,7 @@ namespace WeaponAndWizardry.App_Code
                     AddForegroundImage("Ilias_closed2.png", 100, 120, 12, 640, 480);
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("\"...\"");
-                    PrintTextDialogue("\"If you don't reply, I'm going to get upset\"\n"+
+                    PrintTextDialogue("\"If you don't reply, I'm going to get upset\"\n" +
                         "You begin to tremble at the sound of Ilias‘s voice.\n" +
                 "The goddess whom created the world, who extends her love to humanity.\n" +
                 "You feel both relaxed and awed with such an amazing figure before you.\n" +
@@ -250,12 +250,12 @@ namespace WeaponAndWizardry.App_Code
             {
                 case 1:
                     PrintTextDialogue("\"I'm not very strong...\"");
-                    
+
                     break;
 
                 case 2:
                     PrintTextDialogue("\"I'm a little slow.\"");
-                    
+
                     break;
 
                 case 3:
@@ -265,7 +265,7 @@ namespace WeaponAndWizardry.App_Code
                     break;
 
                 case 4:
-                    PrintTextDialogue("\"I'm super unlucky.\"");                   
+                    PrintTextDialogue("\"I'm super unlucky.\"");
 
 
                     break;
@@ -380,7 +380,7 @@ namespace WeaponAndWizardry.App_Code
                     _currentExecutingLine = _currentExecutingLine + 16;
                     break;
             }
-            
+
         }
 
         private void Prologue19()
@@ -849,7 +849,7 @@ namespace WeaponAndWizardry.App_Code
                     AddForegroundImage("Halfling_happy.png", 100, 120, 12, 640, 480);
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to play with the children for a bit.\n" +
-                        "Despite the child's small size, the he's actually quite good.\n"+
+                        "Despite the child's small size, the he's actually quite good.\n" +
                         "\"You're not bad. Best adult I've ever played with.\"");
                     _currentExecutingLine++;
                     break;
@@ -871,7 +871,7 @@ namespace WeaponAndWizardry.App_Code
             SetBackgroundImage("27.png");
             AddForegroundImage("Halfling_interested.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("The child begins asking you about your sword, what you do for a living, etc.\n"+
+            PrintTextDialogue("The child begins asking you about your sword, what you do for a living, etc.\n" +
                 "\"A monster hunter? So cool.  Hope you can slay the one that's been attacking our village. " +
                 "You should check by the stables, that's where the last monster attack was.\"" +
                 "The child waves good-bye as he gets called back by his mother.");
@@ -963,7 +963,7 @@ namespace WeaponAndWizardry.App_Code
         private void Prologue61()
         {
             SetChoiceButtons(new Choices("Slash it with your sword.", "Stab it with your sword.", "Attempt to run away.", "Stay on the defensive."));
-            PrintTextDialogue("The beast must've used one of the villager's bodies to draw you here.\n"+
+            PrintTextDialogue("The beast must've used one of the villager's bodies to draw you here.\n" +
                 "You're surprised it it's intelligence, but quickly draw your sword to defend yourself.");
             _currentExecutingLine++;
         }
@@ -985,7 +985,7 @@ namespace WeaponAndWizardry.App_Code
             SetBackgroundImage("01.png");
             AddForegroundImage("Ilias_closed1.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"If you had a good experience so far, please comment in the following survey provided by one of the developers.\n"+
+            PrintTextDialogue("\"If you had a good experience so far, please comment in the following survey provided by one of the developers.\n" +
                 "Project Lead: George Lee\nStory Designer: Steven Ma\nGame Visuals Designer: Shawn Kim\"");
             _currentExecutingLine++;
         }
@@ -1011,7 +1011,8 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue66()
         {
-            //Redirect to title screen.
+            //    //Redirect to title screen.
+            //    HttpContext.Current.Session["_gameover"] = "true";
         }
         #endregion
     }

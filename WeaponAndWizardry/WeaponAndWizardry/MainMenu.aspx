@@ -14,21 +14,21 @@
             <tr><td><div class="row"></div></td></tr>
             <tr>
                 <td style="width: 100%" align="center">
-                    <asp:Button ID="Button_New_Game" CssClass="image_button_new" runat="server" Text="New Game" PostBackUrl="~/MainScene.aspx"/>
+                    <asp:Button ID="Button_New_Game" CssClass="image_button_new" runat="server" Text="New Game" OnClick="Button_New_Game_Click"/>
                 </td>
             </tr>
             <tr><td><div class="row"></div></td></tr>
             <tr>
                 <td style="width: 100%" align="center">
                     <br />
-                    <asp:Button ID="Button_Load_Game" CssClass="image_button_load" runat="server" Text="Load Game" PostBackUrl="~/MainScene.aspx"/>
+                    <asp:Button ID="Button_Load_Game" CssClass="image_button_load" runat="server" Text="Load Game"/>
                 </td>
             </tr>
             <tr><td><div class="row"></div></td></tr>
             <tr>
                 <td style="width: 100%" align="center">
                     <br />
-                    <asp:Button ID="Button_Credits" CssClass="image_button_credits" runat="server" Text="Credits" PostBackUrl="~/About.aspx"/>
+                    <asp:Button ID="Button_Credits" CssClass="image_button_credits" runat="server" Text="Credits"/>
                 </td>
             </tr>
             <tr><td><div class="row"><br /><br /><br /><br /><br /><br /><br /></div></td></tr>
