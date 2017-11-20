@@ -189,5 +189,13 @@ namespace WeaponAndWizardry.App_Code
             _currentForegroundImages.Add(image);
             _imageDisplay.Controls.Add(image);
         }
+
+        /// <summary>
+        /// Returns the user to the main menu
+        /// </summary>
+        public void QuitGame()
+        {
+            SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
+        }
     }
 }
