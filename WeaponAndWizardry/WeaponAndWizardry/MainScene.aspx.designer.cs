@@ -10,7 +10,7 @@
 namespace WeaponAndWizardry {
     
     
-    public partial class MainMenu {
+    public partial class MainScene {
         
         /// <summary>
         /// ImageDisplay control.
