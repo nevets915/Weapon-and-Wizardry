@@ -4,14 +4,49 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WeaponAndWizardry.App_Code;
 
 namespace WeaponAndWizardry
 {
-    public partial class MainScene : System.Web.UI.Page
+    public partial class MainScene : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack && SessionHandler.ScriptEngine == null)
+            {
+                SessionHandler.ScriptEngine = new ScriptEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                SessionHandler.ScriptEngine.ExecuteLine(0);
+                Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+            }
+            else
+            {
+                Utility.RestoreGuiState(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                SessionHandler.ScriptEngine.UpdateReferences(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+            }
+        }
 
+        protected void ButtonChoice1_Click(object sender, EventArgs e)
+        {
+            SessionHandler.ScriptEngine.ExecuteLine(1);
+            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+        }
+
+        protected void ButtonChoice2_Click(object sender, EventArgs e)
+        {
+            SessionHandler.ScriptEngine.ExecuteLine(2);
+            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+        }
+
+        protected void ButtonChoice3_Click(object sender, EventArgs e)
+        {
+            SessionHandler.ScriptEngine.ExecuteLine(3);
+            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+        }
+
+        protected void ButtonChoice4_Click(object sender, EventArgs e)
+        {
+            SessionHandler.ScriptEngine.ExecuteLine(4);
+            Utility.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
         }
     }
 }

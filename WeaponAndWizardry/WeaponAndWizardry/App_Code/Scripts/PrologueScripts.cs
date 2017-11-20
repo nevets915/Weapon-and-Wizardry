@@ -94,6 +94,7 @@ namespace WeaponAndWizardry.App_Code
         {
             ClearImageDisplay();
             SetBackgroundImage("01.png");
+            AddForegroundImage("Avatar1.jpg", 50, 50, 1, 200, 200);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Where am I…?\"\nA soft light fills the area," +
                 "giving the atmosphere a solemn feel.\n ... \"Is this a dream?\"");
@@ -137,6 +138,7 @@ namespace WeaponAndWizardry.App_Code
                 "Even if it’s just a dream.");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     ClearImageDisplay();
                     SetBackgroundImage("01.png");
@@ -149,6 +151,7 @@ namespace WeaponAndWizardry.App_Code
                 "Even if it’s just a dream.");
                     _currentExecutingLine++;
                     break;
+
                 case 3:
                     ClearImageDisplay();
                     SetBackgroundImage("01.png");
@@ -205,6 +208,7 @@ namespace WeaponAndWizardry.App_Code
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
                     break;
+
                 case 2:
                     PrintTextDialogue("\"Speed's my game.\"");
                     PrintTextDialogue("\"What would you say is your biggest weakness?\"");
@@ -212,6 +216,7 @@ namespace WeaponAndWizardry.App_Code
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
                     break;
+
                 case 3:
                     PrintTextDialogue("\"I'm a know-it-all.\"");
                     PrintTextDialogue("\"What would you say is your biggest weakness?\"");
@@ -219,6 +224,7 @@ namespace WeaponAndWizardry.App_Code
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
                     break;
+
                 case 4:
                     PrintTextDialogue("\"I've always been very lucky\"");
                     PrintTextDialogue("\"What would you say is your biggest weakness?\"");
@@ -247,15 +253,18 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("\"I'm not very strong...\"");
                     
                     break;
+
                 case 2:
                     PrintTextDialogue("\"I'm a little slow.\"");
                     
                     break;
+
                 case 3:
                     PrintTextDialogue("\"I've never been very bright.\"");
 
 
                     break;
+
                 case 4:
                     PrintTextDialogue("\"I'm super unlucky.\"");                   
 
@@ -341,6 +350,7 @@ namespace WeaponAndWizardry.App_Code
                 "What do you do?");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You’ve decided that the incident was more trouble than it’s worth.\n" +
@@ -392,12 +402,14 @@ namespace WeaponAndWizardry.App_Code
                     "However, you swing doesn’t go clean through and the goblin is able to retaliate.");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You’ve decided that the incident was more trouble than it’s worth.\n" +
                         "You continue on your way towards Granberia.");
                     _currentExecutingLine = _currentExecutingLine + 14;
                     break;
+
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide the best course of action would be to bluff your way to victory.\n" +
@@ -484,6 +496,7 @@ namespace WeaponAndWizardry.App_Code
                     );
                     _currentExecutingLine = _currentExecutingLine + 2;
                     break;
+
                 case 2:
                     ClearImageDisplay();
                     SetBackgroundImage("11.png");
@@ -492,6 +505,7 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("\"What? Can’t you just untie me first?\"");
                     _currentExecutingLine = _currentExecutingLine + 3;
                     break;
+
                 case 3:
                     SetChoiceButtons(nextChoice);
                     ClearImageDisplay();
@@ -591,6 +605,8 @@ namespace WeaponAndWizardry.App_Code
             PrintTextDialogue("\"I’m not that nationalistic, but I needed money to buy food to survive.  \n" +
             "It’s hard making a living in this day and age.  I joined the army to make ends meet, but… well you know.\"");
             _currentExecutingLine = _currentExecutingLine - 3;
+
+
         }
 
         private void Prologue32()
@@ -676,8 +692,10 @@ namespace WeaponAndWizardry.App_Code
                         "\"If it will save our village, I will pay any price.\nYou have a deal.\"");
                     _currentExecutingLine = _currentExecutingLine + 2;
                     break;
+
                 case 2:
                     AddForegroundImage("Elder_happy.png", 100, 120, 12, 640, 480);
+
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("\"Very good.\nPlease slay the beast and bring me it's head as proof." +
                         "\nOnly then will you be paid.\"\nThe old man motions you to leave as he has other matters to attend to.");
@@ -715,11 +733,13 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("You decide to head to the marketplace to ask around for information.");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to ask around the center of town.");
                     _currentExecutingLine = _currentExecutingLine + 7;
                     break;
+
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to go to the area of town where the most recent villager death was.");
@@ -767,7 +787,7 @@ namespace WeaponAndWizardry.App_Code
         }
 
         /// <summary>
-        /// Choice doesn't matter here, shopkeeper is uncooperative.  
+        /// Choice doesn't matter here, shopkeeper is uncooperative.
         /// </summary>
         private void Prologue47()
         {
@@ -792,6 +812,7 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("You decide to ask around the center of town.");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to go to the area of town where the most recent villager death was.");
@@ -828,11 +849,12 @@ namespace WeaponAndWizardry.App_Code
                 case 1:
                     AddForegroundImage("Halfling_happy.png", 100, 120, 12, 640, 480);
                     SetChoiceButtons(nextChoice);
-                    PrintTextDialogue("You decide to play with the children for a bit.\n"+
+                    PrintTextDialogue("You decide to play with the children for a bit.\n" +
                         "Despite the child's small size, the he's actually quite good.\n"+
                         "\"You're not bad. Best adult I've ever played with.\"");
                     _currentExecutingLine++;
                     break;
+
                 case 2:
                     AddForegroundImage("Halfling_sad.png", 100, 120, 12, 640, 480);
                     SetChoiceButtons(new Choices("Ask around the village marketplace for information.", "Go to the most recent murder scene to search for clues."));
@@ -851,8 +873,8 @@ namespace WeaponAndWizardry.App_Code
             AddForegroundImage("Halfling_interested.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The child begins asking you about your sword, what you do for a living, etc.\n"+
-                "\"A monster hunter? So cool.  Hope you can slay the one that's been attacking our village. "+
-                "You should check by the stables, that's where the last monster attack was.\""+
+                "\"A monster hunter? So cool.  Hope you can slay the one that's been attacking our village. " +
+                "You should check by the stables, that's where the last monster attack was.\"" +
                 "The child waves good-bye as he gets called back by his mother.");
             _currentExecutingLine++;
         }
@@ -878,6 +900,7 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("You decide to head to the marketplace to ask around for information.");
                     _currentExecutingLine = _currentExecutingLine - 11;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to go to the area of town where the most recent villager death was.");
@@ -891,7 +914,7 @@ namespace WeaponAndWizardry.App_Code
             ClearImageDisplay();
             SetBackgroundImage("29.png");
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You arrive at the village stables.\nNothing seems out of the ordinary.\n"+
+            PrintTextDialogue("You arrive at the village stables.\nNothing seems out of the ordinary.\n" +
                 "Lots of horses, hay and the occassional farmer.");
             _currentExecutingLine++;
         }
@@ -899,7 +922,7 @@ namespace WeaponAndWizardry.App_Code
         private void Prologue56()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You notice, however that there is a faint trail of dried blood on the ground.\n"+
+            PrintTextDialogue("You notice, however that there is a faint trail of dried blood on the ground.\n" +
                 "Curious, you begin to follow it as it leads you outside the village.");
             _currentExecutingLine++;
         }
@@ -908,7 +931,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetBackgroundImage("14.png");
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("The trail leads you deeper and deeper into the forest.\n"+
+            PrintTextDialogue("The trail leads you deeper and deeper into the forest.\n" +
                 "Eventually, the trail ends as you reach a large oak tree.");
             _currentExecutingLine++;
         }
@@ -917,7 +940,7 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The trail leads you deeper and deeper into the forest.\n" +
-                "Eventually, the trail ends as you reach a large oak tree.\n"+
+                "Eventually, the trail ends as you reach a large oak tree.\n" +
                 "Everything seems to be very still, but somehow you feel uneasy.");
             _currentExecutingLine++;
         }
@@ -933,14 +956,14 @@ namespace WeaponAndWizardry.App_Code
         {
             AddForegroundImage("Monster_neutral.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Suddenly a behemoth of crashs down in front of you.\n"+
+            PrintTextDialogue("Suddenly a behemoth of crashs down in front of you.\n" +
                 "In it's jaws appears to be the leftover villager shirt of an unfortunate victim.");
             _currentExecutingLine++;
         }
 
         private void Prologue61()
         {
-            SetChoiceButtons(new Choices("Slash it with your sword.","Stab it with your sword.","Attempt to run away.","Stay on the defensive."));
+            SetChoiceButtons(new Choices("Slash it with your sword.", "Stab it with your sword.", "Attempt to run away.", "Stay on the defensive."));
             PrintTextDialogue("The beast must've used one of the villager's bodies to draw you here.\n"+
                 "You're surprised it it's intelligence, but quickly draw your sword to defend yourself.");
             _currentExecutingLine++;
@@ -991,7 +1014,6 @@ namespace WeaponAndWizardry.App_Code
         {
             //Redirect to title screen.
         }
-
         #endregion
     }
 }
