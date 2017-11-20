@@ -94,7 +94,6 @@ namespace WeaponAndWizardry.App_Code
         {
             ClearImageDisplay();
             SetBackgroundImage("01.png");
-            AddForegroundImage("Avatar1.jpg", 50, 50, 1, 200, 200);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Where am I…?\"\nA soft light fills the area," +
                 "giving the atmosphere a solemn feel.\n ... \"Is this a dream?\"");
