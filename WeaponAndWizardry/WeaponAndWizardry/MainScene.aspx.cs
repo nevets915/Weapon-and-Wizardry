@@ -25,32 +25,21 @@ namespace WeaponAndWizardry
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };
+            List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck };
             // check the postback and session handler of script engine is null
             if (!IsPostBack && SessionHandler.ScriptEngine == null)
             {
                 // if it is, assign new game
-                SessionHandler.ScriptEngine = new WebGameEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                
+                SessionHandler.ScriptEngine = new WebGameEngine(ImageDisplay, TextDisplay, choiceButtons, stats);
                 SessionHandler.ScriptEngine.ExecuteLine(0);
-                SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
             }
             else
             {
-                //if(Session["_gameover"] != null)
-                //    try
-                //    {
-                //        if (((string)Session["_gameover"]).Equals("true"))
-                //        {
-                //            Server.Transfer("MainMenu.aspx", true);
-                //        }
-
-                //    } catch (Exception ex)
-                //    {
-
-                //    }
-
-                // if not check it is game over and restore the previouse scene
-                SessionHandler.RestoreGuiState(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
-                SessionHandler.ScriptEngine.UpdateReferences(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                SessionHandler.RestoreGuiState(ImageDisplay, TextDisplay, choiceButtons, stats);
+                SessionHandler.ScriptEngine.UpdateReferences(ImageDisplay, TextDisplay, choiceButtons, stats);
             }
             SessionHandler.MainScene = this;
         }

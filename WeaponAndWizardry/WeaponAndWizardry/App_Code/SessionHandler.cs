@@ -48,6 +48,11 @@ namespace WeaponAndWizardry.App_Code
         private const string _guid = "guid";
 
         /// <summary>
+        /// Strongly-typed Stats string index
+        /// </summary>
+        private const string _stats = "stats";
+
+        /// <summary>
         /// Returns the Session object of type Script Engine
         /// </summary>
         public static WebGameEngine ScriptEngine
@@ -157,6 +162,26 @@ namespace WeaponAndWizardry.App_Code
         }
 
         /// <summary>
+        /// Returns the Session object of type string[]
+        /// Which is the text data for each Stat
+        /// </summary>
+        public static string[] Stats
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_stats] == null)
+                {
+                    HttpContext.Current.Session[_stats] = new string[5];
+                }
+                return (string[])HttpContext.Current.Session[_stats];
+            }
+            set
+            {
+                HttpContext.Current.Session[_stats] = value;
+            }
+        }
+
+        /// <summary>
         /// Returns the Session object of type List<int>
         /// Which is the unsigned int data for each choice 
         /// picked by the player previously
@@ -203,7 +228,7 @@ namespace WeaponAndWizardry.App_Code
         /// Saves the GUI State to Session Variables
         /// </summary>
         /// <param name="imageDisplay">The panel control state to save</param>
-        public static void SaveGuiState(Panel imageDisplay, string textDisplay, List<Button> buttons)
+        public static void SaveGuiState(Panel imageDisplay, string textDisplay, List<Button> buttons, List<Label> stats)
         {
             //TODO: Cleanup save state to require only the page
             ImageDisplay.Controls.Clear();
@@ -218,18 +243,26 @@ namespace WeaponAndWizardry.App_Code
             {
                 ChoiceButtons[i] = buttons[i].Text;
             }
+
+            for (int i = 0; i < stats.Count; i++)
+            {
+                Stats[i] = stats[i].Text;
+            }
         }
 
         /// <summary>
-        /// Restores the Session state back to the ImageDisplay
+        /// Restores the Session state back to the GUI
         /// </summary>
-        /// <param name="display">The panel control to retore to</param>
-        public static void RestoreGuiState(Panel display, TextBox textDisplay, List<Button> buttons)
+        /// <param name="imageDisplay">The panel control to retore image GUI to</param>
+        /// <param name="textDisplay">The control for displaying text</param>
+        /// <param name="buttons">The controls for the buttons</param>
+        /// <param name="stats">The controls for the stats</param>
+        public static void RestoreGuiState(Panel imageDisplay, TextBox textDisplay, List<Button> buttons, List<Label> stats)
         {
-            display.Controls.Clear();
+            imageDisplay.Controls.Clear();
             foreach (Image image in ImageDisplay.Controls)
             {
-                display.Controls.Add(Utility.CopyImage(image));
+                imageDisplay.Controls.Add(Utility.CopyImage(image));
             }
 
             textDisplay.Text = TextDisplay;
@@ -237,6 +270,10 @@ namespace WeaponAndWizardry.App_Code
             for (int i = 0; i < ChoiceButtons.Length; i++)
             {
                 buttons[i].Text = ChoiceButtons[i];
+            }
+            for (int i = 0; i < Stats.Length; i++)
+            {
+                stats[i].Text = Stats[i];
             }
         }
     }

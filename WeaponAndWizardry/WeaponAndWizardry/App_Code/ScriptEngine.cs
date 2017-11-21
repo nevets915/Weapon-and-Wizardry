@@ -21,8 +21,151 @@ namespace WeaponAndWizardry.App_Code
         private uint _choicePicked;
         private Image _currentBackgroundImage;
         private List<Image> _currentForegroundImages;
+        private List<Label> _stats;
 
         private delegate void ScriptLine();
+
+        #region Properties
+        /// <summary>
+        /// Gets or Sets the HP stat of the character
+        /// </summary>
+        public string HP
+        {            
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("HP"))
+                    {
+                        return label.Text.Substring(4);
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("HP"))
+                    {
+                        label.Text = "HP: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Strength stat of the character
+        /// </summary>
+        public string Str
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Str"))
+                    {
+                        return label.Text.Substring(4);
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Str"))
+                    {
+                        label.Text = "Str: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Dexterity stat of the character
+        /// </summary>
+        public string Dex
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Dex"))
+                    {
+                        return label.Text.Substring(4);
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Dex"))
+                    {
+                        label.Text = "Dex: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Intelligence stat of the character
+        /// </summary>
+        public string Int
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Int"))
+                    {
+                        return label.Text.Substring(4);
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Int"))
+                    {
+                        label.Text = "Int: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Luck stat of the character
+        /// </summary>
+        public string Luk
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Luk"))
+                    {
+                        return label.Text.Substring(4);
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Luk"))
+                    {
+                        label.Text = "Luk: " + value;
+                    }
+                }
+            }
+        }
+        #endregion Properties
 
         /// <summary>
         /// Instantiates an instance of the ScriptEngine
@@ -31,7 +174,7 @@ namespace WeaponAndWizardry.App_Code
         /// first index in the collection.
         /// </summary>
         /// <param name="gui"></param>
-        public WebGameEngine(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
+        public WebGameEngine(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons, List<Label> stats)
         {
             _currentExecutingLine = 0;
             _imageDisplay = imageDisplay;
@@ -40,8 +183,9 @@ namespace WeaponAndWizardry.App_Code
             _currentForegroundImages = new List<Image>();
             _choiceButtons = choiceButtons;
             _currentBackgroundImage = null;
-            LoadScripts();
-        }
+            _stats = stats;
+            LoadScripts();            
+        }        
 
         /// <summary>
         /// Updates the references to the GUI controls.
@@ -51,11 +195,12 @@ namespace WeaponAndWizardry.App_Code
         /// <param name="imageDisplay">The new panel to refer to</param>
         /// <param name="textDisplay">The new text box to refer to</param>
         /// <param name="choiceButtons">The buttons to refer to</param>
-        public void UpdateReferences(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
+        public void UpdateReferences(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons, List<Label> stats)
         {
             _imageDisplay = imageDisplay;
             _textDisplay = textDisplay;
             _choiceButtons = choiceButtons;
+            _stats = stats;
         }
 
         /// <summary>
@@ -68,6 +213,41 @@ namespace WeaponAndWizardry.App_Code
             SessionHandler.ChoicesPicked.Add(_choicePicked);
             _scriptLines[_currentExecutingLine].Invoke();
         }
+
+        /// <summary>
+        /// Saves the game into a serializable Save object
+        /// </summary>
+        public Save SaveGame()
+        {
+            Save save = new Save(SessionHandler.Guid, SessionHandler.ChoicesPicked);
+            return save;
+        }
+
+        /// <summary>
+        /// Loads the game from a serializable Save object
+        /// </summary>
+        public void LoadGame(Save save)
+        {
+            SessionHandler.ChoicesPicked.Clear();
+            _textDisplay.Text = "";
+            _currentExecutingLine = 0;
+            _currentForegroundImages = new List<Image>();
+            _currentBackgroundImage = null;
+            foreach (uint choice in save.ChoicesPicked)
+            {
+                ExecuteLine(choice);
+            }
+        }
+
+        /// <summary>
+        /// Returns the user to the main menu
+        /// </summary>
+        public void QuitGame()
+        {
+            SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
+        }
+
+        #region Script API methods
 
         /// <summary>
         /// Outputs text to the Text Display
@@ -193,37 +373,6 @@ namespace WeaponAndWizardry.App_Code
             _imageDisplay.Controls.Add(image);
         }
 
-        /// <summary>
-        /// Saves the game into a serializable Save object
-        /// </summary>
-        public Save SaveGame()
-        {
-            Save save = new Save(SessionHandler.Guid, SessionHandler.ChoicesPicked);
-            return save;
-        }
-
-        /// <summary>
-        /// Loads the game from a serializable Save object
-        /// </summary>
-        public void LoadGame(Save save)
-        {
-            SessionHandler.ChoicesPicked.Clear();
-            _textDisplay.Text = "";
-            _currentExecutingLine = 0;
-            _currentForegroundImages = new List<Image>();
-            _currentBackgroundImage = null;
-            foreach(uint choice in save.ChoicesPicked)
-            {
-                ExecuteLine(choice);
-            }
-        }
-
-        /// <summary>
-        /// Returns the user to the main menu
-        /// </summary>
-        public void QuitGame()
-        {
-            SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
-        }
+        #endregion Script API methods
     }
 }
