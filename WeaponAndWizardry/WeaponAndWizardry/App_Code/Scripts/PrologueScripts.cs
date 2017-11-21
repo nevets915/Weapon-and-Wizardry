@@ -8,7 +8,7 @@ namespace WeaponAndWizardry.App_Code
     /// <summary>
     /// Container for the Script methods for the Prologue.
     /// </summary>
-    public partial class ScriptEngine
+    public partial class WebGameEngine
     {
         /// <summary>
         /// Region containing a method for loading the scripts needed.

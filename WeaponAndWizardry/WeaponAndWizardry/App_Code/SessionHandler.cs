@@ -38,9 +38,19 @@ namespace WeaponAndWizardry.App_Code
         private const string _mainScene = "mainscene";
 
         /// <summary>
+        /// Strongly-typed Choices picked string index
+        /// </summary>
+        private const string _choices = "choices";
+
+        /// <summary>
+        /// Strongly-typed GUID string index
+        /// </summary>
+        private const string _guid = "guid";
+
+        /// <summary>
         /// Returns the Session object of type Script Engine
         /// </summary>
-        public static ScriptEngine ScriptEngine
+        public static WebGameEngine ScriptEngine
         {
             get
             {
@@ -50,7 +60,7 @@ namespace WeaponAndWizardry.App_Code
                 }
                 else
                 {
-                    return (ScriptEngine)HttpContext.Current.Session[_engine];
+                    return (WebGameEngine)HttpContext.Current.Session[_engine];
                 }
             }
             set
@@ -143,6 +153,49 @@ namespace WeaponAndWizardry.App_Code
             set
             {
                 HttpContext.Current.Session[_choiceButtons] = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the Session object of type List<int>
+        /// Which is the unsigned int data for each choice 
+        /// picked by the player previously
+        /// </summary>
+        public static List<uint> ChoicesPicked
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_choices] == null)
+                {
+                    HttpContext.Current.Session[_choices] = new List<uint>();
+                }
+                return (List<uint>)HttpContext.Current.Session[_choices];
+            }
+            set
+            {
+                HttpContext.Current.Session[_choices] = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the Session object of type Guid
+        /// </summary>
+        public static Guid Guid
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_guid] == null)
+                {
+                    return Guid.Empty;
+                }
+                else
+                {
+                    return (Guid)HttpContext.Current.Session[_guid];
+                }
+            }
+            set
+            {
+                HttpContext.Current.Session[_guid] = value;
             }
         }
 

@@ -14,7 +14,7 @@ namespace WeaponAndWizardry
         {
             if (!IsPostBack && SessionHandler.ScriptEngine == null)
             {
-                SessionHandler.ScriptEngine = new ScriptEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                SessionHandler.ScriptEngine = new WebGameEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
                 SessionHandler.ScriptEngine.ExecuteLine(0);
                 SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
             }
