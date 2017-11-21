@@ -29,7 +29,7 @@ namespace WeaponAndWizardry
             if (!IsPostBack && SessionHandler.ScriptEngine == null)
             {
                 // if it is, assign new game
-                SessionHandler.ScriptEngine = new ScriptEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+                SessionHandler.ScriptEngine = new WebGameEngine(ImageDisplay, TextDisplay, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
                 SessionHandler.ScriptEngine.ExecuteLine(0);
                 SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
             }
@@ -108,6 +108,26 @@ namespace WeaponAndWizardry
         protected void Button_Back_Click(object sender, EventArgs e)
         {
             SessionHandler.ScriptEngine.QuitGame();
+        }
+
+        /// <summary>
+        /// Saves the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button_Save_Click(object sender, EventArgs e)
+        {
+            Session["save"] = SessionHandler.ScriptEngine.SaveGame();
+        }
+
+        /// <summary>
+        /// Loads the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button_Load_Click(object sender, EventArgs e)
+        {
+            SessionHandler.ScriptEngine.LoadGame((Save)Session["save"]);
         }
     }
 }

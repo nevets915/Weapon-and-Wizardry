@@ -6,10 +6,12 @@ using System.Web.UI.WebControls;
 namespace WeaponAndWizardry.App_Code
 {
     /// <summary>
+    /// Core class that handles logic of game workflow
+    /// for ASP.NET webforms.
     /// Handles execution of scenario scripts.
     /// Exposes API for Script class to use.
     /// </summary>
-    public partial class ScriptEngine
+    public partial class WebGameEngine
     {
         private int _currentExecutingLine;
         private Panel _imageDisplay;
@@ -29,7 +31,7 @@ namespace WeaponAndWizardry.App_Code
         /// first index in the collection.
         /// </summary>
         /// <param name="gui"></param>
-        public ScriptEngine(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
+        public WebGameEngine(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
         {
             _currentExecutingLine = 0;
             _imageDisplay = imageDisplay;
@@ -37,6 +39,7 @@ namespace WeaponAndWizardry.App_Code
             _scriptLines = new List<ScriptLine>();
             _currentForegroundImages = new List<Image>();
             _choiceButtons = choiceButtons;
+            _currentBackgroundImage = null;
             LoadScripts();
         }
 
@@ -62,6 +65,7 @@ namespace WeaponAndWizardry.App_Code
         public void ExecuteLine(uint choicePicked)
         {
             _choicePicked = choicePicked;
+            SessionHandler.ChoicesPicked.Add(_choicePicked);
             _scriptLines[_currentExecutingLine].Invoke();
         }
 
@@ -72,7 +76,6 @@ namespace WeaponAndWizardry.App_Code
         public void PrintTextDialogue(string message)
         {
             message = "\n\n" + message;
-            System.Diagnostics.Debug.WriteLine(message);
             _textDisplay.Text += message;
         }
 
@@ -82,7 +85,6 @@ namespace WeaponAndWizardry.App_Code
         /// <param name="message">The string message to output</param>
         public void PrintLineTextDialogue(string message)
         {
-            System.Diagnostics.Debug.WriteLine(message);
             _textDisplay.Text += message + "\n";
         }
 
@@ -189,6 +191,31 @@ namespace WeaponAndWizardry.App_Code
             image.ImageUrl = "~/Content/images/characters/" + url;
             _currentForegroundImages.Add(image);
             _imageDisplay.Controls.Add(image);
+        }
+
+        /// <summary>
+        /// Saves the game into a serializable Save object
+        /// </summary>
+        public Save SaveGame()
+        {
+            Save save = new Save(SessionHandler.Guid, SessionHandler.ChoicesPicked);
+            return save;
+        }
+
+        /// <summary>
+        /// Loads the game from a serializable Save object
+        /// </summary>
+        public void LoadGame(Save save)
+        {
+            SessionHandler.ChoicesPicked.Clear();
+            _textDisplay.Text = "";
+            _currentExecutingLine = 0;
+            _currentForegroundImages = new List<Image>();
+            _currentBackgroundImage = null;
+            foreach(uint choice in save.ChoicesPicked)
+            {
+                ExecuteLine(choice);
+            }
         }
 
         /// <summary>
