@@ -47,16 +47,16 @@
                 </script>
                 <div class="row" style="width:94%;margin:auto;">
                     <div class="row">
-                        <asp:Button ID="ButtonChoice1" CssClass="btn btn-primary" runat="server" Text="Choice1" OnClick="ButtonChoice1_Click" style="width:100%" />
+                        <asp:Button ID="ButtonChoice1" CssClass="btn btn-primary" runat="server" Text="Choice1" OnClick="ButtonChoice_Clicked" style="width:100%" />
                     </div>
                     <div class="row">
-                        <asp:Button ID="ButtonChoice2" CssClass="btn btn-primary" runat="server" Text="Choice2" OnClick="ButtonChoice2_Click" style="width:100%" />
+                        <asp:Button ID="ButtonChoice2" CssClass="btn btn-primary" runat="server" Text="Choice2" OnClick="ButtonChoice_Clicked" style="width:100%" />
                     </div>
                     <div class="row">
-                        <asp:Button ID="ButtonChoice3" CssClass="btn btn-primary" runat="server" Text="Choice3" OnClick="ButtonChoice3_Click" style="width:100%" />
+                        <asp:Button ID="ButtonChoice3" CssClass="btn btn-primary" runat="server" Text="Choice3" OnClick="ButtonChoice_Clicked" style="width:100%" />
                     </div>
                     <div class="row">
-                        <asp:Button ID="ButtonChoice4" CssClass="btn btn-primary" runat="server" Text="Choice4" OnClick="ButtonChoice4_Click" style="width:100%" />
+                        <asp:Button ID="ButtonChoice4" CssClass="btn btn-primary" runat="server" Text="Choice4" OnClick="ButtonChoice_Clicked" style="width:100%" />
                     </div>
                 </div>
             </div>

@@ -56,48 +56,18 @@ namespace WeaponAndWizardry
         }
 
         /// <summary>
-        /// For the first choice
+        /// Handles all choice buttons
         /// </summary>
-        /// <param name="sender">reference of the objec</param>
+        /// <param name="sender">The button clicked</param>
         /// <param name="e">events arguement</param>
-        protected void ButtonChoice1_Click(object sender, EventArgs e)
+        protected void ButtonChoice_Clicked(object sender, EventArgs e)
         {
-            SessionHandler.ScriptEngine.ExecuteLine(1);
-            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
-        }
-
-
-        /// <summary>
-        /// For the second choice
-        /// </summary>
-        /// <param name="sender">reference of the objec</param>
-        /// <param name="e">events arguement</param>
-        protected void ButtonChoice2_Click(object sender, EventArgs e)
-        {
-            SessionHandler.ScriptEngine.ExecuteLine(2);
-            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
-        }
-
-        /// <summary>
-        /// For the third choice
-        /// </summary>
-        /// <param name="sender">reference of the objec</param>
-        /// <param name="e">events arguement</param>
-        protected void ButtonChoice3_Click(object sender, EventArgs e)
-        {
-            SessionHandler.ScriptEngine.ExecuteLine(3);
-            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
-        }
-
-        /// <summary>
-        /// For the forth choice
-        /// </summary>
-        /// <param name="sender">reference of the objec</param>
-        /// <param name="e">events arguement</param>
-        protected void ButtonChoice4_Click(object sender, EventArgs e)
-        {
-            SessionHandler.ScriptEngine.ExecuteLine(4);
-            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 });
+            List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };
+            List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck };
+            Button button = (Button)sender;
+            string choice = new string(button.ID.Last(), 1);
+            SessionHandler.ScriptEngine.ExecuteLine(uint.Parse(choice));
+            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
         }
 
         /// <summary>
