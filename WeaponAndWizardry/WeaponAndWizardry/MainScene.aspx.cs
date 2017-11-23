@@ -11,7 +11,7 @@ namespace WeaponAndWizardry
     /// <summary>
     /// Module: MainScene
     /// Description: This page is for Main Scene of the game
-    /// Author: 
+    /// Author:
     ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-15
     /// Based on:
     ///     https://stackoverflow.com/questions/23976683/asp-net-button-to-redirect-to-another-page
@@ -31,7 +31,7 @@ namespace WeaponAndWizardry
             if (!IsPostBack && SessionHandler.ScriptEngine == null)
             {
                 // if it is, assign new game
-                
+
                 SessionHandler.ScriptEngine = new WebGameEngine(ImageDisplay, TextDisplay, choiceButtons, stats);
                 SessionHandler.ScriptEngine.ExecuteLine(0);
                 SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
@@ -77,6 +77,8 @@ namespace WeaponAndWizardry
         protected void Button_Save_Click(object sender, EventArgs e)
         {
             Session["save"] = SessionHandler.ScriptEngine.SaveGame();
+            string save = Newtonsoft.Json.JsonConvert.SerializeObject(Session["save"]);
+            System.IO.File.WriteAllText("c:\\save.txt", save); // Do database save
         }
 
         /// <summary>
@@ -86,7 +88,9 @@ namespace WeaponAndWizardry
         /// <param name="e"></param>
         protected void Button_Load_Click(object sender, EventArgs e)
         {
-            SessionHandler.ScriptEngine.LoadGame((Save)Session["save"]);
+            string save = System.IO.File.ReadAllText("c:\\save.txt", System.Text.Encoding.ASCII); // Do database load
+            Save s = Newtonsoft.Json.JsonConvert.DeserializeObject<Save>(save);
+            SessionHandler.ScriptEngine.LoadGame(s);
         }
     }
 }
