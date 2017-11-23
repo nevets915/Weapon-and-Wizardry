@@ -9,7 +9,7 @@ namespace WeaponAndWizardry.App_Code
     /// Represents a script scenario that uses ScriptEngine API
     /// to dictate the game flow.
     /// </summary>
-    public partial class ScriptEngine
+    public partial class WebGameEngine
     {
         static Choices nextChoice = new Choices("Next");
 
