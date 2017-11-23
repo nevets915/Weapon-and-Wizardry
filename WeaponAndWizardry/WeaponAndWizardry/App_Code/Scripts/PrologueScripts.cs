@@ -964,54 +964,312 @@ namespace WeaponAndWizardry.App_Code
         {
             SetChoiceButtons(new Choices("Slash it with your sword.", "Stab it with your sword.", "Attempt to run away.", "Stay on the defensive."));
             PrintTextDialogue("The beast must've used one of the villager's bodies to draw you here.\n"+
-                "You're surprised it it's intelligence, but quickly draw your sword to defend yourself.");
+                "You're surprised it it's intelligence, but quickly draw your sword to defend yourself.\n"+
+                "You notice the beast is searching around, looking for something to strike.");
             _currentExecutingLine++;
         }
 
         private void Prologue62()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
-            AddForegroundImage("Ilias_neutral.png", 100, 120, 12, 640, 480);
-            SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"Hello user, thank you for participating in the prototype for Weapons and Wizardry.\n" +
-                "We hoped you enjoyed a taste of what Group 7 can offer.\"");
-            _currentExecutingLine++;
+            switch(_choicePicked)
+            {
+                case 1:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You attempt to slash the beast with your sword.\n"+
+                        "You aim for it's torso, which seemed like a vital spot.");
+                    _currentExecutingLine++;
+
+                    break;
+                case 2:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You attempt to stab the beast with your sword.\n" +
+                        "You aim for it's torso, which seemed like a vital spot.");
+                    _currentExecutingLine++;
+                    break;
+                case 3:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.");
+                    _currentExecutingLine = _currentExecutingLine + 8;
+                    break;
+                case 4:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to stand your ground and not move.\n"+
+                        "No sound is made as you ready yourself, waiting for the monster to strike first.");
+                    _currentExecutingLine = _currentExecutingLine + 12;
+                    break;
+            }
         }
 
         private void Prologue63()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
-            AddForegroundImage("Ilias_closed1.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"If you had a good experience so far, please comment in the following survey provided by one of the developers.\n"+
-                "Project Lead: George Lee\nStory Designer: Steven Ma\nGame Visuals Designer: Shawn Kim\"");
+            PrintLineTextDialogue("CLANK! CRACK!");
             _currentExecutingLine++;
         }
 
         private void Prologue64()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
-            AddForegroundImage("Ilias_happy.png", 100, 120, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"Please look forwards to the final release.\"");
+            PrintLineTextDialogue("You reel back from your strike and your sword feels lighter for some reason.\n"+
+                "You look down at your sword and realize that it is now broken in two.\n"+
+                "The beast's hide is too tough for you to break.");
             _currentExecutingLine++;
         }
 
         private void Prologue65()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Game Over.\nReturning to Title Screen.");
+            PrintLineTextDialogue("GRAWWWWWWR!");
             _currentExecutingLine++;
         }
 
         private void Prologue66()
         {
-            //Redirect to title screen.
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("The beast, now enraged, charges for you.\n"+
+                "Unable to defend yourself, the beast easily eviscerates you and feasts on your flesh.");
+            _currentExecutingLine++;
+        }
+        private void Prologue67()
+        {
+            ClearImageDisplay();
+            //Need game over image
+            //SetBackgroundImage("14.png");
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("GAME OVER! \nReturning to Title Screen.");
+            _currentExecutingLine++;
+
+        }
+
+        private void Prologue68()
+        {
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine = _currentExecutingLine - 67;
+        }
+
+        private void Prologue69()
+        {
+            ClearForegroundImages();
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("Running as fast as you can out of the forest, you lose the beast easily.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue70()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("After sprinting for a while, you begin to relax as the beast is out of sight.\n"+
+                "Panting from exhaustion, you decide to rest by one of the forest trees.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue71()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("GRAWWRRR!");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue72()
+        {
+            AddForegroundImage("Monster_neutral.png", 100, 120, 12, 640, 480);
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("Suddenly, the monster from before drops down from the tree and attacks you.\n"+
+                "The shout surprises you and you're unable to grab your sword before the beast leaps down on you.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue73()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("The beast easily claws your vital organs and makes a quick meal of you.");
+            _currentExecutingLine = _currentExecutingLine - 6;
+        }
+
+        private void Prologue74()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("The beast doesn't seem to know where you are.\n"+
+                "It lumbers around you, listening for any sudden movements.\n"+
+                "It occurs to you that the monster is blind and relies on scent or sound to find it's prey.\n"+
+                "The monster slowly inches towards you.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue75()
+        {
+            SetChoiceButtons(new Choices("Slash it's body", "Stab it through it's mouth", "Throw your sword away as a distraction"));
+            PrintLineTextDialogue("The beast's face is only inches away from yours.\n"+
+                "It's mouth is gaping open, letting out foul vapours.\n"+
+                "You can smell it's terrible breath and it nearly knocks you out.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue76()
+        {
+            switch (_choicePicked)
+            {
+                case 1:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You attempt to slash the beast with your sword.\n" +
+                        "You aim for it's torso, which seemed like a vital spot.");
+                    _currentExecutingLine = _currentExecutingLine - 13;
+
+                    break;
+                case 2:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You aim your sword careful and use half-swording to pierce the monster through it's mouth");
+                    _currentExecutingLine++;
+                    break;
+                case 3:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.");
+                    _currentExecutingLine = _currentExecutingLine + 5;
+                    break;
+                
+            }
+        }
+
+        private void Prologue77()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("Your sword tastes squishy flesh as it digs deeper and deeper into the monster's body.\n"+
+                "The monster begins frantically swipping like a feral beast as you refuse to let go of your advantageous position.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue78()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("AROoowwwww!");
+            _currentExecutingLine++;
+        }
+        private void Prologue79()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("The beast lets out one last howl before falling dead.\n"+
+                "You pull out your sword from it's body and clean your blade.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue80()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("It was a tough fight, but you managed to defeat the Beast of Granberia.\n"+
+                "You collect it's body pieces as proof for your reward.\n"+
+                "You head back to Granberia.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue81()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("You throw your sword as far as you can. \n"+
+                "It makes a loud sound as it lands into a nearby tree.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue82()
+        {
+            SetChoiceButtons(new Choices("Run away as fast as you can!", "Attempt a chokehold", "Stay very still"));
+            PrintLineTextDialogue("The beast instantly notices the noise and dashes over to the tree, clawing it like a feral beast.\n"+
+                "The beast now has it's back to you.  Despite the fact you are unarmed, you now have a golden opportunity.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue83()
+        {
+            switch(_choicePicked)
+            {
+                case 1:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.");
+                    _currentExecutingLine = _currentExecutingLine - 14;
+                    break;
+                case 2:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.");
+                    _currentExecutingLine++;
+                    break;
+                case 3:
+                    SetChoiceButtons(nextChoice);
+                    PrintTextDialogue("You decide to stay very still.  Hoping the monster doesn't notice that you're still nearby.");
+                    _currentExecutingLine = _currentExecutingLine + 7;
+                    break;
+            }
+        }
+
+        private void Prologue84()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You leap into the air and get a firm hold on the monsters.\n"+
+                "Strangling the monster with your arm across it's neck, you squeeze as hard as you can.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue85()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("GRAWWWWRRRR! GRAWR! GRAWR!");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue86()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The monster begins frantically swinging it's claws trying to get you off.\n"+
+                "You get clawed a couple times, but no serious injuries so far.\n"+
+                "You hold on for dear life, knowing that if it manages to shake you off, you're dead.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue87()
+        {
+            //May use strength here to determine survive or not.
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("Eventually, the monster begins to slow, it's voice begins to falter.\n"+
+                "Nearly a minute passes, before you feel the monster's life slowly fade from it's body.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue88()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintLineTextDialogue("The beast lets out one last howl before falling dead.\n" +
+                "You pull out your sword from the tree you stuck it in.");
+            _currentExecutingLine = _currentExecutingLine - 8;
+        }
+
+        private void Prologue89()
+        {
+            //Test
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("Eventually, the monster begins to slow, it's voice begins to falter.\n" +
+                "Nearly a minute passes, before you feel the monster's life slowly fade from it's body.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue90()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("The monster breaths heavily after destroying the tree that your sword was stuck in.\n"+
+                "It makes one last look around your location, but can't sense exactly where you are.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue91()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("Suddenly you hear a squirrel in the distance and the monster immediately reacts.\n"+
+                "The monster goes on all fours and runs off.");
+            _currentExecutingLine++;
+        }
+
+        private void Prologue92()
+        {
+            SetChoiceButtons(nextChoice);
+            PrintTextDialogue("You wait a few moments");
+            _currentExecutingLine++;
         }
         #endregion
     }
