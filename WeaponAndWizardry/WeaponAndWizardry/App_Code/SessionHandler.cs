@@ -171,7 +171,7 @@ namespace WeaponAndWizardry.App_Code
             {
                 if (HttpContext.Current.Session[_stats] == null)
                 {
-                    HttpContext.Current.Session[_stats] = new string[5];
+                    HttpContext.Current.Session[_stats] = new string[6];
                 }
                 return (string[])HttpContext.Current.Session[_stats];
             }

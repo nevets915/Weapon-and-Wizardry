@@ -76,6 +76,15 @@ namespace WeaponAndWizardry {
         protected global::System.Web.UI.WebControls.Label Label_Luck;
         
         /// <summary>
+        /// Label_Alignment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Alignment;
+        
+        /// <summary>
         /// Button_Save control.
         /// </summary>
         /// <remarks>

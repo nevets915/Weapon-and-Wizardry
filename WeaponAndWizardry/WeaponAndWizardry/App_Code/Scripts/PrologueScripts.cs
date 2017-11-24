@@ -21,6 +21,7 @@ namespace WeaponAndWizardry.App_Code
         public enum Dexterity { Uncoordinated, Clumsy, Average, Nimble, Agile };
         public enum Intelligence { Dumb, Foolish, Average, Brilliant, Enlightened };
         public enum Luck { Jinxed, Unlucky, Average, Lucky, Blessed };
+        public enum Alignment { Wicked, Evil, Troublesome, Neutral, Likeable, Good, Adored}
 
 
         /// <summary>
@@ -110,10 +111,12 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue1()
         {
+            HP = "100";
             Str = Strength.Average.ToString();
             Dex = Dexterity.Average.ToString();
             Int = Intelligence.Average.ToString();
             Luk = Luck.Average.ToString();
+            Align = Alignment.Neutral.ToString();
             ClearImageDisplay();
             SetBackgroundImage("01.png");
             SetChoiceButtons(nextChoice);
@@ -255,7 +258,7 @@ namespace WeaponAndWizardry.App_Code
                 case 4:
                     Luk = IncreaseLuk();
                     PrintTextDialogue("\"I've always been very lucky\"");
-                    PrintTextDialogue("\"Excellent, you should see that your Str stat has changed on the right-hand side of your screen.\n" +
+                    PrintTextDialogue("\"Excellent, you should see that your Luk stat has changed on the right-hand side of your screen.\n" +
                         "What would you say is your biggest weakness?\"");
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
@@ -413,7 +416,15 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue19()
         {
-            SetChoiceButtons(new Choices("Attack with your sword", "Flee", "Intimidate them with a battle-cry (Strength)"));
+            int s = (int)GetEnumStr();
+            if (s > 2)
+            {
+                SetChoiceButtons(new Choices("Attack with your sword", "Flee", "Intimidate them with a battle-cry (Strength)"));
+            }
+            else
+            {
+                SetChoiceButtons(new Choices("Attack with your sword", "Flee"));
+            }
             PrintTextDialogue("You’re outnumbered 3-to-1.  However, you know that goblins are generally cowards" +
                 " and will flee if they think the odds are against them.\nWhat do you do?");
             _currentExecutingLine++;
@@ -521,6 +532,8 @@ namespace WeaponAndWizardry.App_Code
                         "\"Thanks. Now, I’m gonna get out of here before more of those goblins show up." +
                         "\nI promise I’ll pay you back someday. The soldier rushes away, quick to leave the area.\""
                     );
+                    Align = IncreaseAlign();
+ 
                     _currentExecutingLine = _currentExecutingLine + 2;
                     break;
 
@@ -542,6 +555,7 @@ namespace WeaponAndWizardry.App_Code
                         "\n\"What? Hey, you can't leave me here! Please, please don't let me die! I don't wanna die! " +
                         "Despite the soldier's cries, you leave and continue on your journey.");
                     _currentExecutingLine = _currentExecutingLine + 7;
+                    Align = DecreaseAlign();
                     break;
 
                 case 4:
@@ -552,6 +566,7 @@ namespace WeaponAndWizardry.App_Code
                         "You raise your sword and aim for a quick execution-style cut. \n" +
                         "\"What the - !What are you doing ? I…-\"");
                     _currentExecutingLine = _currentExecutingLine + 5;
+                    Align = DecreaseAlign();
                     break;
             }
         }
@@ -567,6 +582,7 @@ namespace WeaponAndWizardry.App_Code
                         "\"Thanks. Now, I’m gonna get out of here before more of those goblins show up." +
                         "\nI promise I’ll pay you back someday. The soldier rushes away, quick to leave the area.\""
                     );
+                    Align = IncreaseAlign();
                     _currentExecutingLine++;
                     break;
 
@@ -646,6 +662,7 @@ namespace WeaponAndWizardry.App_Code
             PrintTextDialogue("You swing your sword and decapitate the soldier.\n" +
                 "The soldier's head comes clean off and his body lands lifeless on the floor.\n" +
                 "Unmoved by your recent murder, you search the soldier's body for loot.");
+            Align = DecreaseAlign();
             _currentExecutingLine++;
         }
 
@@ -701,7 +718,7 @@ namespace WeaponAndWizardry.App_Code
             ClearImageDisplay();
             SetBackgroundImage("58.png");
             AddForegroundImage("Elder_neutral.png", 100, 120, 12, 640, 480);
-            SetChoiceButtons(new Choices("\"Double the reward or I walk, old man.\"", "\"I accept the contract.\""));
+            SetChoiceButtons(new Choices("\"Double the reward or I walk, old man.\" (Luck Check)", "\"I accept the contract.\""));
             PrintTextDialogue("\"As you know, our village is currently being attacked by an unknown monster.\n" +
                 "It seems to happen at random times.  The most recent attack was near the stables of our village.\n" +
                 "Please I beg you to help us.\nThe reward of 500 gold pieces.\"");
@@ -715,16 +732,26 @@ namespace WeaponAndWizardry.App_Code
             switch (_choicePicked)
             {
                 case 1:
-                    AddForegroundImage("Elder_surprised.png", 100, 120, 12, 640, 480);
-                    SetChoiceButtons(nextChoice);
-                    PrintTextDialogue("\"D-Double?!? But I... The village...\"\nThe village chief sighs.\n" +
-                        "\"If it will save our village, I will pay any price.\nYou have a deal.\"");
-                    _currentExecutingLine = _currentExecutingLine + 2;
+                    int i = (int)GetEnumInt();
+                    if (i > 2)
+                    {
+                        AddForegroundImage("Elder_surprised.png", 100, 120, 12, 640, 480);
+                        SetChoiceButtons(nextChoice);
+                        PrintTextDialogue("\"D-Double?!? But I... The village...\"\nThe village chief sighs.\n" +
+                            "\"If it will save our village, I will pay any price.\nYou have a deal.\"");
+                        _currentExecutingLine = _currentExecutingLine + 2;                       
+                    }
+                    else
+                    {
+                        AddForegroundImage("Elder_surprised.png", 100, 120, 12, 640, 480);
+                        SetChoiceButtons(nextChoice);
+                        PrintTextDialogue("\"D-Double?!? I could easily hire 5 mercenaries for that kind of money.\n" +
+                            "No deal!\"");
+                        _currentExecutingLine = _currentExecutingLine + 1;
+                    }
                     break;
-
                 case 2:
                     AddForegroundImage("Elder_happy.png", 100, 120, 12, 640, 480);
-
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("\"Very good.\nPlease slay the beast and bring me it's head as proof." +
                         "\nOnly then will you be paid.\"\nThe old man motions you to leave as he has other matters to attend to.");
@@ -881,6 +908,7 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("You decide to play with the children for a bit.\n" +
                         "Despite the child's small size, the he's actually quite good.\n" +
                         "\"You're not bad. Best adult I've ever played with.\"");
+                    Align = IncreaseAlign();
                     _currentExecutingLine++;
                     break;
 
@@ -890,6 +918,7 @@ namespace WeaponAndWizardry.App_Code
                     PrintTextDialogue("\"Aww, you're no fun. Adults are so boring.\"" +
                         "\nThe child leaves you. Seems there's nothing else here that will help you progress.\n" +
                         "Where should you head next?");
+                    Align = DecreaseAlign();
                     _currentExecutingLine = _currentExecutingLine + 3;
                     break;
             }
@@ -1201,7 +1230,16 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue82()
         {
-            SetChoiceButtons(new Choices("Run away as fast as you can!", "Attempt a chokehold", "Stay very still"));
+            int s = (int)GetEnumStr();
+            if(s > 2)
+            {
+                SetChoiceButtons(new Choices("Run away as fast as you can!", "Attempt a chokehold", "Stay very still"));
+            }
+            else
+            {
+                SetChoiceButtons(new Choices("Run away as fast as you can!", null, "Stay very still"));
+            }
+            
             PrintLineTextDialogue("The beast instantly notices the noise and dashes over to the tree, clawing it like a feral beast.\n"+
                 "The beast now has it's back to you.  Despite the fact you are unarmed, you now have a golden opportunity.");
             _currentExecutingLine++;

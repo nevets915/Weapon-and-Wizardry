@@ -32,6 +32,7 @@
                     <asp:Label ID="Label_Dex" runat="server" Text="Dex: " Font-Size="Medium"></asp:Label>  <br />
                     <asp:Label ID="Label_Int" runat="server" Text="Int: " Font-Size="Medium"></asp:Label>  <br />
                     <asp:Label ID="Label_Luck" runat="server" Text="Luk: " Font-Size="Medium"></asp:Label>  <br />
+                    <asp:Label ID="Label_Alignment" runat="server" Text="Alignment: " Font-Size="Medium"></asp:Label>  <br />
                     <br /><br /><br /><br /><br /><br /><br /><br /><br />
                     <br /><br /><br /><br /><br /><br /><br /><br />
                     <asp:Button ID="Button_Save" runat="server" Text="Save" style="width:100%;" OnClick="Button_Save_Click" />

@@ -166,6 +166,31 @@ namespace WeaponAndWizardry.App_Code
             }
         }
 
+        public string Align
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Alignment"))
+                    {
+                        return label.Text.Substring(10);
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Alignment"))
+                    {
+                        label.Text = "Alignment: " + value;
+                    }
+                }
+            }
+        }
+
         public Strength GetEnumStr()
         {
             return (Strength)Enum.Parse(typeof(Strength), Str);
@@ -225,7 +250,7 @@ namespace WeaponAndWizardry.App_Code
 
         public Luck GetEnumLuck()
         {
-            return (Luck)Enum.Parse(typeof(Luck), Str);
+            return (Luck)Enum.Parse(typeof(Luck), Luk);
         }
 
         public String DecreaseLuk()
@@ -240,6 +265,25 @@ namespace WeaponAndWizardry.App_Code
             Luck l = GetEnumLuck();
             l++;
             return l.ToString();
+        }
+
+        public Alignment GetEnumAlign()
+        {
+            return (Alignment)Enum.Parse(typeof(Alignment), Align);
+        }
+
+        public String DecreaseAlign()
+        {
+            Alignment a = GetEnumAlign();
+            a--;
+            return a.ToString();
+        }
+
+        public String IncreaseAlign()
+        {
+            Alignment a = GetEnumAlign();
+            a++;
+            return a.ToString();
         }
 
         #endregion Properties
