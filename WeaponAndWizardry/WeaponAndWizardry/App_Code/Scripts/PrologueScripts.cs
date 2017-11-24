@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -10,6 +11,18 @@ namespace WeaponAndWizardry.App_Code
     /// </summary>
     public partial class WebGameEngine
     {
+        private Strength _str;
+        private Dexterity _dex;
+        private Intelligence _int;
+        private Luck _luk;
+
+        public enum Health { Dying, Maimed, Wounded, Healthy};
+        public enum Strength { Pitiful, Weak, Average, Strong, Herculean };
+        public enum Dexterity { Uncoordinated, Clumsy, Average, Nimble, Agile };
+        public enum Intelligence { Dumb, Foolish, Average, Brilliant, Enlightened };
+        public enum Luck { Jinxed, Unlucky, Average, Lucky, Blessed };
+
+
         /// <summary>
         /// Region containing a method for loading the scripts needed.
         /// </summary>
@@ -97,6 +110,10 @@ namespace WeaponAndWizardry.App_Code
 
         private void Prologue1()
         {
+            Str = Strength.Average.ToString();
+            Dex = Dexterity.Average.ToString();
+            Int = Intelligence.Average.ToString();
+            Luk = Luck.Average.ToString();
             ClearImageDisplay();
             SetBackgroundImage("01.png");
             SetChoiceButtons(nextChoice);
@@ -206,32 +223,40 @@ namespace WeaponAndWizardry.App_Code
             switch (_choicePicked)
             {
                 case 1:
+                    Str = IncreaseStr();
                     PrintTextDialogue("\"I'm the strongest there is.\"");
-                    PrintTextDialogue("\"What would you say is your biggest weakness?\"");
+                    PrintTextDialogue("\"Excellent, you should see that your Str stat has changed on the right-hand side of your screen.\n"+
+                        "What would you say is your biggest weakness?\"");
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
                     break;
 
                 case 2:
+                    Dex = IncreaseDex();
                     PrintTextDialogue("\"Speed's my game.\"");
-                    PrintTextDialogue("\"What would you say is your biggest weakness?\"");
+                    PrintTextDialogue("\"Excellent, you should see that your Dex stat has changed on the right-hand side of your screen.\n" +
+                        "What would you say is your biggest weakness?\"");
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
                     break;
 
                 case 3:
+                    Int = IncreaseInt();
                     PrintTextDialogue("\"I'm a know-it-all.\"");
-                    PrintTextDialogue("\"What would you say is your biggest weakness?\"");
+                    PrintTextDialogue("\"Excellent, you should see that your Int stat has changed on the right-hand side of your screen.\n" +
+                        "What would you say is your biggest weakness?\"");
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
                     break;
 
                 case 4:
+                    Luk = IncreaseLuk();
                     PrintTextDialogue("\"I've always been very lucky\"");
-                    PrintTextDialogue("\"What would you say is your biggest weakness?\"");
+                    PrintTextDialogue("\"Excellent, you should see that your Str stat has changed on the right-hand side of your screen.\n" +
+                        "What would you say is your biggest weakness?\"");
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
 
@@ -255,22 +280,22 @@ namespace WeaponAndWizardry.App_Code
             {
                 case 1:
                     PrintTextDialogue("\"I'm not very strong...\"");
-
+                    Str = DecreaseStr();
                     break;
 
                 case 2:
                     PrintTextDialogue("\"I'm a little slow.\"");
-
+                    Dex = DecreaseDex();
                     break;
 
                 case 3:
                     PrintTextDialogue("\"I've never been very bright.\"");
-
+                    Int = DecreaseInt();
                     break;
 
                 case 4:
                     PrintTextDialogue("\"I'm super unlucky.\"");
-
+                    Luk = DecreaseLuk();
                     break;
             }
             ClearImageDisplay();

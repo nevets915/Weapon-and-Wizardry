@@ -22,7 +22,7 @@ namespace WeaponAndWizardry.App_Code
         private Image _currentBackgroundImage;
         private List<Image> _currentForegroundImages;
         private List<Label> _stats;
-
+                
         private delegate void ScriptLine();
 
         #region Properties
@@ -48,7 +48,7 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("HP"))
                     {
-                        label.Text = "HP: " + value;
+                        label.Text = "HP: " + value + "/100";
                     }
                 }
             }
@@ -165,6 +165,83 @@ namespace WeaponAndWizardry.App_Code
                 }
             }
         }
+
+        public Strength GetEnumStr()
+        {
+            return (Strength)Enum.Parse(typeof(Strength), Str);
+        }
+
+        public String DecreaseStr()
+        {
+            Strength s = GetEnumStr();
+            s--;
+            return s.ToString();
+        }
+
+        public String IncreaseStr()
+        {
+            Strength s = GetEnumStr();
+            s++;
+            return s.ToString();
+        }
+
+        public Dexterity GetEnumDex()
+        {
+            return (Dexterity)Enum.Parse(typeof(Dexterity), Dex);
+        }
+
+        public String DecreaseDex()
+        {
+            Dexterity d = GetEnumDex();
+            d--;
+            return d.ToString();
+        }
+
+        public String IncreaseDex()
+        {
+            Dexterity d = GetEnumDex();
+            d++;
+            return d.ToString();
+        }
+
+        public Intelligence GetEnumInt()
+        {
+            return (Intelligence)Enum.Parse(typeof(Intelligence), Int);
+        }
+
+        public String DecreaseInt()
+        {
+            Intelligence i = GetEnumInt();
+            i--;
+            return i.ToString();
+        }
+
+        public String IncreaseInt()
+        {
+            Intelligence i = GetEnumInt();
+            i++;
+            return i.ToString();
+        }
+
+        public Luck GetEnumLuck()
+        {
+            return (Luck)Enum.Parse(typeof(Luck), Str);
+        }
+
+        public String DecreaseLuk()
+        {
+            Luck l = GetEnumLuck();
+            l--;
+            return l.ToString();
+        }
+
+        public String IncreaseLuk()
+        {
+            Luck l = GetEnumLuck();
+            l++;
+            return l.ToString();
+        }
+
         #endregion Properties
 
         /// <summary>
