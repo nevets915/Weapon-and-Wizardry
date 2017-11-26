@@ -29,7 +29,7 @@ namespace WeaponAndWizardry.App_Code
         /// <summary>
         /// Gets or Sets the HP stat of the character
         /// </summary>
-        public string HP
+        public int HP
         {            
             get
             {
@@ -37,10 +37,10 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("HP"))
                     {
-                        return label.Text.Substring(4);
+                        return Int32.Parse(label.Text.Substring(4));
                     }
                 }
-                return null;
+                return 0;
             }
             set
             {
@@ -48,7 +48,7 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("HP"))
                     {
-                        label.Text = "HP: " + value + "/100";
+                        label.Text = "HP: " + value;
                     }
                 }
             }
@@ -57,7 +57,7 @@ namespace WeaponAndWizardry.App_Code
         /// <summary>
         /// Gets or Sets the Strength stat of the character
         /// </summary>
-        public string Str
+        public Strength Str
         {
             get
             {
@@ -65,10 +65,10 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Str"))
                     {
-                        return label.Text.Substring(4);
+                        return (Strength)Enum.Parse(typeof(Strength), label.Text.Substring(4));
                     }
                 }
-                return null;
+                return 0;
             }
             set
             {
@@ -76,6 +76,14 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Str"))
                     {
+                        if (value > Strength.Herculean)
+                        {
+                            value = Strength.Herculean;
+                        }
+                        if (value < Strength.Pitiful)
+                        {
+                            value = Strength.Pitiful;
+                        }
                         label.Text = "Str: " + value;
                     }
                 }
@@ -85,7 +93,7 @@ namespace WeaponAndWizardry.App_Code
         /// <summary>
         /// Gets or Sets the Dexterity stat of the character
         /// </summary>
-        public string Dex
+        public Dexterity Dex
         {
             get
             {
@@ -93,10 +101,10 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Dex"))
                     {
-                        return label.Text.Substring(4);
+                        return (Dexterity)Enum.Parse(typeof(Dexterity),label.Text.Substring(4));
                     }
                 }
-                return null;
+                return 0;
             }
             set
             {
@@ -104,6 +112,14 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Dex"))
                     {
+                        if(value > Dexterity.Agile)
+                        {
+                            value = Dexterity.Agile;
+                        }
+                        if(value < Dexterity.Uncoordinated)
+                        {
+                            value = Dexterity.Uncoordinated;
+                        }
                         label.Text = "Dex: " + value;
                     }
                 }
@@ -113,7 +129,7 @@ namespace WeaponAndWizardry.App_Code
         /// <summary>
         /// Gets or Sets the Intelligence stat of the character
         /// </summary>
-        public string Int
+        public Intelligence Int
         {
             get
             {
@@ -121,10 +137,10 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Int"))
                     {
-                        return label.Text.Substring(4);
+                        return (Intelligence)Enum.Parse(typeof(Intelligence),label.Text.Substring(4));
                     }
                 }
-                return null;
+                return 0;
             }
             set
             {
@@ -132,6 +148,14 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Int"))
                     {
+                        if (value > Intelligence.Enlightened)
+                        {
+                            value = Intelligence.Enlightened;
+                        }
+                        if (value < Intelligence.Dumb)
+                        {
+                            value = Intelligence.Dumb;
+                        }
                         label.Text = "Int: " + value;
                     }
                 }
@@ -141,7 +165,7 @@ namespace WeaponAndWizardry.App_Code
         /// <summary>
         /// Gets or Sets the Luck stat of the character
         /// </summary>
-        public string Luk
+        public Luck Luk
         {
             get
             {
@@ -149,10 +173,10 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Luk"))
                     {
-                        return label.Text.Substring(4);
+                        return (Luck)Enum.Parse(typeof(Luck),label.Text.Substring(4));
                     }
                 }
-                return null;
+                return 0;
             }
             set
             {
@@ -160,13 +184,21 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Luk"))
                     {
+                        if (value > Luck.Blessed)
+                        {
+                            value = Luck.Blessed;
+                        }
+                        if (value < Luck.Jinxed)
+                        {
+                            value = Luck.Jinxed;
+                        }
                         label.Text = "Luk: " + value;
                     }
                 }
             }
         }
 
-        public string Align
+        public Alignment Align
         {
             get
             {
@@ -174,10 +206,10 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Alignment"))
                     {
-                        return label.Text.Substring(10);
+                        return (Alignment)Enum.Parse(typeof(Alignment),label.Text.Substring(10));
                     }
                 }
-                return null;
+                return 0;
             }
             set
             {
@@ -185,105 +217,43 @@ namespace WeaponAndWizardry.App_Code
                 {
                     if (label.Text.Contains("Alignment"))
                     {
+                        if (value > Alignment.Adored)
+                        {
+                            value = Alignment.Adored;
+                        }
+                        if (value < Alignment.Wicked)
+                        {
+                            value = Alignment.Wicked;
+                        }
                         label.Text = "Alignment: " + value;
                     }
                 }
             }
         }
 
-        public Strength GetEnumStr()
+        public int Gold
         {
-            return (Strength)Enum.Parse(typeof(Strength), Str);
-        }
-
-        public String DecreaseStr()
-        {
-            Strength s = GetEnumStr();
-            s--;
-            return s.ToString();
-        }
-
-        public String IncreaseStr()
-        {
-            Strength s = GetEnumStr();
-            s++;
-            return s.ToString();
-        }
-
-        public Dexterity GetEnumDex()
-        {
-            return (Dexterity)Enum.Parse(typeof(Dexterity), Dex);
-        }
-
-        public String DecreaseDex()
-        {
-            Dexterity d = GetEnumDex();
-            d--;
-            return d.ToString();
-        }
-
-        public String IncreaseDex()
-        {
-            Dexterity d = GetEnumDex();
-            d++;
-            return d.ToString();
-        }
-
-        public Intelligence GetEnumInt()
-        {
-            return (Intelligence)Enum.Parse(typeof(Intelligence), Int);
-        }
-
-        public String DecreaseInt()
-        {
-            Intelligence i = GetEnumInt();
-            i--;
-            return i.ToString();
-        }
-
-        public String IncreaseInt()
-        {
-            Intelligence i = GetEnumInt();
-            i++;
-            return i.ToString();
-        }
-
-        public Luck GetEnumLuck()
-        {
-            return (Luck)Enum.Parse(typeof(Luck), Luk);
-        }
-
-        public String DecreaseLuk()
-        {
-            Luck l = GetEnumLuck();
-            l--;
-            return l.ToString();
-        }
-
-        public String IncreaseLuk()
-        {
-            Luck l = GetEnumLuck();
-            l++;
-            return l.ToString();
-        }
-
-        public Alignment GetEnumAlign()
-        {
-            return (Alignment)Enum.Parse(typeof(Alignment), Align);
-        }
-
-        public String DecreaseAlign()
-        {
-            Alignment a = GetEnumAlign();
-            a--;
-            return a.ToString();
-        }
-
-        public String IncreaseAlign()
-        {
-            Alignment a = GetEnumAlign();
-            a++;
-            return a.ToString();
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Gold"))
+                    {
+                        return Int32.Parse(label.Text.Substring(5));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Gold"))
+                    {
+                        label.Text = "Gold: " + value;
+                    }
+                }
+            }
         }
 
         #endregion Properties
