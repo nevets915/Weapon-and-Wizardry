@@ -31,12 +31,22 @@ namespace WeaponAndWizardry
         /// <summary>
         /// For the New Game
         /// </summary>
-        /// <param name="sender">reference of the objec</param>
+        /// <param name="sender">reference of the object</param>
         /// <param name="e">events arguement</param>
         protected void Button_New_Game_Click(object sender, EventArgs e)
         {
             //Session["_gameover"] = "false";
             Server.Transfer("MainScene.aspx", false);
+        }
+
+        /// <summary>
+        /// For the saved Game
+        /// </summary>
+        /// <param name="sender">reference of the object</param>
+        /// <param name="e">events arguement</param>
+        protected void Button_Load_Game_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("LoadGame.aspx", false);
         }
     }
 }

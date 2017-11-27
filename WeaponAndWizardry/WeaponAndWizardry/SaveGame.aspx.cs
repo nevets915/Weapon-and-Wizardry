@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 /// <summary>
 /// Module: MainMenu
-/// Description: This page is for Loading the save data of the game
+/// Description: This page is for Saving the save data of the game
 /// Author: 
 ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-27
 /// Based on:
@@ -15,19 +15,9 @@ using System.Web.UI.WebControls;
 /// </summary>
 namespace WeaponAndWizardry
 {
-    public partial class LoadGame : System.Web.UI.Page
+    public partial class SaveGame : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button_Load_Back_Click(object sender, EventArgs e)
-        {
-            Response.Redirect(Request.UrlReferrer.ToString());
-        }
-
-        protected void Button_Load_Game_Click(object sender, EventArgs e)
         {
 
         }
