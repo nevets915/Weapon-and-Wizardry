@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI.WebControls;
 
-namespace WeaponAndWizardry.App_Code
+namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// Core class that handles logic of game workflow
@@ -335,6 +335,7 @@ namespace WeaponAndWizardry.App_Code
         /// </summary>
         public void QuitGame()
         {
+            SessionHandler.ClearSession();
             SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
         }
 

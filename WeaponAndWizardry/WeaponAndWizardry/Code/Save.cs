@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WeaponAndWizardry.App_Code
+namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// Represents a save file for serialization
