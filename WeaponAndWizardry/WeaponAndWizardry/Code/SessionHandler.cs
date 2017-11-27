@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WeaponAndWizardry.App_Code
+namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// A wrapper to allow safe use of Session variables
@@ -275,6 +275,14 @@ namespace WeaponAndWizardry.App_Code
             {
                 stats[i].Text = Stats[i];
             }
+        }
+
+        /// <summary>
+        /// Clears all session data
+        /// </summary>
+        public static void ClearSession()
+        {
+            HttpContext.Current.Session.Clear();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
 
-namespace WeaponAndWizardry.App_Code
+namespace WeaponAndWizardry.Code
 {
     public static class Utility
     {

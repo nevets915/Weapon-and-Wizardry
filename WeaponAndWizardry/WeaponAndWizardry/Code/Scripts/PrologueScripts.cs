@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace WeaponAndWizardry.App_Code
+namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// Container for the Script methods for the Prologue.

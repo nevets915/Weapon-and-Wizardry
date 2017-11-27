@@ -492,13 +492,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\Choices.cs" />
-    <Compile Include="App_Code\Save.cs" />
-    <Compile Include="App_Code\ScriptEngine.cs" />
-    <Compile Include="App_Code\Scripts\PrologueScripts.cs" />
-    <Compile Include="App_Code\Scripts\Scripts.cs" />
-    <Compile Include="App_Code\SessionHandler.cs" />
-    <Compile Include="App_Code\Utility.cs" />
+    <Compile Include="Code\Choices.cs" />
+    <Compile Include="Code\Save.cs" />
+    <Compile Include="Code\ScriptEngine.cs" />
+    <Compile Include="Code\Scripts\PrologueScripts.cs" />
+    <Compile Include="Code\Scripts\Scripts.cs" />
+    <Compile Include="Code\SessionHandler.cs" />
+    <Compile Include="Code\Utility.cs" />
     <Compile Include="LoadGame.aspx.cs">
       <DependentUpon>LoadGame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -545,7 +545,7 @@
     <Compile Include="TestJson.aspx.designer.cs">
       <DependentUpon>TestJson.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\UsersSaveDataController.cs" />
+    <Content Include="Code\UsersSaveDataController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
