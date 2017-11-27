@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI.WebControls;
 
-namespace WeaponAndWizardry.App_Code
+namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// Core class that handles logic of game workflow
@@ -333,9 +333,10 @@ namespace WeaponAndWizardry.App_Code
         /// <summary>
         /// Returns the user to the main menu
         /// </summary>
-        public void QuitGame()
+        public void QuitGame(System.Web.UI.Page page)
         {
-            SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
+            SessionHandler.ClearSession();
+            page.Server.Transfer("MainMenu.aspx", false);
         }
 
         #region Script API methods

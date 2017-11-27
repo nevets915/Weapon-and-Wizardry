@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WeaponAndWizardry.App_Code;
+using WeaponAndWizardry.Code;
 
 namespace WeaponAndWizardry
 {
@@ -66,9 +66,9 @@ namespace WeaponAndWizardry
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void Button_Back_Click(object sender, EventArgs e)
+        protected void Button_Quit_Click(object sender, EventArgs e)
         {
-            SessionHandler.ScriptEngine.QuitGame();
+            SessionHandler.ScriptEngine.QuitGame(this);
         }
 
         /// <summary>
