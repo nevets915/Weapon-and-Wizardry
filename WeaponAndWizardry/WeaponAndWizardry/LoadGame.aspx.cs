@@ -11,7 +11,8 @@ using System.Web.UI.WebControls;
 /// Author: 
 ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-27
 /// Based on:
-///  N/A
+///    http://www.dotnetcurry.com/aspnet/89/aspnet-redirect-go-back-to-previous-page
+
 /// </summary>
 namespace WeaponAndWizardry
 {

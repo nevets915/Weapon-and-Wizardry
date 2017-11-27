@@ -34,8 +34,8 @@
                     <asp:Label ID="Label_Luck" runat="server" Text="Luk: " Font-Size="Medium"></asp:Label>  <br />
                     <asp:Label ID="Label_Alignment" runat="server" Text="Alignment: " Font-Size="Medium"></asp:Label>  <br />
                     <asp:Label ID="Label_Gold" runat="server" Text="Gold: " Font-Size="Medium"></asp:Label>  <br />
-                    <br /><br /><br /><br /><br /><br /><br /><br /><br />
-                    <br /><br /><br /><br /><br /><br /><br /><br />
+                    <br /><br /><br /><br /><br />
+                    <br /><br /><br /><br /><br /><br />
                     <asp:Button ID="Button_Save" runat="server" Text="Save" style="width:100%;" OnClick="Button_Save_Click" />
                     <asp:Button ID="Button_Load" runat="server" Text="Load" style="width:100%;" OnClick="Button_Load_Click" />
                     <asp:Button ID="Button_Back" runat="server" Text="Quit" PostBackUrl="~/MainMenu.aspx" style="width:100%;" OnClick="Button_Back_Click" />
