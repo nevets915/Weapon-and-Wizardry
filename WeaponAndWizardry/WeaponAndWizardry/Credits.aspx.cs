@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 /// Author: 
 ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-27
 /// Based on:
-///  N/A
+///  https://css-tricks.com/snippets/css/star-wars-crawl-text/
 /// </summary>
 namespace WeaponAndWizardry
 {
