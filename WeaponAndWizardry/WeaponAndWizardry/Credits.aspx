@@ -13,8 +13,10 @@
         <table style="width: 100%">
             <tr><td><div class="row"></div></td></tr>
             <tr><td><div class="row"></div></td></tr>
-            <tr><td align="center">
+            <tr>
+                <td align="center">
 
+                </td>
             </tr>
             <tr>
             </tr>
