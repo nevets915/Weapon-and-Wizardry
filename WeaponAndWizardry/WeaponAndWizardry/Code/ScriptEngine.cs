@@ -333,10 +333,10 @@ namespace WeaponAndWizardry.Code
         /// <summary>
         /// Returns the user to the main menu
         /// </summary>
-        public void QuitGame()
+        public void QuitGame(System.Web.UI.Page page)
         {
             SessionHandler.ClearSession();
-            SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
+            page.Server.Transfer("MainMenu.aspx", false);
         }
 
         #region Script API methods
