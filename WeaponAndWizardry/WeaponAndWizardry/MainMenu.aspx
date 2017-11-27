@@ -21,7 +21,7 @@
             <tr>
                 <td style="width: 100%" align="center">
                     <br />
-                    <asp:Button ID="Button_Load_Game" CssClass="image_button_load" runat="server" Text="Load Game" PostBackUrl="~/LoadGame.aspx"/>
+                    <asp:Button ID="Button_Load_Game" CssClass="image_button_load" runat="server" Text="Load Game" OnClick="Button_Load_Game_Click"/>
                 </td>
             </tr>
             <tr><td><div class="row"></div></td></tr>

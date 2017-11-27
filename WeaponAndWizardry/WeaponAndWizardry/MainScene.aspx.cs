@@ -13,6 +13,7 @@ namespace WeaponAndWizardry
     /// Description: This page is for Main Scene of the game
     /// Author:
     ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-15
+    ///	 Name: George Lee           Date: 2017-11-20
     /// Based on:
     ///     https://stackoverflow.com/questions/23976683/asp-net-button-to-redirect-to-another-page
     /// </summary>
@@ -92,6 +93,7 @@ namespace WeaponAndWizardry
             string save = System.IO.File.ReadAllText("c:\\save.txt", System.Text.Encoding.ASCII); // Do database load
             Save s = Newtonsoft.Json.JsonConvert.DeserializeObject<Save>(save);
             SessionHandler.ScriptEngine.LoadGame(s);
+            Server.Transfer("LoadGame.aspx", false);
         }
     }
 }

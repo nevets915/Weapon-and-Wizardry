@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoadGame.aspx.cs" Inherits="WeaponAndWizardry.LoadGame" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SaveGame.aspx.cs" Inherits="WeaponAndWizardry.SaveGame" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../Content/styles/MainMenu.css" rel="stylesheet" type="text/css" />
@@ -28,10 +28,10 @@
             </tr>
             <tr>
                 <td aligh="center">
-                    <asp:Button ID="Button_Load_Back" CssClass="image_button_back" runat="server" style="margin-left: 30%; margin-top:10%; width: 230px;" Text="Back" OnClick="Button_Load_Back_Click"/>
+                    <asp:Button ID="Button_Load_Back" CssClass="image_button_back" runat="server" style="margin-left: 30%; margin-top:10%; width: 230px;" Text="Back" PostBackUrl="~/MainMenu.aspx"/>
                 </td>
                 <td aligh="center">
-                    <asp:Button ID="Button_Load_Game" CssClass="image_button_load" runat="server" style="margin-left: 30%; margin-top:10%; width: 230px" Text="Load Game" OnClick="Button_Load_Game_Click"/>
+                    <asp:Button ID="Button_Load_Game" CssClass="image_button_load" runat="server" style="margin-left: 30%; margin-top:10%; width: 230px" Text="Load Game"/>
                 </td>
             </tr>
             <tr><td><div class="row"><br /><br /><br /><br /><br /><br /><br /></div></td></tr>
