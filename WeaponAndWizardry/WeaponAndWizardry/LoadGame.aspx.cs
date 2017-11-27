@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 /// <summary>
 /// Module: MainMenu
-/// Description: This page is for Main Menu of the game
+/// Description: This page is for Loading the save data of the game
 /// Author: 
-///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-15
+///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-27
 /// Based on:
-/// https://stackoverflow.com/questions/23976683/asp-net-button-to-redirect-to-another-page
+///  N/A
 /// </summary>
 namespace WeaponAndWizardry
 {
