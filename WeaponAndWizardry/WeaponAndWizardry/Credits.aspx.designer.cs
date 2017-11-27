@@ -10,16 +10,7 @@
 namespace WeaponAndWizardry {
     
     
-    public partial class LoadGame {
-        
-        /// <summary>
-        /// TextBox_SaveDataCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_SaveDataCode;
+    public partial class Credits {
         
         /// <summary>
         /// Button_Load_Back control.
@@ -29,14 +20,5 @@ namespace WeaponAndWizardry {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_Load_Back;
-        
-        /// <summary>
-        /// Button_Load_Game control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Load_Game;
     }
 }

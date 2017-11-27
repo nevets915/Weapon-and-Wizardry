@@ -155,7 +155,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -173,7 +172,6 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="App_Data\dbo.Users.sql" />
     <Content Include="App_Data\WWDaata_UserTable.sql" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\images\backgrounds\01.png" />
     <Content Include="Content\images\backgrounds\10.png" />
     <Content Include="Content\images\backgrounds\11.png" />
@@ -313,6 +311,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Credits.aspx" />
     <Content Include="LoadGame.aspx" />
     <Content Include="MainScene.aspx" />
     <Content Include="MainMenu.aspx" />
@@ -327,7 +326,6 @@
       <LastGenOutput>SaveDataModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\sounds.js" />
-    <Content Include="TestJson.aspx" />
     <EntityDeploy Include="Models\SaveDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SaveDataModel.Designer.cs</LastGenOutput>
@@ -366,7 +364,6 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
@@ -499,6 +496,13 @@
     <Compile Include="Code\Scripts\Scripts.cs" />
     <Compile Include="Code\SessionHandler.cs" />
     <Compile Include="Code\Utility.cs" />
+    <Compile Include="Credits.aspx.cs">
+      <DependentUpon>Credits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Credits.aspx.designer.cs">
+      <DependentUpon>Credits.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoadGame.aspx.cs">
       <DependentUpon>LoadGame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -538,39 +542,11 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>SaveDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TestJson.aspx.cs">
-      <DependentUpon>TestJson.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestJson.aspx.designer.cs">
-      <DependentUpon>TestJson.aspx</DependentUpon>
-    </Compile>
     <Content Include="Code\UsersSaveDataController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
