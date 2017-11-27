@@ -6,10 +6,12 @@ using System.Web.UI.WebControls;
 namespace WeaponAndWizardry.App_Code
 {
     /// <summary>
+    /// Core class that handles logic of game workflow
+    /// for ASP.NET webforms.
     /// Handles execution of scenario scripts.
     /// Exposes API for Script class to use.
     /// </summary>
-    public partial class ScriptEngine
+    public partial class WebGameEngine
     {
         private int _currentExecutingLine;
         private Panel _imageDisplay;
@@ -19,8 +21,242 @@ namespace WeaponAndWizardry.App_Code
         private uint _choicePicked;
         private Image _currentBackgroundImage;
         private List<Image> _currentForegroundImages;
-
+        private List<Label> _stats;
+                
         private delegate void ScriptLine();
+
+        #region Properties
+        /// <summary>
+        /// Gets or Sets the HP stat of the character
+        /// </summary>
+        public int HP
+        {            
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("HP"))
+                    {
+                        return Int32.Parse(label.Text.Substring(4));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("HP"))
+                    {
+                        label.Text = "HP: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Strength stat of the character
+        /// </summary>
+        public Strength Str
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Str"))
+                    {
+                        return (Strength)Enum.Parse(typeof(Strength), label.Text.Substring(4));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Str"))
+                    {
+                        if (value > Strength.Herculean)
+                        {
+                            value = Strength.Herculean;
+                        }
+                        if (value < Strength.Pitiful)
+                        {
+                            value = Strength.Pitiful;
+                        }
+                        label.Text = "Str: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Dexterity stat of the character
+        /// </summary>
+        public Dexterity Dex
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Dex"))
+                    {
+                        return (Dexterity)Enum.Parse(typeof(Dexterity),label.Text.Substring(4));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Dex"))
+                    {
+                        if(value > Dexterity.Agile)
+                        {
+                            value = Dexterity.Agile;
+                        }
+                        if(value < Dexterity.Uncoordinated)
+                        {
+                            value = Dexterity.Uncoordinated;
+                        }
+                        label.Text = "Dex: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Intelligence stat of the character
+        /// </summary>
+        public Intelligence Int
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Int"))
+                    {
+                        return (Intelligence)Enum.Parse(typeof(Intelligence),label.Text.Substring(4));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Int"))
+                    {
+                        if (value > Intelligence.Enlightened)
+                        {
+                            value = Intelligence.Enlightened;
+                        }
+                        if (value < Intelligence.Dumb)
+                        {
+                            value = Intelligence.Dumb;
+                        }
+                        label.Text = "Int: " + value;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or Sets the Luck stat of the character
+        /// </summary>
+        public Luck Luk
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Luk"))
+                    {
+                        return (Luck)Enum.Parse(typeof(Luck),label.Text.Substring(4));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Luk"))
+                    {
+                        if (value > Luck.Blessed)
+                        {
+                            value = Luck.Blessed;
+                        }
+                        if (value < Luck.Jinxed)
+                        {
+                            value = Luck.Jinxed;
+                        }
+                        label.Text = "Luk: " + value;
+                    }
+                }
+            }
+        }
+
+        public Alignment Align
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Alignment"))
+                    {
+                        return (Alignment)Enum.Parse(typeof(Alignment),label.Text.Substring(10));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Alignment"))
+                    {
+                        if (value > Alignment.Adored)
+                        {
+                            value = Alignment.Adored;
+                        }
+                        if (value < Alignment.Wicked)
+                        {
+                            value = Alignment.Wicked;
+                        }
+                        label.Text = "Alignment: " + value;
+                    }
+                }
+            }
+        }
+
+        public int Gold
+        {
+            get
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Gold"))
+                    {
+                        return Int32.Parse(label.Text.Substring(5));
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                foreach (Label label in _stats)
+                {
+                    if (label.Text.Contains("Gold"))
+                    {
+                        label.Text = "Gold: " + value;
+                    }
+                }
+            }
+        }
+
+        #endregion Properties
 
         /// <summary>
         /// Instantiates an instance of the ScriptEngine
@@ -29,7 +265,7 @@ namespace WeaponAndWizardry.App_Code
         /// first index in the collection.
         /// </summary>
         /// <param name="gui"></param>
-        public ScriptEngine(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
+        public WebGameEngine(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons, List<Label> stats)
         {
             _currentExecutingLine = 0;
             _imageDisplay = imageDisplay;
@@ -37,8 +273,10 @@ namespace WeaponAndWizardry.App_Code
             _scriptLines = new List<ScriptLine>();
             _currentForegroundImages = new List<Image>();
             _choiceButtons = choiceButtons;
-            LoadScripts();
-        }
+            _currentBackgroundImage = null;
+            _stats = stats;
+            LoadScripts();            
+        }        
 
         /// <summary>
         /// Updates the references to the GUI controls.
@@ -48,11 +286,12 @@ namespace WeaponAndWizardry.App_Code
         /// <param name="imageDisplay">The new panel to refer to</param>
         /// <param name="textDisplay">The new text box to refer to</param>
         /// <param name="choiceButtons">The buttons to refer to</param>
-        public void UpdateReferences(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons)
+        public void UpdateReferences(Panel imageDisplay, TextBox textDisplay, List<Button> choiceButtons, List<Label> stats)
         {
             _imageDisplay = imageDisplay;
             _textDisplay = textDisplay;
             _choiceButtons = choiceButtons;
+            _stats = stats;
         }
 
         /// <summary>
@@ -62,8 +301,44 @@ namespace WeaponAndWizardry.App_Code
         public void ExecuteLine(uint choicePicked)
         {
             _choicePicked = choicePicked;
+            SessionHandler.ChoicesPicked.Add(_choicePicked);
             _scriptLines[_currentExecutingLine].Invoke();
         }
+
+        /// <summary>
+        /// Saves the game into a serializable Save object
+        /// </summary>
+        public Save SaveGame()
+        {
+            Save save = new Save(SessionHandler.Guid, SessionHandler.ChoicesPicked);
+            return save;
+        }
+
+        /// <summary>
+        /// Loads the game from a serializable Save object
+        /// </summary>
+        public void LoadGame(Save save)
+        {
+            SessionHandler.ChoicesPicked.Clear();
+            _textDisplay.Text = "";
+            _currentExecutingLine = 0;
+            _currentForegroundImages = new List<Image>();
+            _currentBackgroundImage = null;
+            foreach (uint choice in save.ChoicesPicked)
+            {
+                ExecuteLine(choice);
+            }
+        }
+
+        /// <summary>
+        /// Returns the user to the main menu
+        /// </summary>
+        public void QuitGame()
+        {
+            SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
+        }
+
+        #region Script API methods
 
         /// <summary>
         /// Outputs text to the Text Display
@@ -72,7 +347,6 @@ namespace WeaponAndWizardry.App_Code
         public void PrintTextDialogue(string message)
         {
             message = "\n\n" + message;
-            System.Diagnostics.Debug.WriteLine(message);
             _textDisplay.Text += message;
         }
 
@@ -82,7 +356,6 @@ namespace WeaponAndWizardry.App_Code
         /// <param name="message">The string message to output</param>
         public void PrintLineTextDialogue(string message)
         {
-            System.Diagnostics.Debug.WriteLine(message);
             _textDisplay.Text += message + "\n";
         }
 
@@ -191,12 +464,6 @@ namespace WeaponAndWizardry.App_Code
             _imageDisplay.Controls.Add(image);
         }
 
-        /// <summary>
-        /// Returns the user to the main menu
-        /// </summary>
-        public void QuitGame()
-        {
-            SessionHandler.MainScene.Server.Transfer("MainMenu.aspx", true);
-        }
+        #endregion Script API methods
     }
 }

@@ -171,10 +171,8 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="App_Data\Wwdatabase.mdf" />
-    <Content Include="App_Data\Wwdatabase_log.ldf">
-      <DependentUpon>Wwdatabase.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\dbo.Users.sql" />
+    <Content Include="App_Data\WWDaata_UserTable.sql" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\images\backgrounds\01.png" />
     <Content Include="Content\images\backgrounds\10.png" />
@@ -495,6 +493,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Choices.cs" />
+    <Compile Include="App_Code\Save.cs" />
     <Compile Include="App_Code\ScriptEngine.cs" />
     <Compile Include="App_Code\Scripts\PrologueScripts.cs" />
     <Compile Include="App_Code\Scripts\Scripts.cs" />
