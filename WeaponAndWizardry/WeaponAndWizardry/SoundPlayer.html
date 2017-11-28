@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script>
+      var soundID = "Thunder";
+
+      function loadSound () {
+        createjs.Sound.registerSound("stage2.mp3", soundID);
+      }
+
+      function playSound () {
+        createjs.Sound.play(soundID);
+      }
+
+      loadSound();
+      setTimeout(function () {
+          playSound();
+      }, 2000);
+
+    </script>
+</head>
+
+<body>
+    <p>
+        This is the player for all sounds in the game.
+        You can minimize this window and continue playing the game.
+        You may close it if you wish to disable all sounds.
+    </p>
+</body>
+</html>
