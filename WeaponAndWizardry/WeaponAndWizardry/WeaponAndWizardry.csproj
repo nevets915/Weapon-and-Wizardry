@@ -259,6 +259,7 @@
     <Content Include="Content\images\backgrounds\86.png" />
     <Content Include="Content\images\backgrounds\9.png" />
     <Content Include="Content\images\backgrounds\Camp.png" />
+    <Content Include="Content\images\backgrounds\gameover.png" />
     <Content Include="Content\images\backgrounds\main_menu_bg.png" />
     <Content Include="Content\images\characters\Elder_happy.png" />
     <Content Include="Content\images\characters\Elder_neutral.png" />
@@ -494,6 +495,7 @@
     <Compile Include="Code\Save.cs" />
     <Compile Include="Code\ScriptEngine.cs" />
     <Compile Include="Code\Scripts\PrologueScripts.cs" />
+    <Content Include="Code\Scripts\ChapterOneScripts.cs" />
     <Compile Include="Code\Scripts\Scripts.cs" />
     <Compile Include="Code\SessionHandler.cs" />
     <Compile Include="Code\Utility.cs" />
@@ -587,6 +589,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\Scripts\" />
     <Folder Include="Content\bgm\" />
     <Folder Include="Content\ui\" />
     <Folder Include="Controllers\" />
