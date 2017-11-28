@@ -8,6 +8,8 @@ namespace WeaponAndWizardry.Code
     /// <summary>
     /// Represents a script scenario that uses ScriptEngine API
     /// to dictate the game flow.
+    /// Author: 
+    ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public partial class WebGameEngine
     {

@@ -10,6 +10,8 @@ namespace WeaponAndWizardry.Code
     {
         /// <summary>
         /// Creates a deep copy of the Image object
+        /// Author: 
+        ///     Name: Jia Qi Lee (George) Date: 2017-11-15
         /// </summary>
         /// <param name="image">The image to copy</param>
         /// <returns>A copy of the image</returns>

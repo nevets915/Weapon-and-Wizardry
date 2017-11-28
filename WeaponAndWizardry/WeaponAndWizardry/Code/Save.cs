@@ -7,6 +7,8 @@ namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// Represents a save file for serialization
+    /// Author: 
+    ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public class Save
     {
