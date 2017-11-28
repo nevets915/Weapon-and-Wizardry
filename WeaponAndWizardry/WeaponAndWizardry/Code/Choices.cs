@@ -7,6 +7,8 @@ namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// Contains a collection of choices used in Script API
+    /// Author: 
+    ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public class Choices
     {

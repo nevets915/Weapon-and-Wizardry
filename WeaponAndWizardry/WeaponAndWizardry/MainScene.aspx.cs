@@ -13,6 +13,7 @@ namespace WeaponAndWizardry
     /// Description: This page is for Main Scene of the game
     /// Author:
     ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-15
+    ///	 Name: Jia Qi Lee (George) Date: 2017-11-15
     /// Based on:
     ///     https://stackoverflow.com/questions/23976683/asp-net-button-to-redirect-to-another-page
     /// </summary>

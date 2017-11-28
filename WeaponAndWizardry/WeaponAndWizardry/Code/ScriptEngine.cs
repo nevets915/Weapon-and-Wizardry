@@ -10,6 +10,8 @@ namespace WeaponAndWizardry.Code
     /// for ASP.NET webforms.
     /// Handles execution of scenario scripts.
     /// Exposes API for Script class to use.
+    /// Author: 
+    ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public partial class WebGameEngine
     {

@@ -9,6 +9,8 @@ namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// A wrapper to allow safe use of Session variables
+    /// Author: 
+    ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public static class SessionHandler
     {
