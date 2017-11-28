@@ -312,6 +312,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Credits.aspx" />
+    <Content Include="SaveGame.aspx" />
     <Content Include="LoadGame.aspx" />
     <Content Include="MainScene.aspx" />
     <Content Include="MainMenu.aspx" />
@@ -502,6 +503,13 @@
     </Compile>
     <Compile Include="Credits.aspx.designer.cs">
       <DependentUpon>Credits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaveGame.aspx.cs">
+      <DependentUpon>SaveGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaveGame.aspx.designer.cs">
+      <DependentUpon>SaveGame.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoadGame.aspx.cs">
       <DependentUpon>LoadGame.aspx</DependentUpon>

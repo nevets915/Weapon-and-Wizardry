@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../Content/styles/MainMenu.css" rel="stylesheet" type="text/css" />
+    <style>
 
+    </style>
     <div style="background:url(../Content/Images/backgrounds/main_menu_bg.png) no-repeat; width: 100% 0;height:100% 0; background-position: right center; min-height:650px;">
         <div>
             <div class ="row center">
