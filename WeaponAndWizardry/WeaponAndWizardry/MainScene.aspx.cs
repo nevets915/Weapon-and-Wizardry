@@ -54,7 +54,7 @@ namespace WeaponAndWizardry
         protected void ButtonChoice_Clicked(object sender, EventArgs e)
         {
             List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };
-            List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck };
+            List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck, Label_Alignment, Label_Gold };
             Button button = (Button)sender;
             string choice = new string(button.ID.Last(), 1);
             SessionHandler.ScriptEngine.ExecuteLine(uint.Parse(choice));
