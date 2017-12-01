@@ -52,6 +52,10 @@ namespace WeaponAndWizardry.Code
                 {
                     if (label.Text.Contains("HP"))
                     {
+                        if (value > 100)
+                        {
+                            value = 100;
+                        }
                         label.Text = "HP: " + value;
                     }
                 }
@@ -438,7 +442,7 @@ namespace WeaponAndWizardry.Code
             image.Style["left"] = "0px";
             image.Style["top"] = "0px";
             image.Width = 800;
-            image.Height = 600;
+            image.Height = 500;
             image.ImageUrl = "~/Content/images/backgrounds/" + imageFileName;
             _currentBackgroundImage = image;
             _imageDisplay.Controls.Add(_currentBackgroundImage);
