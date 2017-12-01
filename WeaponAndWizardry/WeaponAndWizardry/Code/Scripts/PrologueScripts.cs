@@ -7,7 +7,10 @@ using System.Web;
 namespace WeaponAndWizardry.Code
 {
     /// <summary>
-    /// Container for the Script methods for the Prologue.
+    /// Module: WebGameEngine
+    /// Description: Container for prologue story scripts which tell the engine 
+    /// what order the instructions should go in.
+    /// Author: Steven Ma			Date: 2017-11-30 
     /// </summary>
     public partial class WebGameEngine
     {
@@ -353,6 +356,7 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Farewell, brave hero.\nKnow that I will always be watching over you, " +
                 "even in the tutorial section.\"");
+            _currentExecutingLine++;
         }
 
         private void Prologue10()
@@ -1000,7 +1004,7 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The child begins asking you about your sword, what you do for a living, etc.\n" +
                 "\"A monster hunter? So cool.  Hope you can slay the one that's been attacking our village. " +
-                "You should check by the stables, that's where the last monster attack was.\"" +
+                "You should check by the stables, that's where the last monster attack was.\"\n" +
                 "The child waves good-bye as he gets called back by his mother.");
             _currentExecutingLine++;
         }
@@ -1531,6 +1535,7 @@ namespace WeaponAndWizardry.Code
                 "I will make sure to tell the village of your good deed.  \nThank you.\"");
             Align++;
             SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
         }
 
         private void Prologue100()

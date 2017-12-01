@@ -494,8 +494,9 @@
     <Compile Include="Code\Choices.cs" />
     <Compile Include="Code\Save.cs" />
     <Compile Include="Code\ScriptEngine.cs" />
+    <Compile Include="Code\Scripts\EndingScript.cs" />
     <Compile Include="Code\Scripts\PrologueScripts.cs" />
-    <Content Include="Code\Scripts\ChapterOneScripts.cs" />
+    <Compile Include="Code\Scripts\ChapterOneScripts.cs" />
     <Compile Include="Code\Scripts\Scripts.cs" />
     <Compile Include="Code\SessionHandler.cs" />
     <Compile Include="Code\Utility.cs" />

@@ -7,12 +7,19 @@ using System.Web;
 namespace WeaponAndWizardry.Code
 {
     /// <summary>
-    /// Container for the Script methods for the Prologue.
+    /// Module: WebGameEngine
+    /// Description: Container for Chapter 1 scripts which tell the engine 
+    /// what order the instructions should go in.
+    /// Author: Steven Ma			Date: 2017-11-30 
     /// </summary>
     public partial class WebGameEngine
     {
         private bool _stoleGoblet = false;
 
+        /// <summary>
+        /// Region containing a method for loading the scripts needed.
+        /// </summary>
+        #region Script Load
         public void LoadChapterOneScripts()
         {
             _scriptLines.Add(Ch1Line1);
@@ -46,17 +53,24 @@ namespace WeaponAndWizardry.Code
             _scriptLines.Add(Ch1Line29);
             _scriptLines.Add(Ch1Line30);
             _scriptLines.Add(Ch1Line31);
-            //_scriptLines.Add(Ch1Line32);
-            //_scriptLines.Add(Ch1Line33);
+            _scriptLines.Add(Ch1Line32);
+            _scriptLines.Add(Ch1Line33);
         }
 
+        #endregion
+
+        /// <summary>
+        /// Region containing the script methods, each containing what's needed for the next
+        /// line of dialogue.
+        /// </summary>
+        #region Scripts
         private void Ch1Line1()
         {
             ClearImageDisplay();
             SetBackgroundImage("gameover.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Game over\nReturning to main menu.");
-            QuitGame();
+            //QuitGame();
         }
 
         private void Ch1Line2()
@@ -310,9 +324,10 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line25()
         {
-            PrintTextDialogue("\"You will be of course, rewarded for your time and effort.\n"+
+            PrintTextDialogue("\"Here is a small incentive to start you off (Gold +200).\n"+
                 "Please do your best.\"\n"+
                 "The princess gives you one last smile before you take your leave.");
+            Gold = Gold + 200;
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -339,7 +354,7 @@ namespace WeaponAndWizardry.Code
         private void Ch1Line28()
         {
             PrintTextDialogue("First notice: Monster slayer wanted! Court wizard requesting aid.\n"+
-                "Second notice: Find missing adventurer. Went missing in the maze of the sphinx.\n"+
+                "Second notice: Find missing adventurer. Come to the town bar for info.\n"+
                 "Third notice: Looking for Noble escort through monster-filled forest.");
             SetChoiceButtons(new Choices("Help the wizard", "Find the missing adventurer", "Become a noble escort."));
             _currentExecutingLine++;
@@ -356,7 +371,7 @@ namespace WeaponAndWizardry.Code
                     break;
                 case 2:
                     PrintTextDialogue("You decide to go and help find the missing adventurer.\n"+
-                        "You take the image of the missing adventurer and head towards the maze of the sphinx.");
+                        "You head towards the town bar to get information.");
                     _currentExecutingLine++;
                     break;
                 case 3:
@@ -392,10 +407,10 @@ namespace WeaponAndWizardry.Code
             {
                 case 1:
                     PrintTextDialogue("There are 4 potions sitting there. Some of them look a bit odd.\n"+
-                        "A red one labeled, \"In case headaches.\"\n"+
-                        "A violet one labeled, \"Better to be ___, than smart.\"\n" +
-                        "A black one labeled, \"Fear the strong.\"\n" +
-                        "A orange one labeled, \"Silver and Gold.\"\n"+
+                        "A red one labeled, \"In case of headaches.\"\n"+
+                        "A violet one labeled, \"Don't drink this one.\"\n" +
+                        "A black one labeled, \"Don't drink this one either.\"\n" +
+                        "A orange one labeled, \"Never EVER drink this one.\"\n"+
                         "Which one will you drink?" );
                     SetChoiceButtons(new Choices("The red one.", "The violet one", "The black one", "The orange one."));
                     _currentExecutingLine++;
@@ -428,9 +443,8 @@ namespace WeaponAndWizardry.Code
                     Align--;
                     break;
                 case 4:
-                    PrintTextDialogue("You drink the orange potion and suddenly gold appears in your hand.\n"+
-                        "You count it out and there's at least 200 gold pieces here.");
-                    Gold = Gold + 200;
+                    PrintTextDialogue("You drink the orange potion and suddenly your body begins to ache badly.");
+                    HP = HP - 10;
                     break;
             }
             SetChoiceButtons(nextChoice);
@@ -439,7 +453,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line34()
         {
-            PrintTextDialogue("\"Admiring my potions are you?\"");
+            PrintTextDialogue("\"Don't drink those!\"\n"+
+                "You hear a desperate voice say in the distance.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -452,12 +467,273 @@ namespace WeaponAndWizardry.Code
             _currentExecutingLine++;
         }
 
-        private void Ch1Line70()
+        private void Ch1Line36()
         {
-            //Addforegroundimage
-            PrintTextDialogue("A puff of smoke appears and suddenly the court wizard appears before you.");
+            
+            PrintTextDialogue("\"Cough, cough cough! Ah, s-sorry about that. Haven't perfected teleportation yet.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
+
+        private void Ch1Line37()
+        {
+
+            PrintTextDialogue("\"My name is Albus, court wizard for the capital.\n"+
+                "Though you probably already knew that.\n"+
+                "In short, I need your help recovering my staff.  Without it, my magic is far less potent.\"");
+            SetChoiceButtons(new Choices("\"How did you lose it?\""));
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line38()
+        {
+            PrintTextDialogue("\"How did you lose it?\"");
+            PrintTextDialogue("\"I lost it in a nearby cave while collecting potion ingredients.\n"+
+                "Unfortunately, the cave is home to alot of monsters and I'd rather not go alone.\n"+
+                "I'm a bit of a stay-at-home, book-worm kinda guy.\"");
+            SetChoiceButtons(new Choices("\"Okay, let's go.\"", "\"Uhh... I usually go solo.\""));
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line39()
+        {
+            switch(_choicePicked)
+            {
+                case 1:
+                    PrintTextDialogue("\"Okay, let's go.\"");
+                    PrintTextDialogue("\"Catch on quick don't you? I like that.\"");
+                    break;
+                case 2:
+                    PrintTextDialogue("\"Uhh... I usually go solo.\"");
+                    PrintTextDialogue("The court wizard sighs.\n"+
+                        "\"Unfortunately, you can't. I'm the only one who can locate my staff.\n"+
+                        "You might end up in the cave for weeks without finding the thing.\"");
+                    break;
+            }
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line40()
+        {
+            PrintTextDialogue("The two of you begin to travel together out of town.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line41()
+        {
+            PrintTextDialogue("\"So, since we'll be working together, tell me about yourself.\n"+
+                "Why'd you become a monster slayer?\"");
+            SetChoiceButtons(new Choices("\"Cause I love killing bad things\"", "\"It's an easy market to make money.\"", "\"I don't know, why'd you become a wizard?\""));
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line42()
+        {
+            switch(_choicePicked)
+            {
+                case 1:
+                    PrintTextDialogue("\"Cause I love killing bad things\"");
+                    PrintTextDialogue("\"A little blood thirst never hurt anyone I suppose.\"");
+                    SetChoiceButtons(nextChoice);
+                    _currentExecutingLine++;
+                    break;
+                case 2:
+                    PrintTextDialogue("\"It's an easy market to make money.\"");
+                    PrintTextDialogue("\"Pragmatic, eh? Yea, it's tough making money in such a dangerous world we live in.\"");
+                    SetChoiceButtons(nextChoice);
+                    _currentExecutingLine++;
+                    break;
+                case 3:
+                    PrintTextDialogue("\"I don't know, why'd you become a wizard?\"");
+                    PrintTextDialogue("\"Touche.\"");
+                    SetChoiceButtons(nextChoice);
+                    _currentExecutingLine++;
+                    break;
+            }
+        }
+
+        private void Ch1Line43()
+        {
+            PrintTextDialogue("\"I became a wizard to live up to my family's expectations.\n"+
+                "The wizard looks down a bit.\"");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line44()
+        {
+            PrintTextDialogue("\"I don't know if you've noticed, but I'm a little clumsy, which is why I needed your help getting my staff back.\n"+
+                "God knows, I couldn't get it myself.\"");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line45()
+        {
+            ClearImageDisplay();
+            SetBackgroundImage("26.png");
+            PrintTextDialogue("The two of you arrive at the entrance of the cave.\n"+
+                "\"LUMINOUS\"\n"+
+                "The wizard lights the way and you both head into the cave.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line46()
+        {
+            ClearImageDisplay();
+            SetBackgroundImage("25.png");
+            PrintTextDialogue("The air is quiet... too quiet.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line47()
+        {
+
+            PrintTextDialogue("You and Albus walk deeper and deeper into the cave.\n"+
+                "\"Man, this place sure is creepy, I- AHHHH!\"");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line48()
+        {
+
+            PrintTextDialogue("You turn around to look at Albus, assuming the worst.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line49()
+        {
+
+            PrintTextDialogue("You turn around to look at Albus, assuming the worst.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line50()
+        {
+
+            PrintTextDialogue("\"Help me! I'm trapped.  I-I can't move.\"\n"+
+                "You see Albus stuck in what appears to be a large web-like substance.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line51()
+        {
+
+            PrintTextDialogue("\"My, my. What do we have here?\"\n"+
+                "You turn around to the source of the voice.\n"+
+                "A couple of adventures have come into my grasp at last.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line52()
+        {
+            //Web creature.
+            PrintTextDialogue("A spider-like being appears before you.\n"+
+                "\"A monster!\" You hear Albus cry.\n"+
+                "You draw your sword as you prepare to fight.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line53()
+        {
+            PrintTextDialogue("The spider monster hisses at you as ready your sword.\""+
+                "What do you do?");
+            SetChoiceButtons(new Choices("Attempt to strike first (Dexterity Check)", "Stay on the defensive", "Talk to her."));
+            _currentExecutingLine++;
+        }
+
+        private void Ch1Line54()
+        {
+            switch(_choicePicked)
+            {
+                case 1:
+                    PrintTextDialogue("The spider monster hisses at you as ready your sword.\"" +
+                "What do you do?");
+                break;
+
+                case 2:
+                    PrintTextDialogue("The spider monster hisses at you as ready your sword.\"" +
+                "What do you do?");
+                break;
+
+            }
+        }
+
+        //////
+
+        private void Ch2Line30()
+        {
+            ClearImageDisplay();
+            SetBackgroundImage("47.png");
+            PrintTextDialogue("You arrive at the town bar and have a seat.  The bartender appears a little busy right now.\n"+
+                "Aside from the bartender, you see a couple of guys playing cards and a trio of mean-looking mercenaries.\n"+
+                "You could ask either of these groups for information on the contract.");
+            SetChoiceButtons(new Choices("Play cards.", "Ask the mercenaries for a tip."));
+            _currentExecutingLine++;
+        }
+
+        private void Ch2Line31()
+        {
+            switch(_choicePicked)
+            {
+                case 1:
+                    PrintTextDialogue("You decide to head over to the cards game table and ask the players.");
+                    SetChoiceButtons(nextChoice);
+                    _currentExecutingLine++;
+                    break;
+                case 2:
+                    PrintTextDialogue("You decide to head over to the group of mercenaries for a tip.");
+                    SetChoiceButtons(nextChoice);
+                    _currentExecutingLine++;
+                    break;
+            }
+        }
+
+        private void Ch2Line32()
+        {
+            PrintTextDialogue("The card players make space for you to sit.\n"+
+                "\"So pal, you playing or just staring?\"");
+            SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
+            _currentExecutingLine++;
+        }
+
+        private void Ch2Line33()
+        {
+            PrintTextDialogue("The card players make space for you to sit.\n" +
+                "\"So pal, you playing or just staring?\"");
+            SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
+            _currentExecutingLine++;
+        }
+
+        private void Ch2Line34()
+        {
+            switch(_choicePicked)
+            {
+                case 1:
+                    PrintTextDialogue("\"Do you fellas know anything about the missing adventure contract?\"\n"+
+                        "You show them the contract paper you picked up.");
+                    PrintTextDialogue("\"Sorry, pal. We don't know nothing, but if you play a bit, then maybe it'll jog our memory.\"");
+                    break;
+                case 2:
+                    PrintTextDialogue("You decide to play a game (-20 Gold)");
+                    break;
+            }
+            PrintTextDialogue("The card players make space for you to sit.\n" +
+                "\"So pal, you playing or just staring?\"");
+            SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
+            _currentExecutingLine++;
+        }
+
+        #endregion
     }
 }
