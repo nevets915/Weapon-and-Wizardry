@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI.WebControls;
-using Microsoft.AspNet.SignalR.Hubs;
 
 namespace WeaponAndWizardry.Code
 {
@@ -25,7 +24,6 @@ namespace WeaponAndWizardry.Code
         private Image _currentBackgroundImage;
         private List<Image> _currentForegroundImages;
         private List<Label> _stats;
-        public static IHubConnectionContext<dynamic> Clients;
                 
         private delegate void ScriptLine();
 
@@ -471,18 +469,6 @@ namespace WeaponAndWizardry.Code
             image.ImageUrl = "~/Content/images/characters/" + url;
             _currentForegroundImages.Add(image);
             _imageDisplay.Controls.Add(image);
-        }
-
-        /// <summary>
-        /// Plays a specified background sound on the client
-        /// </summary>
-        /// <param name="soundUrl"></param>
-        public void PlayBackgroundSound(string soundUrl)
-        {
-            if (SessionHandler.SoundHubConnectionId != null)
-            {
-                Clients.Client(SessionHandler.SoundHubConnectionId).play(soundUrl);
-            }
         }
 
         #endregion Script API methods
