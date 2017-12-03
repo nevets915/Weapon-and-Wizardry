@@ -12,6 +12,8 @@ namespace WeaponAndWizardry.Code
     /// Exposes API for Script class to use.
     /// Author: 
     ///     Name: Jia Qi Lee (George) Date: 2017-11-15
+    /// Updated by:
+    ///     Name: Steven Ma           Date: 2017-12-03
     /// </summary>
     public partial class WebGameEngine
     {
