@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNet.SignalR.Hubs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,6 +16,7 @@ namespace WeaponAndWizardry.Code
     /// </summary>
     public static class SessionHandler
     {
+        #region Constant Strings
         /// <summary>
         /// Strongly-typed Script Engine string index
         /// </summary>
@@ -53,6 +56,17 @@ namespace WeaponAndWizardry.Code
         /// Strongly-typed Stats string index
         /// </summary>
         private const string _stats = "stats";
+
+        /// <summary>
+        /// Strongly-typed Sound Hub string index
+        /// </summary>
+        private const string _soundHub = "soundhub";
+
+        /// <summary>
+        /// Strongly-typed string index for a Previously visited session
+        /// </summary>
+        private const string _previousSessionState = "previoussession";
+        #endregion Constant Strings
 
         /// <summary>
         /// Returns the Session object of type Script Engine
@@ -97,6 +111,36 @@ namespace WeaponAndWizardry.Code
             set
             {
                 HttpContext.Current.Session[_mainScene] = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the Session object of type string.
+        /// The connection ID for the SoundPlayerHub
+        /// </summary>
+        public static string SoundHubConnectionId
+        {
+            get
+            {
+                if (HttpContext.Current.Session == null)
+                {
+                    return (string)PreviousSessionState[_soundHub];
+                }
+                else
+                {
+                    return (string)HttpContext.Current.Session[_soundHub];
+                }
+            }
+            set
+            {
+                if (HttpContext.Current.Session == null)
+                {
+                    PreviousSessionState[_soundHub] = value;
+                }
+                else
+                {
+                    HttpContext.Current.Session[_soundHub] = value;
+                }
             }
         }
 
