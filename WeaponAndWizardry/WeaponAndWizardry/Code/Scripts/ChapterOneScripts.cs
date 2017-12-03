@@ -372,11 +372,11 @@ namespace WeaponAndWizardry.Code
                 case 2:
                     PrintTextDialogue("You decide to go and help find the missing adventurer.\n"+
                         "You head towards the town bar to get information.");
-                    _currentExecutingLine++;
+                    _currentExecutingLine = _currentExecutingLine + 26;
                     break;
                 case 3:
                     PrintTextDialogue("You decide to try your hand at becoming a noble escort. You head to the location specified by the contract.");
-                    _currentExecutingLine++;
+                    _currentExecutingLine = _currentExecutingLine + 26;
                     break;
             }
         }
@@ -651,89 +651,89 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(new Choices("Attempt to strike first (Dexterity Check)", "Stay on the defensive", "Talk to her."));
             _currentExecutingLine++;
         }
+        /*
+       private void Ch1Line54()
+       {
+           switch(_choicePicked)
+           {
+               case 1:
+                   PrintTextDialogue("The spider monster hisses at you as ready your sword.\"" +
+               "What do you do?");
+               break;
 
-        private void Ch1Line54()
-        {
-            switch(_choicePicked)
-            {
-                case 1:
-                    PrintTextDialogue("The spider monster hisses at you as ready your sword.\"" +
-                "What do you do?");
-                break;
+               case 2:
+                   PrintTextDialogue("The spider monster hisses at you as ready your sword.\"" +
+               "What do you do?");
+               break;
 
-                case 2:
-                    PrintTextDialogue("The spider monster hisses at you as ready your sword.\"" +
-                "What do you do?");
-                break;
+           }
+       }
 
-            }
-        }
 
-        //////
 
-        private void Ch2Line30()
-        {
-            ClearImageDisplay();
-            SetBackgroundImage("47.png");
-            PrintTextDialogue("You arrive at the town bar and have a seat.  The bartender appears a little busy right now.\n"+
-                "Aside from the bartender, you see a couple of guys playing cards and a trio of mean-looking mercenaries.\n"+
-                "You could ask either of these groups for information on the contract.");
-            SetChoiceButtons(new Choices("Play cards.", "Ask the mercenaries for a tip."));
-            _currentExecutingLine++;
-        }
+       private void Ch2Line30()
+       {
+           ClearImageDisplay();
+           SetBackgroundImage("47.png");
+           PrintTextDialogue("You arrive at the town bar and have a seat.  The bartender appears a little busy right now.\n"+
+               "Aside from the bartender, you see a couple of guys playing cards and a trio of mean-looking mercenaries.\n"+
+               "You could ask either of these groups for information on the contract.");
+           SetChoiceButtons(new Choices("Play cards.", "Ask the mercenaries for a tip."));
+           _currentExecutingLine++;
+       }
 
-        private void Ch2Line31()
-        {
-            switch(_choicePicked)
-            {
-                case 1:
-                    PrintTextDialogue("You decide to head over to the cards game table and ask the players.");
-                    SetChoiceButtons(nextChoice);
-                    _currentExecutingLine++;
-                    break;
-                case 2:
-                    PrintTextDialogue("You decide to head over to the group of mercenaries for a tip.");
-                    SetChoiceButtons(nextChoice);
-                    _currentExecutingLine++;
-                    break;
-            }
-        }
+       private void Ch2Line31()
+       {
+           switch(_choicePicked)
+           {
+               case 1:
+                   PrintTextDialogue("You decide to head over to the cards game table and ask the players.");
+                   SetChoiceButtons(nextChoice);
+                   _currentExecutingLine++;
+                   break;
+               case 2:
+                   PrintTextDialogue("You decide to head over to the group of mercenaries for a tip.");
+                   SetChoiceButtons(nextChoice);
+                   _currentExecutingLine++;
+                   break;
+           }
+       }
 
-        private void Ch2Line32()
-        {
-            PrintTextDialogue("The card players make space for you to sit.\n"+
-                "\"So pal, you playing or just staring?\"");
-            SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
-            _currentExecutingLine++;
-        }
+       private void Ch2Line32()
+       {
+           PrintTextDialogue("The card players make space for you to sit.\n"+
+               "\"So pal, you playing or just staring?\"");
+           SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
+           _currentExecutingLine++;
+       }
 
-        private void Ch2Line33()
-        {
-            PrintTextDialogue("The card players make space for you to sit.\n" +
-                "\"So pal, you playing or just staring?\"");
-            SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
-            _currentExecutingLine++;
-        }
+       private void Ch2Line33()
+       {
+           PrintTextDialogue("The card players make space for you to sit.\n" +
+               "\"So pal, you playing or just staring?\"");
+           SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
+           _currentExecutingLine++;
+       }
 
-        private void Ch2Line34()
-        {
-            switch(_choicePicked)
-            {
-                case 1:
-                    PrintTextDialogue("\"Do you fellas know anything about the missing adventure contract?\"\n"+
-                        "You show them the contract paper you picked up.");
-                    PrintTextDialogue("\"Sorry, pal. We don't know nothing, but if you play a bit, then maybe it'll jog our memory.\"");
-                    break;
-                case 2:
-                    PrintTextDialogue("You decide to play a game (-20 Gold)");
-                    break;
-            }
-            PrintTextDialogue("The card players make space for you to sit.\n" +
-                "\"So pal, you playing or just staring?\"");
-            SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
-            _currentExecutingLine++;
-        }
-
+       private void Ch2Line34()
+       {
+           switch(_choicePicked)
+           {
+               case 1:
+                   PrintTextDialogue("\"Do you fellas know anything about the missing adventure contract?\"\n"+
+                       "You show them the contract paper you picked up.");
+                   PrintTextDialogue("\"Sorry, pal. We don't know nothing, but if you play a bit, then maybe it'll jog our memory.\"");
+                   break;
+               case 2:
+                   PrintTextDialogue("You decide to play a game (-20 Gold)");
+                   break;
+           }
+           PrintTextDialogue("The card players make space for you to sit.\n" +
+               "\"So pal, you playing or just staring?\"");
+           SetChoiceButtons(new Choices("Play", "Ask questions about the contract"));
+           _currentExecutingLine++;
+       }
+       */
         #endregion
     }
 }

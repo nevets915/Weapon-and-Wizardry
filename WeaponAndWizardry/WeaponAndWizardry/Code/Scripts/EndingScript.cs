@@ -88,11 +88,11 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine6()
         {
-            SetChoiceButtons(new Choices("Princess Melty", "Hero Motaire", "Royal escort Isis", "Other"));
+            SetChoiceButtons(new Choices("Princess Melty"));
             PrintTextDialogue("\"Please select a character ending you wish to view.\"");
             _currentExecutingLine++;
         }
-
+        //, "Hero Motaire", "Royal escort Isis", "Other"
 
         private void EndingLine7()
         {
@@ -199,9 +199,91 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine15()
         {
-            PrintLineTextDialogue("Oh, and you got married to the princess ");
+            PrintLineTextDialogue("Oh, and you got married to the princess.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
+        }
+
+        private void EndingLine16()
+        {
+            PrintLineTextDialogue("\"The kingdom can wait a little bit longer.\n" + 
+                "I'll give you a kiss if you stay.\""+
+                "The princess smiles playfully at you.");
+            SetChoiceButtons(new Choices("Kiss her.", "Don't kiss her."));
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine17()
+        {
+            switch (_choicePicked)
+            {
+                case 1:
+                    PrintLineTextDialogue("You chuckle lightly and bring the princess close to you.\n"+
+                        "Your lips slowly close in to meet the princess's");
+                    break;
+            }
+            PrintLineTextDialogue("Suddenly you hear a knock at the door.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine18()
+        {
+            PrintLineTextDialogue("\"My lord and my lady. Your presence is required for your royal coronation. \n" +
+                "Please hurry as we are already behind schedule.\"");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine19()
+        {
+            PrintLineTextDialogue("You sigh and the princess giggles gleefully as you reluctantly get dressed.\n"+
+                "\"Don't worry, love. We can spend more time together once we're done our royal duties.\"");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine20()
+        {
+            PrintLineTextDialogue("You smile back at the princess and make your way to the door of your chambers.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine21()
+        {
+            PrintLineTextDialogue("\"Oh and don't forget this.\"");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine22()
+        {
+            PrintLineTextDialogue("You turn around and before you know it, the princess gives you a sweet, loving kiss and a soft embrace.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine23()
+        {
+            PrintLineTextDialogue("The princess whispers softly in your ear before sending you on your way.\n"+
+                "\"I love you.\"");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine24()
+        {
+            PrintLineTextDialogue("You leave your chambers with a big grin on your face as your royal guards escort you.");
+            SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
+        }
+
+        private void EndingLine25()
+        {
+            PrintLineTextDialogue("A king's job is never done.");
+            SetChoiceButtons(nextChoice);
+            //exit
         }
 
         #endregion
