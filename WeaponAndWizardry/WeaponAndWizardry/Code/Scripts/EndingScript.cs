@@ -22,7 +22,30 @@ namespace WeaponAndWizardry.Code
         public void LoadEndingScript()
         {
             _scriptLines.Add(EndingLine1);
-
+            _scriptLines.Add(EndingLine2);
+            _scriptLines.Add(EndingLine3);
+            _scriptLines.Add(EndingLine4);
+            _scriptLines.Add(EndingLine5);
+            _scriptLines.Add(EndingLine6);
+            _scriptLines.Add(EndingLine7);
+            _scriptLines.Add(EndingLine8);
+            _scriptLines.Add(EndingLine9);
+            _scriptLines.Add(EndingLine10);
+            _scriptLines.Add(EndingLine11);
+            _scriptLines.Add(EndingLine12);
+            _scriptLines.Add(EndingLine13);
+            _scriptLines.Add(EndingLine14);
+            _scriptLines.Add(EndingLine15);
+            _scriptLines.Add(EndingLine16);
+            _scriptLines.Add(EndingLine17);
+            _scriptLines.Add(EndingLine18);
+            _scriptLines.Add(EndingLine19);
+            _scriptLines.Add(EndingLine20);
+            _scriptLines.Add(EndingLine21);
+            _scriptLines.Add(EndingLine22);
+            _scriptLines.Add(EndingLine23);
+            _scriptLines.Add(EndingLine24);
+            
         }
 
         #endregion
@@ -37,11 +60,9 @@ namespace WeaponAndWizardry.Code
         private void EndingLine1()
         {
             ClearImageDisplay();
-            //SetBackgroundImage("gameover.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Suddenly a flash of light blinds your eyes.\n"+
                 "You've felt this sensation before.");
-            //QuitGame();
         }
 
         private void EndingLine2()
@@ -80,11 +101,12 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Ilias_happy.png", 100, 20, 12, 640, 480);
-            SetChoiceButtons(new Choices("Princess Melty", "Hero Motaire", "Royal escort Isis", "Other"));
+            SetChoiceButtons(new Choices("Princess Melty"));
             PrintTextDialogue("\"Before we end off, I would like to show you just a glimpse of one of the possible endings to this game as a thank you.\"");
             PrintTextDialogue("\"Please select a character ending you wish to view.\"");
-            _currentExecutingLine++;
+            _currentExecutingLine = _currentExecutingLine + 2;
         }
+        //"Hero Motaire", "Royal escort Isis", "Other"
 
         private void EndingLine6()
         {
@@ -151,7 +173,7 @@ namespace WeaponAndWizardry.Code
                     _currentExecutingLine++;
                     break;
                 case 4:
-                    PrintTextDialogue("\"My, my. What a greedy hero I've raised.\"");
+                    PrintTextDialogue("\"Hmm? Is there another you wish to view?\"");
                     SetChoiceButtons(nextChoice);
                     _currentExecutingLine = _currentExecutingLine - 3;
                     break;
@@ -178,33 +200,26 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine12()
         {
-            PrintLineTextDialogue("This of course came with castles, money and everything you could ever hope for.");
+            PrintLineTextDialogue("You attempt to stand up from your bed, but are stopped by a very familiar soft embrace.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine13()
         {
-            PrintLineTextDialogue("You attempt to stand up from your bed, but are stopped by a very familiar soft embrace.");
+            PrintLineTextDialogue("\"Nnnn, 5 more minutes, honey.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine14()
         {
-            PrintLineTextDialogue("\"Nnnn, 5 more minutes, honey.\"");
-            SetChoiceButtons(nextChoice);
-            _currentExecutingLine++;
-        }
-
-        private void EndingLine15()
-        {
             PrintLineTextDialogue("Oh, and you got married to the princess.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
-        private void EndingLine16()
+        private void EndingLine15()
         {
             PrintLineTextDialogue("\"The kingdom can wait a little bit longer.\n" + 
                 "I'll give you a kiss if you stay.\""+
@@ -213,7 +228,7 @@ namespace WeaponAndWizardry.Code
             _currentExecutingLine++;
         }
 
-        private void EndingLine17()
+        private void EndingLine16()
         {
             switch (_choicePicked)
             {
@@ -227,7 +242,7 @@ namespace WeaponAndWizardry.Code
             _currentExecutingLine++;
         }
 
-        private void EndingLine18()
+        private void EndingLine17()
         {
             PrintLineTextDialogue("\"My lord and my lady. Your presence is required for your royal coronation. \n" +
                 "Please hurry as we are already behind schedule.\"");
@@ -235,7 +250,7 @@ namespace WeaponAndWizardry.Code
             _currentExecutingLine++;
         }
 
-        private void EndingLine19()
+        private void EndingLine18()
         {
             PrintLineTextDialogue("You sigh and the princess giggles gleefully as you reluctantly get dressed.\n"+
                 "\"Don't worry, love. We can spend more time together once we're done our royal duties.\"");
@@ -243,28 +258,28 @@ namespace WeaponAndWizardry.Code
             _currentExecutingLine++;
         }
 
-        private void EndingLine20()
+        private void EndingLine19()
         {
             PrintLineTextDialogue("You smile back at the princess and make your way to the door of your chambers.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
-        private void EndingLine21()
+        private void EndingLine20()
         {
             PrintLineTextDialogue("\"Oh and don't forget this.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
-        private void EndingLine22()
+        private void EndingLine21()
         {
             PrintLineTextDialogue("You turn around and before you know it, the princess gives you a sweet, loving kiss and a soft embrace.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
-        private void EndingLine23()
+        private void EndingLine22()
         {
             PrintLineTextDialogue("The princess whispers softly in your ear before sending you on your way.\n"+
                 "\"I love you.\"");
@@ -272,14 +287,14 @@ namespace WeaponAndWizardry.Code
             _currentExecutingLine++;
         }
 
-        private void EndingLine24()
+        private void EndingLine23()
         {
             PrintLineTextDialogue("You leave your chambers with a big grin on your face as your royal guards escort you.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
-        private void EndingLine25()
+        private void EndingLine24()
         {
             PrintLineTextDialogue("A king's job is never done.");
             SetChoiceButtons(nextChoice);

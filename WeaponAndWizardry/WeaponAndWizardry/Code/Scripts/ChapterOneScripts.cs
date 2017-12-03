@@ -55,6 +55,26 @@ namespace WeaponAndWizardry.Code
             _scriptLines.Add(Ch1Line31);
             _scriptLines.Add(Ch1Line32);
             _scriptLines.Add(Ch1Line33);
+            _scriptLines.Add(Ch1Line34);
+            _scriptLines.Add(Ch1Line35);
+            _scriptLines.Add(Ch1Line36);
+            _scriptLines.Add(Ch1Line37);
+            _scriptLines.Add(Ch1Line38);
+            _scriptLines.Add(Ch1Line39);
+            _scriptLines.Add(Ch1Line40);
+            _scriptLines.Add(Ch1Line41);
+            _scriptLines.Add(Ch1Line42);
+            _scriptLines.Add(Ch1Line43);
+            _scriptLines.Add(Ch1Line44);
+            _scriptLines.Add(Ch1Line45);
+            _scriptLines.Add(Ch1Line46);
+            _scriptLines.Add(Ch1Line47);
+            _scriptLines.Add(Ch1Line48);
+            _scriptLines.Add(Ch1Line49);
+            _scriptLines.Add(Ch1Line50);
+            _scriptLines.Add(Ch1Line51);
+            _scriptLines.Add(Ch1Line52);
+            _scriptLines.Add(Ch1Line53);
         }
 
         #endregion
@@ -182,6 +202,7 @@ namespace WeaponAndWizardry.Code
                     PrintTextDialogue("You decide to just wait patiently. Stealing is wrong after all.");
                     break;
             }
+            SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
         private void Ch1Line10()
@@ -379,6 +400,7 @@ namespace WeaponAndWizardry.Code
                     _currentExecutingLine = _currentExecutingLine + 26;
                     break;
             }
+            SetChoiceButtons(nextChoice);
         }
 
         private void Ch1Line30()
@@ -388,6 +410,7 @@ namespace WeaponAndWizardry.Code
                 "Considering that a court wizard is a person wielding magic for the royal family, they should be able to easily get able-bodies to help them.\n"+
                 "You put your thoughts on hold before entering the wizard's home.");
             _currentExecutingLine++;
+            SetChoiceButtons(nextChoice);
         }
 
         private void Ch1Line31()
@@ -399,6 +422,7 @@ namespace WeaponAndWizardry.Code
                 "You could sample the potions to see what they do before the wizard arrives.");
             SetChoiceButtons(new Choices("Drink a potion", "Wait patiently."));
             _currentExecutingLine++;
+            SetChoiceButtons(nextChoice);
         }
 
         private void Ch1Line32()
@@ -417,9 +441,11 @@ namespace WeaponAndWizardry.Code
                     break;
                 case 2:
                     PrintTextDialogue("You decide not to drink any of the potions.\nWinners don't use drugs.");
+                    SetChoiceButtons(nextChoice);
                     _currentExecutingLine = _currentExecutingLine + 2;
                     break;
             } 
+
         }
 
         private void Ch1Line33()
@@ -649,7 +675,7 @@ namespace WeaponAndWizardry.Code
             PrintTextDialogue("The spider monster hisses at you as ready your sword.\""+
                 "What do you do?");
             SetChoiceButtons(new Choices("Attempt to strike first (Dexterity Check)", "Stay on the defensive", "Talk to her."));
-            _currentExecutingLine++;
+            _currentExecutingLine = _currentExecutingLine + 2;
         }
         /*
        private void Ch1Line54()

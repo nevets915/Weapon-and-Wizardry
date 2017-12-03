@@ -19,6 +19,7 @@ namespace WeaponAndWizardry.Code
         {
             LoadPrologueScripts();
             LoadChapterOneScripts();
+            LoadEndingScript();
         }
 
 
