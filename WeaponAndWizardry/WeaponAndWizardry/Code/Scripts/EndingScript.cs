@@ -60,15 +60,15 @@ namespace WeaponAndWizardry.Code
         private void EndingLine1()
         {
             ClearImageDisplay();
+            SetBackgroundImage("01.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Suddenly a flash of light blinds your eyes.\n"+
                 "You've felt this sensation before.");
+            _currentExecutingLine++;
         }
 
         private void EndingLine2()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
             AddForegroundImage("Ilias_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Hello user, thank you for participating in this version of Weapons and Wizardry.\n" +

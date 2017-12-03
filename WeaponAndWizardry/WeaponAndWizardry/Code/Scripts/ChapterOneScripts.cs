@@ -326,7 +326,7 @@ namespace WeaponAndWizardry.Code
                     else
                     {
                         PrintTextDialogue("\"I'll do it... for a date.\"");
-                        PrintTextDialogue("\"Please don't joke around with a maiden's heart.\""+
+                        PrintTextDialogue("\"Please don't joke around with a maiden's heart.\"\n"+
                             "You feel the angry stares intensify from the two guards behind you.");
                         _currentExecutingLine = _currentExecutingLine + 2;
                     }
@@ -393,11 +393,11 @@ namespace WeaponAndWizardry.Code
                 case 2:
                     PrintTextDialogue("You decide to go and help find the missing adventurer.\n"+
                         "You head towards the town bar to get information.");
-                    _currentExecutingLine = _currentExecutingLine + 26;
+                    _currentExecutingLine = _currentExecutingLine + 25;
                     break;
                 case 3:
                     PrintTextDialogue("You decide to try your hand at becoming a noble escort. You head to the location specified by the contract.");
-                    _currentExecutingLine = _currentExecutingLine + 26;
+                    _currentExecutingLine = _currentExecutingLine + 25;
                     break;
             }
             SetChoiceButtons(nextChoice);
@@ -542,6 +542,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line40()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("35.png");
             PrintTextDialogue("The two of you begin to travel together out of town.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -675,7 +677,7 @@ namespace WeaponAndWizardry.Code
             PrintTextDialogue("The spider monster hisses at you as ready your sword.\""+
                 "What do you do?");
             SetChoiceButtons(new Choices("Attempt to strike first (Dexterity Check)", "Stay on the defensive", "Talk to her."));
-            _currentExecutingLine = _currentExecutingLine + 2;
+            _currentExecutingLine = _currentExecutingLine + 1;
         }
         /*
        private void Ch1Line54()

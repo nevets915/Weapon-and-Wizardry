@@ -168,8 +168,6 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue2()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
             AddForegroundImage("Ilias_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Oh brave hero…\"\nYou hear a beautiful voice begin to call you.\n"
