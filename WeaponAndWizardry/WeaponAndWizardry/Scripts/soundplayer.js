@@ -61,4 +61,4 @@ $(function () {
 //Play the title theme
 setTimeout(function () {
     playbgm("content/sounds/bgm/OpeningTheme1.mp3");
-}, 3000);
+}, 5000);

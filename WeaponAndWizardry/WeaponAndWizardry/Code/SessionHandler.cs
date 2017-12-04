@@ -393,7 +393,15 @@ namespace WeaponAndWizardry.Code
         /// </summary>
         public static void ClearSession()
         {
-            HttpContext.Current.Session.Clear();
+            ScriptEngine = null;
+            MainScene = null;
+            SoundHubConnectionId = null;
+            ImageDisplay = null;
+            TextDisplay = null;
+            Stats = null;
+            ChoiceButtons = null;
+            ChoicesPicked = null;
+            Guid = Guid.Empty;
         }
     }
 }
