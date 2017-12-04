@@ -2,17 +2,22 @@
 
 var effectPlaying;
 var backgroundPlaying;
-var sounds = [
+var bgm = [
     { src: "content/sounds/bgm/OpeningTheme1.mp3"   , id: "content/sounds/bgm/OpeningTheme1.mp3"    },
     { src: "content/sounds/bgm/OpeningTheme2.mp3"   , id: "content/sounds/bgm/OpeningTheme2.mp3"    },
     { src: "content/sounds/bgm/PeaceTheme.mp3"      , id: "content/sounds/bgm/PeaceTheme.mp3"       },
     { src: "content/sounds/bgm/CampTheme.mp3"       , id: "content/sounds/bgm/CampTheme.mp3"        },
 ];
 
+var sfx = [
+    { src: "content/sounds/sfx/explode.wav", id: "content/sounds/sfx/explode.wav" },
+];
+
 //Loads all the sounds into SoundJs
 function loadSound()
 {
-    createjs.Sound.registerSounds(sounds);
+    createjs.Sound.registerSounds(bgm);
+    createjs.Sound.registerSounds(sfx);
 }
 
 //Plays a background sound
@@ -22,25 +27,28 @@ function playbgm(soundID)
         backgroundPlaying.stop();
     var props = new createjs.PlayPropsConfig().set({ loop: -1 });
     console.log(props);
-    console.log("Playing: " + soundID);
+    console.log("Playing BGM: " + soundID);
     backgroundPlaying = createjs.Sound.play(soundID, props);
 }
 
+//Plays a sound effect
 function playSound(soundID, loop) {
-    createjs.Sound.stop();
+    if (effectPlaying != null && effectPlaying.playState == "playSucceeded")
+        effectPlaying.stop();
     var props = new createjs.PlayPropsConfig().set({ loop: Number(loop) });
     console.log(props);
-    console.log("Playing: " + soundID);
-    createjs.Sound.play(soundID, props);
+    console.log("Playing SFX: " + soundID);
+    effectPlaying = createjs.Sound.play(soundID, props);
 }
 
 loadSound();
 
+//SignalR setup code
 $(function () {
     // Declare a proxy to reference the hub.
     var player = $.connection.soundPlayerHub;
 
-    player.client.play = function (sound, loop) {
+    player.client.playSfx = function (sound, loop) {
         playSound(sound, loop);
     };
 
@@ -61,4 +69,4 @@ $(function () {
 //Play the title theme
 setTimeout(function () {
     playbgm("content/sounds/bgm/OpeningTheme1.mp3");
-}, 5000);
+}, 4000);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.SignalR.Hubs;
+using System.Threading;
 
 namespace WeaponAndWizardry.Code
 {
@@ -476,12 +477,25 @@ namespace WeaponAndWizardry.Code
         /// <summary>
         /// Plays a specified background sound on the client
         /// </summary>
-        /// <param name="soundUrl"></param>
+        /// <param name="soundUrl">the sound file url to play</param>
         public void PlayBackgroundSound(string soundUrl)
         {
             if (SessionHandler.SoundHubConnectionId != null)
             {
                 SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).playBackground(soundUrl);
+            }
+        }
+
+        /// <summary>
+        /// Plays a specified sound effect on the client
+        /// </summary>
+        /// <param name="soundUrl">the sound file url to play</param>
+        /// <param name="loop">Keep the sound looping for a specified amount. 0 for none, -1 for infinite loop</param>
+        public void PlaySoundEffect(string soundUrl, int loop)
+        {
+            if (SessionHandler.SoundHubConnectionId != null)
+            {
+                SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).playSfx(soundUrl, loop);
             }
         }
 
