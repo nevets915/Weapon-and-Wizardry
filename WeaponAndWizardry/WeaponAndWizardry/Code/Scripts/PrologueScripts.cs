@@ -1165,8 +1165,10 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("gameover.png");
+            HP = 0;
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("GAME OVER! \nReturning to Title Screen.");
+            //QuitGame(this);
         }
 
         private void Prologue68()

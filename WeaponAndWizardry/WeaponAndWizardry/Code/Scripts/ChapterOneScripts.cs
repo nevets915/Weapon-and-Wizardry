@@ -242,7 +242,7 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line15()
         {
-            //AddForegroundImage();
+            AddForegroundImage("Princess_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("Princess Melty?!?");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -258,6 +258,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line17()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Princess_blush", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"Ah, it's my fault. I've always been a little clumsy.\"\n"+
                 "You're taken back by the princess's humbleness. She gives off an aura that suits a favourable ruler.\n\nTop it all off, she's cute.");
             SetChoiceButtons(nextChoice);
@@ -266,6 +268,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line18()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Princess_happy", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"You're probably wondering why you're met with the princess instead of the king.\n"+
                 "Truth is, I'm the one who requested you.\"");
             SetChoiceButtons(nextChoice);
@@ -274,6 +278,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line19()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Princess_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"I've heard of your work, and I believe that you can help the capital with all of it's monster issues.\n"+
                 "You've seen the notice board, correct? It's full of the people's problems with monsters.\"");
             SetChoiceButtons(nextChoice);
@@ -291,6 +297,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line21()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Princess_happy", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"Please help with my request in aiding the people with monster attacks as peacefully as possible.\n" +
                 "The princess makes a small bow to you, which shocks the two guards behind you.");
             SetChoiceButtons(nextChoice);
@@ -317,6 +325,8 @@ namespace WeaponAndWizardry.Code
                 case 2:
                     if (Align == Alignment.Adored)
                     {
+                        ClearForegroundImages();
+                        AddForegroundImage("Princess_blush", 100, 20, 12, 640, 480);
                         PrintTextDialogue("\"I'll do it... for a date.\"");
                         PrintTextDialogue("\"A d-date?!\"\n"+
                             "The princess looks surprised and a little embarassed.\n"+
@@ -325,6 +335,8 @@ namespace WeaponAndWizardry.Code
                     }
                     else
                     {
+                        ClearForegroundImages();
+                        AddForegroundImage("Princess_blush", 100, 20, 12, 640, 480);
                         PrintTextDialogue("\"I'll do it... for a date.\"");
                         PrintTextDialogue("\"Please don't joke around with a maiden's heart.\""+
                             "You feel the angry stares intensify from the two guards behind you.");
@@ -337,6 +349,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line24()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Princess_blush", 100, 20, 12, 640, 480);
             PrintTextDialogue("Audible only to your ears, the princess whispers very softly.");
             PrintTextDialogue("\"I'll consider it.\"");
             SetChoiceButtons(nextChoice);
@@ -345,6 +359,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line25()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Princess_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"Here is a small incentive to start you off (Gold +200).\n"+
                 "Please do your best.\"\n"+
                 "The princess gives you one last smile before you take your leave.");
@@ -355,6 +371,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line26()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Princess_happy", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"You will be of course, rewarded for your time and effort.\n" +
                 "Please do your best.\"\n" +
                 "The princess gives you one last smile before you take your leave.");
@@ -487,7 +505,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line35()
         {
-            //Addforegroundimage
+            ClearForegroundImages();
+            AddForegroundImage("Albus_angry", 100, 20, 12, 640, 480);
             PrintTextDialogue("A puff of smoke appears and suddenly the court wizard appears before you.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -495,7 +514,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line36()
         {
-            
+            ClearForegroundImages();
+            AddForegroundImage("Albus_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"Cough, cough cough! Ah, s-sorry about that. Haven't perfected teleportation yet.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -503,7 +523,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line37()
         {
-
+            ClearForegroundImages();
+            AddForegroundImage("Albus_happy", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"My name is Albus, court wizard for the capital.\n"+
                 "Though you probably already knew that.\n"+
                 "In short, I need your help recovering my staff.  Without it, my magic is far less potent.\"");
@@ -513,6 +534,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line38()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Albus_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"How did you lose it?\"");
             PrintTextDialogue("\"I lost it in a nearby cave while collecting potion ingredients.\n"+
                 "Unfortunately, the cave is home to alot of monsters and I'd rather not go alone.\n"+
@@ -526,10 +549,14 @@ namespace WeaponAndWizardry.Code
             switch(_choicePicked)
             {
                 case 1:
+                    ClearForegroundImages();
+                    AddForegroundImage("Albus_happy", 100, 20, 12, 640, 480);
                     PrintTextDialogue("\"Okay, let's go.\"");
                     PrintTextDialogue("\"Catch on quick don't you? I like that.\"");
                     break;
                 case 2:
+                    ClearForegroundImages();
+                    AddForegroundImage("Albus_surprised", 100, 20, 12, 640, 480);
                     PrintTextDialogue("\"Uhh... I usually go solo.\"");
                     PrintTextDialogue("The court wizard sighs.\n"+
                         "\"Unfortunately, you can't. I'm the only one who can locate my staff.\n"+
@@ -542,6 +569,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line40()
         {
+            ClearImageDisplay();
+            SetBackgroundImage("49.png");
             PrintTextDialogue("The two of you begin to travel together out of town.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -549,6 +578,7 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line41()
         {
+            AddForegroundImage("Albus_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"So, since we'll be working together, tell me about yourself.\n"+
                 "Why'd you become a monster slayer?\"");
             SetChoiceButtons(new Choices("\"Cause I love killing bad things\"", "\"It's an easy market to make money.\"", "\"I don't know, why'd you become a wizard?\""));
@@ -560,18 +590,24 @@ namespace WeaponAndWizardry.Code
             switch(_choicePicked)
             {
                 case 1:
+                    ClearForegroundImages();
+                    AddForegroundImage("Albus_neutral", 100, 20, 12, 640, 480);
                     PrintTextDialogue("\"Cause I love killing bad things\"");
                     PrintTextDialogue("\"A little blood thirst never hurt anyone I suppose.\"");
                     SetChoiceButtons(nextChoice);
                     _currentExecutingLine++;
                     break;
                 case 2:
+                    ClearForegroundImages();
+                    AddForegroundImage("Albus_happy", 100, 20, 12, 640, 480);
                     PrintTextDialogue("\"It's an easy market to make money.\"");
                     PrintTextDialogue("\"Pragmatic, eh? Yea, it's tough making money in such a dangerous world we live in.\"");
                     SetChoiceButtons(nextChoice);
                     _currentExecutingLine++;
                     break;
                 case 3:
+                    ClearForegroundImages();
+                    AddForegroundImage("Albus_neutral", 100, 20, 12, 640, 480);
                     PrintTextDialogue("\"I don't know, why'd you become a wizard?\"");
                     PrintTextDialogue("\"Touche.\"");
                     SetChoiceButtons(nextChoice);
@@ -582,6 +618,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line43()
         {
+            ClearForegroundImages();
+            AddForegroundImage("Albus_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"I became a wizard to live up to my family's expectations.\n"+
                 "The wizard looks down a bit.\"");
             SetChoiceButtons(nextChoice);
@@ -600,6 +638,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("26.png");
+            AddForegroundImage("Albus_angry", 100, 20, 12, 640, 480);
             PrintTextDialogue("The two of you arrive at the entrance of the cave.\n"+
                 "\"LUMINOUS\"\n"+
                 "The wizard lights the way and you both head into the cave.");
@@ -618,7 +657,6 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line47()
         {
-
             PrintTextDialogue("You and Albus walk deeper and deeper into the cave.\n"+
                 "\"Man, this place sure is creepy, I- AHHHH!\"");
             SetChoiceButtons(nextChoice);
@@ -627,10 +665,9 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line48()
         {
-
             PrintTextDialogue("You turn around to look at Albus, assuming the worst.");
             SetChoiceButtons(nextChoice);
-            _currentExecutingLine++;
+            _currentExecutingLine = _currentExecutingLine + 2;
         }
 
         private void Ch1Line49()
@@ -643,7 +680,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line50()
         {
-
+            ClearForegroundImages();
+            AddForegroundImage("Albus_surprised", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"Help me! I'm trapped.  I-I can't move.\"\n"+
                 "You see Albus stuck in what appears to be a large web-like substance.");
             SetChoiceButtons(nextChoice);
@@ -662,7 +700,8 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line52()
         {
-            //Web creature.
+            ClearForegroundImages();
+            AddForegroundImage("Spider_neutral", 100, 20, 12, 640, 480);
             PrintTextDialogue("A spider-like being appears before you.\n"+
                 "\"A monster!\" You hear Albus cry.\n"+
                 "You draw your sword as you prepare to fight.");
@@ -672,8 +711,10 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line53()
         {
-            PrintTextDialogue("The spider monster hisses at you as ready your sword.\""+
-                "What do you do?");
+            ClearForegroundImages();
+            AddForegroundImage("Spider_happy", 100, 20, 12, 640, 480);
+            PrintTextDialogue("\"Oooo, that sword looks sharp, you could hurt someone with that.\""+
+                "\nThe spider monster hisses and mocks you as your ready yourself.");
             SetChoiceButtons(new Choices("Attempt to strike first (Dexterity Check)", "Stay on the defensive", "Talk to her."));
             _currentExecutingLine = _currentExecutingLine + 2;
         }
