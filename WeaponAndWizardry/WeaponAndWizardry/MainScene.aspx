@@ -38,7 +38,7 @@
                     <br /><br /><br /><br /><br /><br />
                     <asp:Button ID="Button_Save" runat="server" Text="Save" style="width:100%;" OnClick="Button_Save_Click" />
                     <asp:Button ID="Button_Load" runat="server" Text="Load" style="width:100%;" OnClick="Button_Load_Click" />
-                    <asp:Button ID="Button_Back" runat="server" Text="Quit" PostBackUrl="~/MainMenu.aspx" style="width:100%;" OnClick="Button_Quit_Click" />
+                    <asp:Button ID="Button_Back" runat="server" Text="Quit" style="width:100%;" OnClick="Button_Quit_Click" />
                 </div>
                 <asp:TextBox ID="TextDisplay" runat="server" TextMode="MultiLine" style="font-size:large; width:97.5%;margin-left:15px;min-height:200px;min-width:800px;color: white; background-color: rgba(128, 128, 128, 0.6);"></asp:TextBox>
                 <script type="text/javascript">
