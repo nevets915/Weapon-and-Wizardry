@@ -171,6 +171,7 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Oh brave hero…\"\nYou hear a beautiful voice begin to call you.\n"
                 + "The great goddess Ilias suddenly appears before you.");
+            PlayBackgroundSound(Sounds.PeaceTheme);
             _currentExecutingLine++;
         }
 

@@ -1,24 +1,29 @@
 ﻿//Author: Jia Qi Lee (George) Date: 2017-11-15
 
-var stage1 = "content/bgm/stage1.mp3";
-var stage2 = "content/bgm/stage2.mp3";
-var openingTheme = "content/sounds/bgm/OpeningTheme1.mp3";
+var effectPlaying;
+var backgroundPlaying;
+var sounds = [
+    { src: "content/sounds/bgm/OpeningTheme1.mp3"   , id: "content/sounds/bgm/OpeningTheme1.mp3"    },
+    { src: "content/sounds/bgm/OpeningTheme2.mp3"   , id: "content/sounds/bgm/OpeningTheme2.mp3"    },
+    { src: "content/sounds/bgm/PeaceTheme.mp3"      , id: "content/sounds/bgm/PeaceTheme.mp3"       },
+    { src: "content/sounds/bgm/CampTheme.mp3"       , id: "content/sounds/bgm/CampTheme.mp3"        },
+];
 
-function loadSound() {
-    createjs.Sound.registerSound(stage1, stage1);
-    createjs.Sound.registerSound(stage2, stage2);
-    createjs.Sound.registerSound(openingTheme, openingTheme);
+//Loads all the sounds into SoundJs
+function loadSound()
+{
+    createjs.Sound.registerSounds(sounds);
 }
 
-function playBackground(sound)
+//Plays a background sound
+function playbgm(soundID)
 {
-    console.log("Playing: " + sound);
-    if (background != null && background.playState == 'PLAY_SUCCEEDED')
-    {
-        background.stop();
-    }
+    if (backgroundPlaying != null && backgroundPlaying.playState == "playSucceeded")
+        backgroundPlaying.stop();
     var props = new createjs.PlayPropsConfig().set({ loop: -1 });
-    background = createjs.Sound.play(sound, props);
+    console.log(props);
+    console.log("Playing: " + soundID);
+    backgroundPlaying = createjs.Sound.play(soundID, props);
 }
 
 function playSound(soundID, loop) {
@@ -37,11 +42,11 @@ $(function () {
 
     player.client.play = function (sound, loop) {
         playSound(sound, loop);
-    }
+    };
 
     player.client.playBackground = function (sound) {
-        playBackground(sound);
-    }
+        playbgm(sound);
+    };
 
     // Start the connection
     $.connection.hub.logging = true;
@@ -55,5 +60,5 @@ $(function () {
 
 //Play the title theme
 setTimeout(function () {
-    playSound(openingTheme);
+    playbgm("content/sounds/bgm/OpeningTheme1.mp3");
 }, 3000);

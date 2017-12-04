@@ -14,24 +14,11 @@ namespace WeaponAndWizardry.Code
     public class SoundPlayerHub : Hub
     {
         /// <summary>
-        /// Sends a command to the client to play a sound
-        /// </summary>
-        /// <param name="soundUrl">The URL of the sound to play</param>
-        public void Play(string soundUrl)
-        {
-            if (!String.IsNullOrWhiteSpace(SessionHandler.SoundHubConnectionId))
-            {
-                Clients.Client(SessionHandler.SoundHubConnectionId).play(soundUrl, -1);
-            }
-        }
-
-        /// <summary>
         /// A method called by the client to register itself to this session.
         /// </summary>
         public void RegisterClient()
         {
             SessionHandler.SoundHubConnectionId = Context.ConnectionId;
-            WeaponAndWizardry.Code.WebGameEngine.Clients = GlobalHost.ConnectionManager.GetHubContext<SoundPlayerHub>().Clients;
         }
     }
 }

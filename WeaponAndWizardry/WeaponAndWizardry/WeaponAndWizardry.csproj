@@ -505,12 +505,12 @@
     </Compile>
     <Compile Include="Code\Choices.cs" />
     <Compile Include="Code\Save.cs" />
-    <Compile Include="Code\ScriptEngine.cs" />
+    <Compile Include="Code\WebGameEngine.cs" />
     <Compile Include="Code\Scripts\PrologueScripts.cs" />
     <Content Include="Code\Scripts\ChapterOneScripts.cs" />
     <Compile Include="Code\Scripts\Scripts.cs" />
     <Compile Include="Code\SessionHandler.cs" />
-    <Compile Include="Code\Sound.cs" />
+    <Compile Include="Code\Sounds.cs" />
     <Compile Include="Code\SoundPlayerHub.cs" />
     <Compile Include="Code\Utility.cs" />
     <Compile Include="Credits.aspx.cs">

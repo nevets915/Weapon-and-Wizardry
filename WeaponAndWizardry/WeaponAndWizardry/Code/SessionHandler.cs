@@ -60,12 +60,12 @@ namespace WeaponAndWizardry.Code
         /// <summary>
         /// Strongly-typed Sound Hub string index
         /// </summary>
-        private const string _soundHub = "soundhub";
+        private const string _clientHubConnectionId = "soundhub";
 
         /// <summary>
-        /// Strongly-typed string index for a Previously visited session
+        /// Strongly-typed string index for a soundhub clients
         /// </summary>
-        private const string _previousSessionState = "previoussession";
+        private const string _clients = "clients";
         #endregion Constant Strings
 
         /// <summary>
@@ -87,6 +87,29 @@ namespace WeaponAndWizardry.Code
             set
             {
                 HttpContext.Current.Session[_engine] = value;
+            }
+        }
+
+        /// <summary>
+        /// This is stores the reference to all connected clients
+        /// for the sounderplayer SingalR
+        /// </summary>
+        public static IHubConnectionContext<dynamic> Clients
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_clients] == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return (IHubConnectionContext<dynamic>)HttpContext.Current.Session[_clients];
+                }
+            }
+            set
+            {
+                HttpContext.Current.Session[_clients] = value;
             }
         }
 
@@ -122,24 +145,66 @@ namespace WeaponAndWizardry.Code
         {
             get
             {
+                // If from SignalR connection
                 if (HttpContext.Current.Session == null)
                 {
-                    return (string)PreviousSessionState[_soundHub];
+                    try
+                    {
+                        string[] connectionid = System.IO.File.ReadAllLines(".\\tmp.txt");
+                        if (connectionid.Length > 0)
+                        {
+
+                            return connectionid[0];
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        return null;
+                    }
                 }
                 else
                 {
-                    return (string)HttpContext.Current.Session[_soundHub];
+                    if (String.IsNullOrWhiteSpace((string)HttpContext.Current.Session[_clientHubConnectionId]))
+                    {
+
+                        try
+                        {
+                            string[] connectionid = System.IO.File.ReadAllLines(".\\tmp.txt");
+                            if (connectionid.Length > 0)
+                            {
+                                HttpContext.Current.Session[_clientHubConnectionId] = connectionid[0];
+                                return connectionid[0];
+                            }
+                            else
+                            {
+                                return null;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        return (string)HttpContext.Current.Session[_clientHubConnectionId];
+                    }
                 }
             }
             set
             {
+                // If from SignalR connection
                 if (HttpContext.Current.Session == null)
                 {
-                    PreviousSessionState[_soundHub] = value;
+                    System.IO.File.WriteAllText(".\\tmp.txt", value);
                 }
                 else
                 {
-                    HttpContext.Current.Session[_soundHub] = value;
+                    HttpContext.Current.Session[_clientHubConnectionId] = value;
                 }
             }
         }
