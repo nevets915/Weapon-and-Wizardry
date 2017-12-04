@@ -481,7 +481,7 @@ namespace WeaponAndWizardry.Code
         {
             if (SessionHandler.SoundHubConnectionId != null)
             {
-                Clients.Client(SessionHandler.SoundHubConnectionId).play(soundUrl);
+                SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).playBackground(soundUrl);
             }
         }
 

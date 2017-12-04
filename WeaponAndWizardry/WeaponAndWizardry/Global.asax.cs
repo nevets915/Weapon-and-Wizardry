@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.SignalR;
+using System;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -16,30 +17,6 @@ namespace WeaponAndWizardry
         //Lock for synchronization
         private static object _lock = new object();
 
-        // TODO:
-        ///// <summary>
-        ///// Strongly-typed string index for a Previously visited session
-        ///// </summary>
-        //private const string _previousSessionState = "previoussession";
-
-        //public static HttpSessionState PreviousSessionState
-        //{
-        //    get
-        //    {
-        //        if (Application[""] == null)
-        //        {
-        //            return null;
-        //        }
-        //        else
-        //        {
-        //            return (HttpSessionState)HttpContext.Current.Session[_engine];
-        //        }
-        //    }
-        //    set
-        //    {
-        //        _previousSessionState = value;
-        //    }
-        //}
 
         void Application_Start(object sender, EventArgs e)
         {
@@ -50,11 +27,7 @@ namespace WeaponAndWizardry
 
         private void Session_Start(object sender, EventArgs e)
         {
-            // Code that runs when a new session is started
-            lock (_lock)
-            {
-                SessionHandler.PreviousSessionState = Session;
-            }
+            SessionHandler.Clients = GlobalHost.ConnectionManager.GetHubContext<SoundPlayerHub>().Clients;
         }
     }
 }
