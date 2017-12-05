@@ -3,10 +3,10 @@
 var effectPlaying;
 var backgroundPlaying;
 var bgm = [
-    { src: "content/sounds/bgm/OpeningTheme1.mp3"   , id: "content/sounds/bgm/OpeningTheme1.mp3"    },
-    { src: "content/sounds/bgm/OpeningTheme2.mp3"   , id: "content/sounds/bgm/OpeningTheme2.mp3"    },
-    { src: "content/sounds/bgm/PeaceTheme.mp3"      , id: "content/sounds/bgm/PeaceTheme.mp3"       },
-    { src: "content/sounds/bgm/CampTheme.mp3"       , id: "content/sounds/bgm/CampTheme.mp3"        },
+    { src: "content/sounds/bgm/OpeningTheme1.mp3", id: "content/sounds/bgm/OpeningTheme1.mp3" },
+    { src: "content/sounds/bgm/OpeningTheme2.mp3", id: "content/sounds/bgm/OpeningTheme2.mp3" },
+    { src: "content/sounds/bgm/PeaceTheme.mp3", id: "content/sounds/bgm/PeaceTheme.mp3" },
+    { src: "content/sounds/bgm/CampTheme.mp3", id: "content/sounds/bgm/CampTheme.mp3" },
 ];
 
 var sfx = [
@@ -14,15 +14,13 @@ var sfx = [
 ];
 
 //Loads all the sounds into SoundJs
-function loadSound()
-{
+function loadSound() {
     createjs.Sound.registerSounds(bgm);
     createjs.Sound.registerSounds(sfx);
 }
 
 //Plays a background sound
-function playbgm(soundID)
-{
+function playbgm(soundID) {
     if (backgroundPlaying != null && backgroundPlaying.playState == "playSucceeded")
         backgroundPlaying.stop();
     var props = new createjs.PlayPropsConfig().set({ loop: -1 });
@@ -52,14 +50,30 @@ $(function () {
         playSound(sound, loop);
     };
 
+    player.client.stopSfx = function () {
+        if (effectPlaying != null && effectPlaying.playState == "playSucceeded")
+            effectPlaying.stop();
+    };
+
     player.client.playBackground = function (sound) {
         playbgm(sound);
+    };
+
+    player.client.stopBackground = function (sound) {
+        if (backgroundPlaying != null && backgroundPlaying.playState == "playSucceeded")
+            backgroundPlaying.stop();
+    };
+
+    player.client.stopAllSounds = function () {
+        createjs.Sound.stop();
+        backgroundPlaying = null;
+        effectPlaying = null;
     };
 
     // Start the connection
     $.connection.hub.logging = true;
     $.connection.hub.start().done(function () {
-        // Call the Send method on the hub. 
+        // Call the Send method on the hub.
         setTimeout(function () {
             player.server.registerClient();
         }, 1000);
@@ -69,4 +83,4 @@ $(function () {
 //Play the title theme
 setTimeout(function () {
     playbgm("content/sounds/bgm/OpeningTheme1.mp3");
-}, 4000);
+}, 3000);

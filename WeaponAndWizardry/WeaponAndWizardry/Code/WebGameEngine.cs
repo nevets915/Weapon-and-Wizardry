@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
 using System.Web.UI.WebControls;
-using Microsoft.AspNet.SignalR.Hubs;
-using System.Threading;
 
 namespace WeaponAndWizardry.Code
 {
@@ -12,7 +9,7 @@ namespace WeaponAndWizardry.Code
     /// for ASP.NET webforms.
     /// Handles execution of scenario scripts.
     /// Exposes API for Script class to use.
-    /// Author: 
+    /// Author:
     ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public partial class WebGameEngine
@@ -26,16 +23,16 @@ namespace WeaponAndWizardry.Code
         private Image _currentBackgroundImage;
         private List<Image> _currentForegroundImages;
         private List<Label> _stats;
-        public static IHubConnectionContext<dynamic> Clients;
-                
+
         private delegate void ScriptLine();
 
         #region Properties
+
         /// <summary>
         /// Gets or Sets the HP stat of the character
         /// </summary>
         public int HP
-        {            
+        {
             get
             {
                 foreach (Label label in _stats)
@@ -110,7 +107,7 @@ namespace WeaponAndWizardry.Code
                 {
                     if (label.Text.Contains("Dex"))
                     {
-                        return (Dexterity)Enum.Parse(typeof(Dexterity),label.Text.Substring(4));
+                        return (Dexterity)Enum.Parse(typeof(Dexterity), label.Text.Substring(4));
                     }
                 }
                 return 0;
@@ -121,11 +118,11 @@ namespace WeaponAndWizardry.Code
                 {
                     if (label.Text.Contains("Dex"))
                     {
-                        if(value > Dexterity.Agile)
+                        if (value > Dexterity.Agile)
                         {
                             value = Dexterity.Agile;
                         }
-                        if(value < Dexterity.Uncoordinated)
+                        if (value < Dexterity.Uncoordinated)
                         {
                             value = Dexterity.Uncoordinated;
                         }
@@ -146,7 +143,7 @@ namespace WeaponAndWizardry.Code
                 {
                     if (label.Text.Contains("Int"))
                     {
-                        return (Intelligence)Enum.Parse(typeof(Intelligence),label.Text.Substring(4));
+                        return (Intelligence)Enum.Parse(typeof(Intelligence), label.Text.Substring(4));
                     }
                 }
                 return 0;
@@ -182,7 +179,7 @@ namespace WeaponAndWizardry.Code
                 {
                     if (label.Text.Contains("Luk"))
                     {
-                        return (Luck)Enum.Parse(typeof(Luck),label.Text.Substring(4));
+                        return (Luck)Enum.Parse(typeof(Luck), label.Text.Substring(4));
                     }
                 }
                 return 0;
@@ -215,7 +212,7 @@ namespace WeaponAndWizardry.Code
                 {
                     if (label.Text.Contains("Alignment"))
                     {
-                        return (Alignment)Enum.Parse(typeof(Alignment),label.Text.Substring(10));
+                        return (Alignment)Enum.Parse(typeof(Alignment), label.Text.Substring(10));
                     }
                 }
                 return 0;
@@ -284,8 +281,8 @@ namespace WeaponAndWizardry.Code
             _choiceButtons = choiceButtons;
             _currentBackgroundImage = null;
             _stats = stats;
-            LoadScripts();            
-        }        
+            LoadScripts();
+        }
 
         /// <summary>
         /// Updates the references to the GUI controls.
@@ -496,6 +493,39 @@ namespace WeaponAndWizardry.Code
             if (SessionHandler.SoundHubConnectionId != null)
             {
                 SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).playSfx(soundUrl, loop);
+            }
+        }
+
+        /// <summary>
+        /// Stops sound effects from playing
+        /// </summary>
+        public void StopSoundEffect()
+        {
+            if (SessionHandler.SoundHubConnectionId != null)
+            {
+                SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).stopSfx();
+            }
+        }
+
+        /// <summary>
+        /// Stops background sounds from playing
+        /// </summary>
+        public void StopBackgroundSound()
+        {
+            if (SessionHandler.SoundHubConnectionId != null)
+            {
+                SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).stopBackground();
+            }
+        }
+
+        /// <summary>
+        /// Stops all sounds playing on the client
+        /// </summary>
+        public void StopAllSounds()
+        {
+            if (SessionHandler.SoundHubConnectionId != null)
+            {
+                SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).stopAllSounds();
             }
         }
 
