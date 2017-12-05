@@ -56,7 +56,7 @@ namespace WeaponAndWizardry.Code
             SetBackgroundImage("gameover.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Game over\nReturning to main menu.");
-            QuitGame();
+            //QuitGame();
         }
 
         private void Ch1Line2()
