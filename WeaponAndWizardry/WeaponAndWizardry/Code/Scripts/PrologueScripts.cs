@@ -15,12 +15,12 @@ namespace WeaponAndWizardry.Code
         private bool _haggledReward = false;
         private bool _savedSolider = false;
 
-        public enum Health { Dying, Maimed, Wounded, Healthy};
+        public enum Health { Dying, Maimed, Wounded, Healthy };
         public enum Strength { Pitiful, Weak, Average, Strong, Herculean };
         public enum Dexterity { Uncoordinated, Clumsy, Average, Nimble, Agile };
         public enum Intelligence { Dumb, Foolish, Average, Brilliant, Enlightened };
         public enum Luck { Jinxed, Unlucky, Average, Lucky, Blessed };
-        public enum Alignment { Wicked, Evil, Troublesome, Neutral, Likeable, Good, Adored}
+        public enum Alignment { Wicked, Evil, Troublesome, Neutral, Likeable, Good, Adored }
 
 
         /// <summary>
@@ -146,6 +146,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue1()
         {
+            PlayBackgroundSound(Sounds.IliasTheme);
             _monsterSlain = false;
             _haggledReward = false;
             HP = 100;
@@ -171,7 +172,6 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Oh brave hero…\"\nYou hear a beautiful voice begin to call you.\n"
                 + "The great goddess Ilias suddenly appears before you.");
-            PlayBackgroundSound(Sounds.PeaceTheme);
             _currentExecutingLine++;
         }
 
@@ -267,7 +267,7 @@ namespace WeaponAndWizardry.Code
                 case 1:
                     Str++;
                     PrintTextDialogue("\"I'm the strongest there is.\"");
-                    PrintTextDialogue("\"Excellent, you should see that your Str stat has changed on the right-hand side of your screen.\n"+
+                    PrintTextDialogue("\"Excellent, you should see that your Str stat has changed on the right-hand side of your screen.\n" +
                         "What would you say is your biggest weakness?\"");
                     SetChoiceButtons(new Choices("\"I'm not very strong...(Strength--)\"", "\"I'm a little slow (Dexterity--)\"",
                     "\"I've never been very bright.(Intelligence--)\"", "\"I'm super unlucky.(Luck--)\""));
@@ -335,12 +335,12 @@ namespace WeaponAndWizardry.Code
             ClearImageDisplay();
             SetBackgroundImage("01.png");
             AddForegroundImage("Ilias_closed1.png", 100, 20, 12, 640, 480);
-            PrintTextDialogue("\"HP: This is a measure of how healthy your life is.  Keep it above 0, otherwise you will die.\n"+
-                "Str: Represents how physically strong you are.\n"+
-                "Dex: Represents how fast and skillful you are.\n"+
-                "Int: Represents how intelligent you are.\n"+
-                "Luk: Represents how lucky you are.\n"+
-                "Alignment: Represents how the general population feels about you.\n"+
+            PrintTextDialogue("\"HP: This is a measure of how healthy your life is.  Keep it above 0, otherwise you will die.\n" +
+                "Str: Represents how physically strong you are.\n" +
+                "Dex: Represents how fast and skillful you are.\n" +
+                "Int: Represents how intelligent you are.\n" +
+                "Luk: Represents how lucky you are.\n" +
+                "Alignment: Represents how the general population feels about you.\n" +
                 "Gold: Represents how much gold you possess.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -354,10 +354,12 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Farewell, brave hero.\nKnow that I will always be watching over you, " +
                 "even in the tutorial section.\"");
+            _currentExecutingLine++;
         }
 
         private void Prologue10()
         {
+            PlayBackgroundSound(Sounds.CampTheme);
             ClearImageDisplay();
             SetBackgroundImage("13.png");
             SetChoiceButtons(nextChoice);
@@ -396,6 +398,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue14()
         {
+            PlayBackgroundSound(Sounds.TravelTheme);
             SetBackgroundImage("11.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("You make your way along the road to the city of Granberia.");
@@ -411,6 +414,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue16()
         {
+            PlayBackgroundSound(Sounds.CrisisTheme);
             SetChoiceButtons(new Choices("Rush over to find out who's calling for help", "Ignore it"));
             PrintTextDialogue("You hear someone shouting nearby");
             _currentExecutingLine++;
@@ -441,6 +445,7 @@ namespace WeaponAndWizardry.Code
             switch (_choicePicked)
             {
                 case 1:
+                    PlayBackgroundSound(Sounds.BattleTheme);
                     ClearImageDisplay();
                     SetBackgroundImage("11.png");
                     AddForegroundImage("Redgoblin_neutral.png", -100, 20, 12, 640, 480);
@@ -452,6 +457,7 @@ namespace WeaponAndWizardry.Code
                     break;
 
                 case 2:
+                    PlayBackgroundSound(Sounds.TravelTheme);
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You’ve decided that the incident was more trouble than it’s worth.\n" +
                         "You continue on your way towards Granberia. ");
@@ -557,6 +563,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue26()
         {
+            PlayBackgroundSound(Sounds.TravelTheme);
             AddForegroundImage("Soldier_scared1.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(new Choices("Untie him", "Ask him why he’s tied up", "Leave him to the monsters",
                 "Kill him and loot him"));
@@ -725,6 +732,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue34()
         {
+            PlayBackgroundSound(Sounds.TownTheme);
             ClearImageDisplay();
             SetBackgroundImage("03.png");
             SetChoiceButtons(nextChoice);
@@ -790,7 +798,7 @@ namespace WeaponAndWizardry.Code
                         PrintTextDialogue("\"D-Double?!? But I... The village...\"\nThe village chief sighs.\n" +
                             "\"If it will save our village, I will pay any price.\nYou have a deal.\"");
                         _haggledReward = true;
-                        _currentExecutingLine = _currentExecutingLine + 2;                       
+                        _currentExecutingLine = _currentExecutingLine + 2;
                     }
                     else
                     {
@@ -880,9 +888,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue45()
         {
-            SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Extra line");
-            _currentExecutingLine++;
+            QuitGame(SessionHandler.MainScene);
         }
 
         private void Prologue46()
@@ -949,7 +955,7 @@ namespace WeaponAndWizardry.Code
             SetBackgroundImage("27.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The center of town fairly empty at the moment.\n" +
-                "The only person you see are a halfling child playing alone with a softball.\n"+
+                "The only person you see are a halfling child playing alone with a softball.\n" +
                 "Despite looking mostly human, he probably");
             _currentExecutingLine++;
         }
@@ -1001,7 +1007,7 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The child begins asking you about your sword, what you do for a living, etc.\n" +
                 "\"A monster hunter? So cool.  Hope you can slay the one that's been attacking our village. " +
-                "You should check by the stables, that's where the last monster attack was.\"" +
+                "You should check by the stables, that's where the last monster attack was.\"\n" +
                 "The child waves good-bye as he gets called back by his mother.");
             _currentExecutingLine++;
         }
@@ -1038,6 +1044,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue55()
         {
+            PlayBackgroundSound(Sounds.MysteryTheme);
             ClearImageDisplay();
             SetBackgroundImage("29.png");
             SetChoiceButtons(nextChoice);
@@ -1056,6 +1063,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue57()
         {
+            
             SetBackgroundImage("14.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The trail leads you deeper and deeper into the forest.\n" +
@@ -1074,6 +1082,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue59()
         {
+            PlayBackgroundSound(Sounds.BossBuildUpTheme);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("ROAR!");
             _currentExecutingLine++;
@@ -1090,20 +1099,21 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue61()
         {
+            PlayBackgroundSound(Sounds.BossTheme);
             SetChoiceButtons(new Choices("Slash it with your sword.", "Stab it with your sword.", "Attempt to run away.", "Stay on the defensive."));
             PrintTextDialogue("The beast must've used one of the villager's bodies to draw you here.\n" +
-                "You're surprised it it's intelligence, but quickly draw your sword to defend yourself.\n"+
+                "You're surprised it it's intelligence, but quickly draw your sword to defend yourself.\n" +
                 "You notice the beast is searching around, looking for something to strike.");
             _currentExecutingLine++;
         }
 
         private void Prologue62()
         {
-            switch(_choicePicked)
+            switch (_choicePicked)
             {
                 case 1:
                     SetChoiceButtons(nextChoice);
-                    PrintTextDialogue("You attempt to slash the beast with your sword.\n"+
+                    PrintTextDialogue("You attempt to slash the beast with your sword.\n" +
                         "You aim for it's torso, which seemed like a vital spot.");
                     _currentExecutingLine++;
 
@@ -1121,7 +1131,7 @@ namespace WeaponAndWizardry.Code
                     break;
                 case 4:
                     SetChoiceButtons(nextChoice);
-                    PrintTextDialogue("You decide to stand your ground and not move.\n"+
+                    PrintTextDialogue("You decide to stand your ground and not move.\n" +
                         "No sound is made as you ready yourself, waiting for the monster to strike first.");
                     _currentExecutingLine = _currentExecutingLine + 12;
                     break;
@@ -1138,8 +1148,8 @@ namespace WeaponAndWizardry.Code
         private void Prologue64()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You reel back from your strike and your sword feels lighter for some reason.\n"+
-                "You look down at your sword and realize that it is now broken in two.\n"+
+            PrintTextDialogue("You reel back from your strike and your sword feels lighter for some reason.\n" +
+                "You look down at your sword and realize that it is now broken in two.\n" +
                 "The beast's hide is too tough for you to break.");
             _currentExecutingLine++;
         }
@@ -1154,16 +1164,19 @@ namespace WeaponAndWizardry.Code
         private void Prologue66()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("The beast, now enraged, charges for you.\n"+
+            PrintTextDialogue("The beast, now enraged, charges for you.\n" +
                 "Unable to defend yourself, the beast easily eviscerates you and feasts on your flesh.");
             _currentExecutingLine++;
         }
         private void Prologue67()
         {
             ClearImageDisplay();
+            PlayBackgroundSound(Sounds.PeaceTheme);
             SetBackgroundImage("gameover.png");
+            HP = 0;
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("GAME OVER! \nReturning to Title Screen.");
+            _currentExecutingLine = _currentExecutingLine - 22;
         }
 
         private void Prologue68()
@@ -1183,7 +1196,7 @@ namespace WeaponAndWizardry.Code
         private void Prologue70()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("After sprinting for a while, you begin to relax as the beast is out of sight.\n"+
+            PrintTextDialogue("After sprinting for a while, you begin to relax as the beast is out of sight.\n" +
                 "Panting from exhaustion, you decide to rest by one of the forest trees.");
             _currentExecutingLine++;
         }
@@ -1199,7 +1212,7 @@ namespace WeaponAndWizardry.Code
         {
             AddForegroundImage("Monster_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Suddenly, the monster from before drops down from the tree and attacks you.\n"+
+            PrintTextDialogue("Suddenly, the monster from before drops down from the tree and attacks you.\n" +
                 "The shout surprises you and you're unable to grab your sword before the beast leaps down on you.");
             _currentExecutingLine++;
         }
@@ -1214,9 +1227,9 @@ namespace WeaponAndWizardry.Code
         private void Prologue74()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("The beast doesn't seem to know where you are.\n"+
-                "It lumbers around you, listening for any sudden movements.\n"+
-                "It occurs to you that the monster is blind and relies on scent or sound to find it's prey.\n"+
+            PrintTextDialogue("The beast doesn't seem to know where you are.\n" +
+                "It lumbers around you, listening for any sudden movements.\n" +
+                "It occurs to you that the monster is blind and relies on scent or sound to find it's prey.\n" +
                 "The monster slowly inches towards you.");
             _currentExecutingLine++;
         }
@@ -1227,8 +1240,8 @@ namespace WeaponAndWizardry.Code
             ClearForegroundImages();
             AddForegroundImage("Monster_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(new Choices("Slash it's body", "Stab it through it's mouth", "Throw your sword away as a distraction"));
-            PrintTextDialogue("The beast's face is only inches away from yours.\n"+
-                "It's mouth is gaping open, letting out foul vapours.\n"+
+            PrintTextDialogue("The beast's face is only inches away from yours.\n" +
+                "It's mouth is gaping open, letting out foul vapours.\n" +
                 "You can smell it's terrible breath and it nearly knocks you out.");
             _currentExecutingLine++;
         }
@@ -1251,21 +1264,21 @@ namespace WeaponAndWizardry.Code
                     break;
                 case 3:
                     SetChoiceButtons(nextChoice);
-                    PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.\n"+
+                    PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.\n" +
                         "But first you need a distraction.");
                     _currentExecutingLine = _currentExecutingLine + 5;
                     break;
-                
+
             }
         }
 
         private void Prologue77()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Your sword tastes squishy flesh as it digs deeper and deeper into the monster's body.\n"+
-                "The monster begins frantically swipping like a feral beast as you refuse to let go of your advantageous position.\n"+
+            PrintTextDialogue("Your sword tastes squishy flesh as it digs deeper and deeper into the monster's body.\n" +
+                "The monster begins frantically swipping like a feral beast as you refuse to let go of your advantageous position.\n" +
                 "the monster gets a few wild scratches on you, but no serious damage. (-10 HP)");
-            HP = HP -10;
+            HP = HP - 10;
             _currentExecutingLine++;
         }
 
@@ -1279,7 +1292,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("The beast lets out one last howl before falling dead.\n"+
+            PrintTextDialogue("The beast lets out one last howl before falling dead.\n" +
                 "You pull out your sword from it's body and clean your blade.");
             _currentExecutingLine++;
         }
@@ -1287,8 +1300,8 @@ namespace WeaponAndWizardry.Code
         private void Prologue80()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("It was a tough fight, but you managed to defeat the Beast of Granberia.\n"+
-                "You collect it's body pieces as proof for your reward.\n"+
+            PrintTextDialogue("It was a tough fight, but you managed to defeat the Beast of Granberia.\n" +
+                "You collect it's body pieces as proof for your reward.\n" +
                 "You head back to Granberia.");
             _monsterSlain = true;
             _currentExecutingLine = _currentExecutingLine + 15;
@@ -1297,7 +1310,7 @@ namespace WeaponAndWizardry.Code
         private void Prologue81()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You throw your sword as far as you can. \n"+
+            PrintTextDialogue("You throw your sword as far as you can. \n" +
                 "It makes a loud sound as it lands into a nearby tree.");
             _currentExecutingLine++;
         }
@@ -1305,7 +1318,7 @@ namespace WeaponAndWizardry.Code
         private void Prologue82()
         {
             ClearForegroundImages();
-            if(Str > Strength.Average)
+            if (Str > Strength.Average)
             {
                 SetChoiceButtons(new Choices("Run away as fast as you can!", "Attempt a chokehold", "Stay very still"));
             }
@@ -1313,15 +1326,15 @@ namespace WeaponAndWizardry.Code
             {
                 SetChoiceButtons(new Choices("Run away as fast as you can!", null, "Stay very still"));
             }
-            
-            PrintTextDialogue("The beast instantly notices the noise and dashes over to the tree, clawing it like a feral beast.\n"+
+
+            PrintTextDialogue("The beast instantly notices the noise and dashes over to the tree, clawing it like a feral beast.\n" +
                 "The beast now has it's back to you.  Despite the fact you are unarmed, you now have a golden opportunity.");
             _currentExecutingLine++;
         }
 
         private void Prologue83()
         {
-            switch(_choicePicked)
+            switch (_choicePicked)
             {
                 case 1:
                     SetChoiceButtons(nextChoice);
@@ -1345,7 +1358,7 @@ namespace WeaponAndWizardry.Code
         {
             AddForegroundImage("Monster_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You leap into the air and get a firm hold on the monsters.\n"+
+            PrintTextDialogue("You leap into the air and get a firm hold on the monsters.\n" +
                 "Strangling the monster with your arm across it's neck, you squeeze as hard as you can.");
             _currentExecutingLine++;
         }
@@ -1360,8 +1373,8 @@ namespace WeaponAndWizardry.Code
         private void Prologue86()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("The monster begins frantically swinging it's claws trying to get you off.\n"+
-                "You get clawed a couple times, but no serious injuries so far. (-10 HP)\n"+
+            PrintTextDialogue("The monster begins frantically swinging it's claws trying to get you off.\n" +
+                "You get clawed a couple times, but no serious injuries so far. (-10 HP)\n" +
                 "You hold on for dear life, knowing that if it manages to shake you off, you're dead.");
             HP = HP - 10;
             _currentExecutingLine++;
@@ -1372,7 +1385,7 @@ namespace WeaponAndWizardry.Code
             ClearForegroundImages();
             AddForegroundImage("Monster_scared.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Eventually, the monster begins to slow, it's voice begins to falter.\n"+
+            PrintTextDialogue("Eventually, the monster begins to slow, it's voice begins to falter.\n" +
                 "Nearly a minute passes, before you feel the monster's life slowly fade from it's body.");
             _currentExecutingLine++;
         }
@@ -1388,18 +1401,13 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue89()
         {
-            ClearForegroundImages();
-            AddForegroundImage("Monster_scared.png", 100, 20, 12, 640, 480);
-            SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Eventually, the monster begins to slow, it's voice begins to falter.\n" +
-                "Nearly a minute passes, before you feel the monster's life slowly fade from it's body.");
-            _currentExecutingLine++;
+            //Extra line.
         }
 
         private void Prologue90()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("The monster breaths heavily after destroying the tree that your sword was stuck in.\n"+
+            PrintTextDialogue("The monster breaths heavily after destroying the tree that your sword was stuck in.\n" +
                 "It makes one last look around your location, but can't sense exactly where you are.");
             _currentExecutingLine++;
         }
@@ -1408,7 +1416,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("Suddenly you hear a squirrel in the distance and the monster immediately reacts.\n"+
+            PrintTextDialogue("Suddenly you hear a squirrel in the distance and the monster immediately reacts.\n" +
                 "The monster goes on all fours and runs off.");
             _currentExecutingLine++;
         }
@@ -1416,7 +1424,7 @@ namespace WeaponAndWizardry.Code
         private void Prologue92()
         {
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("You wait a few moments, before moving. You walk over to pick up your sword.\n"+
+            PrintTextDialogue("You wait a few moments, before moving. You walk over to pick up your sword.\n" +
                 "You survive the ordeal by the skin of your teeth.  However, the monster you were sent to kill has gotten away.");
             _currentExecutingLine++;
         }
@@ -1430,6 +1438,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue94()
         {
+            PlayBackgroundSound(Sounds.VictoryTheme);
             ClearImageDisplay();
             SetBackgroundImage("03.png");
             SetChoiceButtons(nextChoice);
@@ -1443,8 +1452,8 @@ namespace WeaponAndWizardry.Code
             ClearImageDisplay();
             SetBackgroundImage("58.png");
             AddForegroundImage("Elder_neutral.png", 100, 20, 12, 640, 480);
-            
-            if(_monsterSlain)
+
+            if (_monsterSlain)
             {
                 SetChoiceButtons(new Choices("\"Yep, with ease.\"  Show him proof."));
             }
@@ -1453,7 +1462,7 @@ namespace WeaponAndWizardry.Code
                 SetChoiceButtons(new Choices(null, "(Lie) \"Yep, with ease.\""));
             }
 
-            PrintTextDialogue("You enter the village chief's house and he's anxious to know if you succeeded or not.\n"+
+            PrintTextDialogue("You enter the village chief's house and he's anxious to know if you succeeded or not.\n" +
                 "\"So? Were you able to succeed in slaying the beast?\"");
             _currentExecutingLine++;
         }
@@ -1463,7 +1472,7 @@ namespace WeaponAndWizardry.Code
             switch (_choicePicked)
             {
                 case 1:
-                    PrintTextDialogue("\"Yep, with ease.\"\n"+
+                    PrintTextDialogue("\"Yep, with ease.\"\n" +
                         "You toss him a bag with the beast's head in it.");
                     Align++;
                     break;
@@ -1486,14 +1495,14 @@ namespace WeaponAndWizardry.Code
             AddForegroundImage("Elder_happy.png", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"Here is your reward.\"\n" +
             "The elder hands you a bag of gold.");
-            
+
             SetChoiceButtons(new Choices("Keep the gold", "Give gold to the families that lost their loved ones to the monster."));
             _currentExecutingLine++;
         }
 
         private void Prologue98()
         {
-            switch(_choicePicked)
+            switch (_choicePicked)
             {
                 case 1:
                     ClearForegroundImages();
@@ -1515,7 +1524,7 @@ namespace WeaponAndWizardry.Code
                 case 2:
                     ClearForegroundImages();
                     AddForegroundImage("Elder_surprised.png", 100, 20, 12, 640, 480);
-                    PrintTextDialogue("\"Please give the gold to the families that lost their loved ones due to the monster.\n"+
+                    PrintTextDialogue("\"Please give the gold to the families that lost their loved ones due to the monster.\n" +
                         "They need it more than I do.\"");
                     PrintTextDialogue("\"Eh? Are you sure?\"");
                     _currentExecutingLine++;
@@ -1528,19 +1537,21 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Elder_happy.png", 100, 20, 12, 640, 480);
-            PrintTextDialogue("\"Thank you so much. You are by far the kindest mercenary I've ever met.\n"+
+            PrintTextDialogue("\"Thank you so much. You are by far the kindest mercenary I've ever met.\n" +
                 "I will make sure to tell the village of your good deed.  \nThank you.\"");
             Align++;
             SetChoiceButtons(nextChoice);
+            _currentExecutingLine++;
         }
 
         private void Prologue100()
         {
+            PlayBackgroundSound(Sounds.VillageTheme);
             ClearForegroundImages();
             AddForegroundImage("Elder_neutral.png", 100, 20, 12, 640, 480);
-            PrintTextDialogue("Before you go, I have a letter for you from the royal family.\n"+
-                "It seems they've already heard of your reputation.\"\n"+
-                "The elder hands you a sealed envelope.  It's very decorated and clearly from some of a high position.\n"+
+            PrintTextDialogue("Before you go, I have a letter for you from the royal family.\n" +
+                "It seems they've already heard of your reputation.\"\n" +
+                "The elder hands you a sealed envelope.  It's very decorated and clearly from some of a high position.\n" +
                 "You say your farewells to the village chief and leave his house.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -1550,9 +1561,9 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("03.png");
-            PrintTextDialogue("You open the envelope and read the letter inside.\n"+
+            PrintTextDialogue("You open the envelope and read the letter inside.\n" +
                 "\"To the slayer of the Beast of Granberia, please report to your majesty as soon as possible.\n"
-                +"We have a special need for your services.  You will be well compensated for your time.\n"+
+                + "We have a special need for your services.  You will be well compensated for your time.\n" +
                 "Signed by the royal family.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -1560,7 +1571,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue102()
         {
-            PrintTextDialogue("A royal invitation.\nA reward from this size would have you set for life.\n"+
+            PrintTextDialogue("A royal invitation.\nA reward from this size would have you set for life.\n" +
                 "You could buy... your own estate\nA new clothes\nNew weapons\netc.\nYou decide to take on the request and begin heading towards the capital.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine = _currentExecutingLine + 2;
