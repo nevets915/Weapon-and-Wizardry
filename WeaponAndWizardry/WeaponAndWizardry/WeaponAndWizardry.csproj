@@ -508,7 +508,7 @@
     <Compile Include="Code\Save.cs" />
     <Compile Include="Code\WebGameEngine.cs" />
     <Compile Include="Code\Scripts\PrologueScripts.cs" />
-    <Content Include="Code\Scripts\ChapterOneScripts.cs" />
+    <Compile Include="Code\Scripts\ChapterOneScripts.cs" />
     <Compile Include="Code\Scripts\Scripts.cs" />
     <Compile Include="Code\SessionHandler.cs" />
     <Compile Include="Code\Sounds.cs" />
