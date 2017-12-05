@@ -38,6 +38,7 @@ function playbgm(soundID) {
     console.log(props);
     console.log("Playing BGM: " + soundID);
     backgroundPlaying = createjs.Sound.play(soundID, props);
+    adjustBgmVolume(bgmSlider.value);
 }
 
 //Plays a sound effect
@@ -48,6 +49,22 @@ function playSound(soundID, loop) {
     console.log(props);
     console.log("Playing SFX: " + soundID);
     effectPlaying = createjs.Sound.play(soundID, props);
+    adjustSfxVolume(sfxSlider.value);
+}
+
+//Adjusts the sound effect volume
+function adjustSfxVolume(vol) {
+    if (backgroundPlaying != null && backgroundPlaying.playState == "playSucceeded") {
+        effectPlaying.volume = vol / 100;
+    }
+}
+
+//Adjusts the Background music volume
+function adjustBgmVolume(vol) {
+    if (backgroundPlaying != null && backgroundPlaying.playState == "playSucceeded") {
+        backgroundPlaying.volume = vol / 100;
+    }
+    //console.log(backgroundPlaying);
 }
 
 loadSound();
@@ -90,6 +107,19 @@ $(function () {
         }, 1000);
     });
 });
+
+///Code for volume slider
+var sfxSlider = document.getElementById("sfxRange");
+var bgmSlider = document.getElementById("bgmRange");
+
+// Update the current slider value (each time you drag the slider handle)
+sfxSlider.oninput = function (effectPlaying) {
+    adjustSfxVolume(this.value);
+}
+
+bgmSlider.oninput = function (backgroundPlaying) {
+    adjustBgmVolume(this.value);
+}
 
 //Play the title theme
 setTimeout(function () {
