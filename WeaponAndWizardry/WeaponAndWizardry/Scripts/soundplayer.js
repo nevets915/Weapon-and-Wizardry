@@ -27,8 +27,17 @@ var sfx = [
 
 //Loads all the sounds into SoundJs
 function loadSound() {
+    createjs.Sound.addEventListener("fileload", handleLoad);
     createjs.Sound.registerSounds(bgm);
     createjs.Sound.registerSounds(sfx);
+}
+
+//Fired for every file loaded
+function handleLoad(event) {
+    // Do something with the loaded sound
+    if (event.src == "content/sounds/bgm/OpeningTheme1.mp3") {
+        playbgm("content/sounds/bgm/OpeningTheme1.mp3");
+    }
 }
 
 //Plays a background sound
@@ -121,8 +130,3 @@ sfxSlider.oninput = function (effectPlaying) {
 bgmSlider.oninput = function (backgroundPlaying) {
     adjustBgmVolume(this.value);
 }
-
-//Play the title theme
-setTimeout(function () {
-    playbgm("content/sounds/bgm/OpeningTheme1.mp3");
-}, 3000);
