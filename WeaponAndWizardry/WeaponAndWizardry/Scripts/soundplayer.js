@@ -64,7 +64,7 @@ function playSound(soundID, loop) {
 
 //Adjusts the sound effect volume
 function adjustSfxVolume(vol) {
-    if (backgroundPlaying != null && backgroundPlaying.playState == "playSucceeded") {
+    if (effectPlaying != null && effectPlaying.playState == "playSucceeded") {
         effectPlaying.volume = vol / 100;
     }
 }

@@ -10,11 +10,8 @@
         </div>
         <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
         <script>
-          setTimeout(function ()
-          {
-              sound = window.open("SoundPlayer.html", "name", "height=400,width=500");
-              sound.blur();
-          }, 1000);
+            sound = window.open("SoundPlayer.html", "name", "height=400,width=500");
+            sound.blur();
         </script>
         <table style="width: 100%">
             <tr><td><div class="row"></div></td></tr>
