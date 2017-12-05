@@ -22,6 +22,7 @@ var bgm = [
 
 var sfx = [
     { src: "content/sounds/sfx/explode.wav", id: "content/sounds/sfx/explode.wav" },
+    { src: "content/sounds/sfx/helpme.mp3", id: "content/sounds/sfx/helpme.mp3" },
 ];
 
 //Loads all the sounds into SoundJs

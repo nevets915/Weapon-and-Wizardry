@@ -16,12 +16,16 @@ namespace WeaponAndWizardry.Code
         private bool _savedSolider = false;
 
         public enum Health { Dying, Maimed, Wounded, Healthy };
-        public enum Strength { Pitiful, Weak, Average, Strong, Herculean };
-        public enum Dexterity { Uncoordinated, Clumsy, Average, Nimble, Agile };
-        public enum Intelligence { Dumb, Foolish, Average, Brilliant, Enlightened };
-        public enum Luck { Jinxed, Unlucky, Average, Lucky, Blessed };
-        public enum Alignment { Wicked, Evil, Troublesome, Neutral, Likeable, Good, Adored }
 
+        public enum Strength { Pitiful, Weak, Average, Strong, Herculean };
+
+        public enum Dexterity { Uncoordinated, Clumsy, Average, Nimble, Agile };
+
+        public enum Intelligence { Dumb, Foolish, Average, Brilliant, Enlightened };
+
+        public enum Luck { Jinxed, Unlucky, Average, Lucky, Blessed };
+
+        public enum Alignment { Wicked, Evil, Troublesome, Neutral, Likeable, Good, Adored }
 
         /// <summary>
         /// Region containing a method for loading the scripts needed.
@@ -409,6 +413,7 @@ namespace WeaponAndWizardry.Code
         {
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"HELP ME!\"");
+            PlaySoundEffect(Sounds.helpMe, 1);
             _currentExecutingLine++;
         }
 
@@ -810,6 +815,7 @@ namespace WeaponAndWizardry.Code
                         _currentExecutingLine = _currentExecutingLine + 1;
                     }
                     break;
+
                 case 2:
                     AddForegroundImage("Elder_happy.png", 100, 20, 12, 640, 480);
                     SetChoiceButtons(nextChoice);
@@ -915,6 +921,7 @@ namespace WeaponAndWizardry.Code
                 case 2:
                     PrintTextDialogue("\"How's business?\"");
                     break;
+
                 case 3:
                     PrintTextDialogue("\"...\"");
                     break;
@@ -1063,7 +1070,6 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue57()
         {
-            
             SetBackgroundImage("14.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The trail leads you deeper and deeper into the forest.\n" +
@@ -1118,17 +1124,20 @@ namespace WeaponAndWizardry.Code
                     _currentExecutingLine++;
 
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You attempt to stab the beast with your sword.\n" +
                         "You aim for it's torso, which seemed like a vital spot.");
                     _currentExecutingLine++;
                     break;
+
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.");
                     _currentExecutingLine = _currentExecutingLine + 8;
                     break;
+
                 case 4:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to stand your ground and not move.\n" +
@@ -1168,6 +1177,7 @@ namespace WeaponAndWizardry.Code
                 "Unable to defend yourself, the beast easily eviscerates you and feasts on your flesh.");
             _currentExecutingLine++;
         }
+
         private void Prologue67()
         {
             ClearImageDisplay();
@@ -1257,18 +1267,19 @@ namespace WeaponAndWizardry.Code
                     _currentExecutingLine = _currentExecutingLine - 13;
 
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You aim your sword careful and use half-swording to pierce the monster through it's mouth");
                     _currentExecutingLine++;
                     break;
+
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.\n" +
                         "But first you need a distraction.");
                     _currentExecutingLine = _currentExecutingLine + 5;
                     break;
-
             }
         }
 
@@ -1288,6 +1299,7 @@ namespace WeaponAndWizardry.Code
             PrintTextDialogue("AROoowwwww!");
             _currentExecutingLine++;
         }
+
         private void Prologue79()
         {
             ClearForegroundImages();
@@ -1341,11 +1353,13 @@ namespace WeaponAndWizardry.Code
                     PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.");
                     _currentExecutingLine = _currentExecutingLine - 14;
                     break;
+
                 case 2:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You realize this monster is far outside your pay grade and decide to run for it.");
                     _currentExecutingLine++;
                     break;
+
                 case 3:
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You decide to stay very still.  Hoping the monster doesn't notice that you're still nearby.");
@@ -1476,6 +1490,7 @@ namespace WeaponAndWizardry.Code
                         "You toss him a bag with the beast's head in it.");
                     Align++;
                     break;
+
                 case 2:
                     PrintTextDialogue("\"Yep, with ease.\"\n" +
                         "You lie as convincingly as possible and toss a bag with a fake beast head in it.");
@@ -1521,6 +1536,7 @@ namespace WeaponAndWizardry.Code
                     }
                     _currentExecutingLine = _currentExecutingLine + 2;
                     break;
+
                 case 2:
                     ClearForegroundImages();
                     AddForegroundImage("Elder_surprised.png", 100, 20, 12, 640, 480);

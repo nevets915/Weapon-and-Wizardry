@@ -371,6 +371,7 @@
     <Content Include="Content\sounds\bgm\VictoryTheme.mp3" />
     <Content Include="Content\sounds\bgm\VillageTheme.mp3" />
     <Content Include="Content\sounds\sfx\explode.wav" />
+    <Content Include="Content\sounds\sfx\helpme.mp3" />
     <Content Include="Content\styles\MainMenu.css" />
     <Content Include="Content\Images\ui\buttonHighLight.png" />
     <Content Include="Content\Images\ui\buttonNormal.png" />

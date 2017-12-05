@@ -7,7 +7,7 @@ namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// Contains all data for sound files that exists in the game.
-    /// Author: 
+    /// Author:
     ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public class Sounds
@@ -29,6 +29,6 @@ namespace WeaponAndWizardry.Code
         public const string VictoryTheme = "content/sounds/bgm/VictoryTheme.mp3";
 
         public const string explode = "content/sounds/sfx/explode.wav";
-
-    }                                      
+        public const string helpMe = "content/sounds/sfx/helpme.mp3";
+    }
 }

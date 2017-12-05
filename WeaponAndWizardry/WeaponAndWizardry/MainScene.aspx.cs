@@ -93,6 +93,9 @@ namespace WeaponAndWizardry
             string save = System.IO.File.ReadAllText("c:\\save.txt", System.Text.Encoding.ASCII); // Do database load
             Save s = Newtonsoft.Json.JsonConvert.DeserializeObject<Save>(save);
             SessionHandler.ScriptEngine.LoadGame(s);
+            List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };
+            List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck, Label_Alignment, Label_Gold };
+            SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
             //Server.Transfer("LoadGame.aspx", false);
         }
     }
