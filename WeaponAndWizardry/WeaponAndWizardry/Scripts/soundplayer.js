@@ -6,7 +6,18 @@ var bgm = [
     { src: "content/sounds/bgm/OpeningTheme1.mp3"   , id: "content/sounds/bgm/OpeningTheme1.mp3"    },
     { src: "content/sounds/bgm/OpeningTheme2.mp3"   , id: "content/sounds/bgm/OpeningTheme2.mp3"    },
     { src: "content/sounds/bgm/PeaceTheme.mp3"      , id: "content/sounds/bgm/PeaceTheme.mp3"       },
-    { src: "content/sounds/bgm/CampTheme.mp3"       , id: "content/sounds/bgm/CampTheme.mp3"        },
+    { src: "content/sounds/bgm/CampTheme.mp3", id: "content/sounds/bgm/CampTheme.mp3" },
+    { src: "content/sounds/bgm/IliasTheme.mp3", id: "content/sounds/bgm/IliasTheme.mp3" },
+    { src: "content/sounds/bgm/TravelTheme.mp3", id: "content/sounds/bgm/TravelTheme.mp3" },
+    { src: "content/sounds/bgm/CrisisTheme.mp3", id: "content/sounds/bgm/CrisisTheme.mp3" },
+    { src: "content/sounds/bgm/BattleTheme.mp3", id: "content/sounds/bgm/BattleTheme.mp3" },
+    { src: "content/sounds/bgm/TownTheme.mp3", id: "content/sounds/bgm/TownTheme.mp3" },
+    { src: "content/sounds/bgm/CastleTheme.mp3", id: "content/sounds/bgm/CastleTheme.mp3" },
+    { src: "content/sounds/bgm/VillageTheme.mp3", id: "content/sounds/bgm/VillageTheme.mp3" },
+    { src: "content/sounds/bgm/MysteryTheme.mp3", id: "content/sounds/bgm/MysteryTheme.mp3" },
+    { src: "content/sounds/bgm/BossBuildUpTheme.mp3", id: "content/sounds/bgm/BossBuildUpTheme.mp3" },
+    { src: "content/sounds/bgm/BossTheme.mp3", id: "content/sounds/bgm/BossTheme.mp3" },
+    { src: "content/sounds/bgm/VictoryTheme.mp3", id: "content/sounds/bgm/VictoryTheme.mp3" },
 ];
 
 var sfx = [
