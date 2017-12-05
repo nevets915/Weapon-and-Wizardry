@@ -3,7 +3,6 @@
 var effectPlaying;
 var backgroundPlaying;
 var bgm = [
-<<<<<<<<< Temporary merge branch 1
     { src: "content/sounds/bgm/OpeningTheme1.mp3", id: "content/sounds/bgm/OpeningTheme1.mp3" },
     { src: "content/sounds/bgm/OpeningTheme2.mp3", id: "content/sounds/bgm/OpeningTheme2.mp3" },
     { src: "content/sounds/bgm/PeaceTheme.mp3", id: "content/sounds/bgm/PeaceTheme.mp3" },

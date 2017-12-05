@@ -1438,7 +1438,6 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue94()
         {
-            PlayBackgroundSound(Sounds.VictoryTheme);
             ClearImageDisplay();
             SetBackgroundImage("03.png");
             SetChoiceButtons(nextChoice);
@@ -1449,6 +1448,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue95()
         {
+            PlayBackgroundSound(Sounds.VictoryTheme);
             ClearImageDisplay();
             SetBackgroundImage("58.png");
             AddForegroundImage("Elder_neutral.png", 100, 20, 12, 640, 480);
