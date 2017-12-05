@@ -353,6 +353,8 @@
     <Content Include="Content\images\characters\Yellowgoblin_neutral.png" />
     <Content Include="Content\images\characters\Yellowgoblin_scared.png" />
     <Content Include="Content\sounds\bgm\BattleTheme.mp3" />
+    <Content Include="Content\sounds\bgm\BossBuildUpTheme.mp3" />
+    <Content Include="Content\sounds\bgm\BossTheme.mp3" />
     <Content Include="Content\sounds\bgm\CampTheme.mp3" />
     <Content Include="Content\sounds\bgm\CastleTheme.mp3" />
     <Content Include="Content\sounds\bgm\CrisisTheme.mp3" />
@@ -366,6 +368,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\sounds\bgm\TownTheme.mp3" />
     <Content Include="Content\sounds\bgm\TravelTheme.mp3" />
+    <Content Include="Content\sounds\bgm\VictoryTheme.mp3" />
     <Content Include="Content\sounds\bgm\VillageTheme.mp3" />
     <Content Include="Content\sounds\sfx\explode.wav" />
     <Content Include="Content\styles\MainMenu.css" />
