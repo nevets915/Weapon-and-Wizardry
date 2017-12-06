@@ -342,7 +342,7 @@ namespace WeaponAndWizardry.Code
         public void QuitGame(System.Web.UI.Page page)
         {
             SessionHandler.ClearSession();
-            page.Server.Transfer("MainMenu.aspx", false);
+            page.Response.Redirect("MainMenu.aspx", true);
         }
 
         #region Script API methods

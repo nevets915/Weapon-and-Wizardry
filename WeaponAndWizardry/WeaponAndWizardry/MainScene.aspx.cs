@@ -96,7 +96,6 @@ namespace WeaponAndWizardry
             List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };
             List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck, Label_Alignment, Label_Gold };
             SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
-            //Server.Transfer("LoadGame.aspx", false);
         }
     }
 }
