@@ -150,7 +150,7 @@ namespace WeaponAndWizardry.Code
                 {
                     try
                     {
-                        string[] connectionid = System.IO.File.ReadAllLines(".\\tmp.txt");
+                        string[] connectionid = System.IO.File.ReadAllLines(HttpContext.Current.Server.MapPath("~/tmp.txt"));
                         if (connectionid.Length > 0)
                         {
 
@@ -173,7 +173,7 @@ namespace WeaponAndWizardry.Code
 
                         try
                         {
-                            string[] connectionid = System.IO.File.ReadAllLines(".\\tmp.txt");
+                            string[] connectionid = System.IO.File.ReadAllLines(HttpContext.Current.Server.MapPath("~/tmp.txt"));
                             if (connectionid.Length > 0)
                             {
                                 HttpContext.Current.Session[_clientHubConnectionId] = connectionid[0];
@@ -200,7 +200,7 @@ namespace WeaponAndWizardry.Code
                 // If from SignalR connection
                 if (HttpContext.Current.Session == null)
                 {
-                    System.IO.File.WriteAllText(".\\tmp.txt", value);
+                    System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/tmp.txt"), value);
                 }
                 else
                 {
