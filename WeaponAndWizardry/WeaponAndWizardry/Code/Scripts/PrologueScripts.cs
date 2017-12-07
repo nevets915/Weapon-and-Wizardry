@@ -170,8 +170,6 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue2()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
             AddForegroundImage("Ilias_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Oh brave hero…\"\nYou hear a beautiful voice begin to call you.\n"
@@ -181,8 +179,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue3()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("01.png");
+            ClearForegroundImages();
             AddForegroundImage("Ilias_closed1.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(new Choices("\"I can!\"", "\"Nope.\"", "\"...\""));
             PrintTextDialogue("\"Oh great hero… can you hear my voice?\"");
@@ -1096,6 +1093,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue60()
         {
+            PlaySoundEffect(Sounds.explode, 1);
             AddForegroundImage("Monster_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Suddenly a behemoth of crashs down in front of you.\n" +
