@@ -78,9 +78,9 @@ namespace WeaponAndWizardry
         /// <param name="e"></param>
         protected void Button_Save_Click(object sender, EventArgs e)
         {
-            Session["save"] = SessionHandler.ScriptEngine.SaveGame();
-            string save = Newtonsoft.Json.JsonConvert.SerializeObject(Session["save"]);
-            System.IO.File.WriteAllText("c:\\save.txt", save); // Do database save
+            Save save = SessionHandler.ScriptEngine.SaveGame();
+            string savestring = Newtonsoft.Json.JsonConvert.SerializeObject(save);
+            System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/PlayerSaveData/" + "123"), savestring); // Do database save
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace WeaponAndWizardry
         /// <param name="e"></param>
         protected void Button_Load_Click(object sender, EventArgs e)
         {
-            string save = System.IO.File.ReadAllText("c:\\save.txt", System.Text.Encoding.ASCII); // Do database load
+            string save = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/PlayerSaveData/" + "123"), System.Text.Encoding.ASCII); // Do database load
             Save s = Newtonsoft.Json.JsonConvert.DeserializeObject<Save>(save);
             SessionHandler.ScriptEngine.LoadGame(s);
             List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };

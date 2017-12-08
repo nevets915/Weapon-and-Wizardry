@@ -5,6 +5,7 @@
 
 # Project-specific files
 tmp.txt
+PlayerSaveData/
 
 # User-specific files
 *.suo
