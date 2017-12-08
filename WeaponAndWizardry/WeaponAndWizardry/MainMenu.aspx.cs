@@ -36,7 +36,6 @@ namespace WeaponAndWizardry
         /// <param name="e">events arguement</param>
         protected void Button_New_Game_Click(object sender, EventArgs e)
         {
-            //Session["_gameover"] = "false";
             Response.Redirect("MainScene.aspx", true);
         }
 
@@ -47,7 +46,7 @@ namespace WeaponAndWizardry
         /// <param name="e">events arguement</param>
         protected void Button_Load_Game_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MainScene.aspx", true);
+            Response.Redirect("LoadGame.aspx", true);
         }
     }
 }
