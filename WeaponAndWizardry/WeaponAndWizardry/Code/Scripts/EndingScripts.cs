@@ -18,7 +18,7 @@ namespace WeaponAndWizardry.Code
         /// </summary>
 
         #region Script Load
-        public void LoadEndingScript()
+        public void LoadEndingScripts()
         {
             _scriptLines.Add(EndingLine1);
             _scriptLines.Add(EndingLine2);

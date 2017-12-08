@@ -42,7 +42,7 @@
                     <asp:Button ID="Button_Load" runat="server" Text="Load" Style="width: 100%;" OnClick="Button_Load_Click" />
                     <asp:Button ID="Button_Back" runat="server" Text="Quit" Style="width: 100%;" OnClick="Button_Quit_Click" />
                 </div>
-                <asp:TextBox ID="TextDisplay" runat="server" TextMode="MultiLine" Style="font-size: large; width: 97.5%; margin-left: 15px; min-height: 200px; min-width: 800px; color: white; background-color: rgba(128, 128, 128, 0.6);"></asp:TextBox>
+                <asp:TextBox ID="TextDisplay" runat="server" TextMode="MultiLine" Style="font-size: large; width: 97.5%; margin-left: 15px; min-height: 200px; min-width: 800px; color: white; background-color: rgba(128, 128, 128, 0.6);" ReadOnly="True"></asp:TextBox>
                 <script type="text/javascript">
                     window.onload = function () {
                         var textarea = document.getElementById('<%=TextDisplay.ClientID %>');
