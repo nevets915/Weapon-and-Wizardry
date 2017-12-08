@@ -19,12 +19,15 @@ namespace WeaponAndWizardry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Session["referrer"] = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void Button_Load_Back_Click(object sender, EventArgs e)
         {
-            Response.Redirect(Request.UrlReferrer.ToString());
+            Response.Redirect((string)Session["referrer"]);
         }
 
         protected void Button_Load_Game_Click(object sender, EventArgs e)
