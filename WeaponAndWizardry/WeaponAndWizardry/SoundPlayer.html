@@ -1,5 +1,14 @@
 ﻿<!DOCTYPE html>
-<!-- Author: Jia Qi Lee (George) Date: 2017-11-15 -->
+<!--
+    Module: SoundPlayer.html
+    Description: View of Sound player
+    Author:
+        Name: Jia Qi Lee (George) Date: 2017-11-15
+    Modified:
+        Name: Dongwon(Shawn) Kim  Change: Updated layout     Date: 2017-12-07
+    Based On:
+        N/A
+-->
 <html>
 <head>
     <title>Sound Player</title>
@@ -7,22 +16,51 @@
 </head>
 
 <body>
-    <p>
-        This is the player for all sounds in the game.
-        You can minimize this window and continue playing the game.
-        You may close it if you wish to disable all sounds.
-    </p>
-    <div id="slidecontainer">
-        <p>Background Music Volume:</p>
-        <input type="range" min="1" max="100" value="80" class="slider" id="bgmRange">
-    </div>
-    <div id="slidecontainer">
-        <p>Sound Effects Volume:</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="sfxRange">
+    <div id="musicwrapper">
+        <div class="description">
+            <h2>Weapon and Wizardry Music Player</h2>
+            <p>
+                This is the player for all sounds in the game.<br />
+                You can minimize this window and continue playing the game.<br />
+                You may close it if you wish to disable all sounds.<br />
+            </p>
+        </div>
+        <br />
+        <div id="sliderwrapper">
+            <div class="slidecontainer">
+                <p style="font-weight:600">Background Music Volume:</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="bgmRange">
+            </div>
+            <br />
+            <div class="slidecontainer">
+                <p style="font-weight:600">
+                    Sound Effects Volume:</pstyle="font:bold">
+                    <input type="range" min="1" max="100" value="60" class="slider" id="sfxRange">
+            </div>
+        </div>
     </div>
     <style>
-        #slidecontainer {
+        #musicwrapper {
+            font-family: sans-serif;
+            padding: 1% 0 5% 0;
+            color: #ffffff;
+            background-color: #202020;
+        }
+
+        #sliderwrapper {
+            background-color: #505050;
+            width: 80%;
+            margin: auto;
+            padding: 1% 0 1% 0;
+        }
+
+        .description {
             width: 80%; /* Width of the outside container */
+            margin: auto;
+        }
+
+        .slidecontainer {
+            width: 95%; /* Width of the outside container */
             margin: auto;
         }
 
