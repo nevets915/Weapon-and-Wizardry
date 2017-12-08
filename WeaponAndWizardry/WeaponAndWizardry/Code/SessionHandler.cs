@@ -66,12 +66,27 @@ namespace WeaponAndWizardry.Code
         /// Strongly-typed string index for a soundhub clients
         /// </summary>
         private const string _clients = "clients";
+
+        /// <summary>
+        /// Strongly-typed string index for a save game id
+        /// </summary>
+        private const string _saveId = "saveid";
+
+        /// <summary>
+        /// Strongly-typed string index for a save game data
+        /// </summary>
+        private const string _saveData = "savedata";
+
+        /// <summary>
+        /// Strongly-typed string index for if the game is loading boolean
+        /// </summary>
+        private const string _loading = "";
         #endregion Constant Strings
 
         /// <summary>
-        /// Returns the Session object of type Script Engine
+        /// Returns the Session object of type WebGameEngine
         /// </summary>
-        public static WebGameEngine ScriptEngine
+        public static WebGameEngine GameEngine
         {
             get
             {
@@ -87,6 +102,72 @@ namespace WeaponAndWizardry.Code
             set
             {
                 HttpContext.Current.Session[_engine] = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the Session object of a string for the Save Game Id
+        /// </summary>
+        public static string SaveId
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_saveId] == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return (string)HttpContext.Current.Session[_saveId];
+                }
+            }
+            set
+            {
+                HttpContext.Current.Session[_saveId] = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the Session object of type Save
+        /// </summary>
+        public static Save SaveFile
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_saveData] == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return (Save)HttpContext.Current.Session[_saveData];
+                }
+            }
+            set
+            {
+                HttpContext.Current.Session[_saveData] = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the Session object of a bool for if the game is loading
+        /// </summary>
+        public static bool Loading
+        {
+            get
+            {
+                if (HttpContext.Current.Session[_loading] == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return (bool)HttpContext.Current.Session[_loading];
+                }
+            }
+            set
+            {
+                HttpContext.Current.Session[_loading] = value;
             }
         }
 
@@ -393,7 +474,7 @@ namespace WeaponAndWizardry.Code
         /// </summary>
         public static void ClearSession()
         {
-            ScriptEngine = null;
+            GameEngine = null;
             MainScene = null;
             SoundHubConnectionId = null;
             ImageDisplay = null;

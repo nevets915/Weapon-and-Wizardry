@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.UI.WebControls;
 
 namespace WeaponAndWizardry.Code
@@ -317,6 +318,8 @@ namespace WeaponAndWizardry.Code
         public Save SaveGame()
         {
             Save save = new Save(SessionHandler.Guid, SessionHandler.ChoicesPicked);
+            string savestring = Newtonsoft.Json.JsonConvert.SerializeObject(save);
+            System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/PlayerSaveData/" + save.Id), savestring); // Do database save
             return save;
         }
 
@@ -334,6 +337,7 @@ namespace WeaponAndWizardry.Code
             {
                 ExecuteLine(choice);
             }
+            SessionHandler.SaveGuiState(_imageDisplay, _textDisplay.Text, _choiceButtons, _stats);
         }
 
         /// <summary>
