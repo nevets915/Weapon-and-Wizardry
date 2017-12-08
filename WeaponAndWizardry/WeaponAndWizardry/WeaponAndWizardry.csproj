@@ -352,6 +352,9 @@
     <Content Include="Content\images\characters\Spider_neutral.png" />
     <Content Include="Content\images\characters\Yellowgoblin_neutral.png" />
     <Content Include="Content\images\characters\Yellowgoblin_scared.png" />
+    <Content Include="Content\images\credits\george.png" />
+    <Content Include="Content\images\credits\shawn.jpg" />
+    <Content Include="Content\images\credits\steven.jpg" />
     <Content Include="Content\sounds\bgm\BattleTheme.mp3" />
     <Content Include="Content\sounds\bgm\BossBuildUpTheme.mp3" />
     <Content Include="Content\sounds\bgm\BossTheme.mp3" />
