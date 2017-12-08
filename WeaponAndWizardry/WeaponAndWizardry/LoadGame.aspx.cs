@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using WeaponAndWizardry.Code;
 
 /// <summary>
 /// Module: MainMenu
@@ -30,7 +29,26 @@ namespace WeaponAndWizardry
 
         protected void Button_Load_Game_Click(object sender, EventArgs e)
         {
-
+            if(String.IsNullOrWhiteSpace(TextBox_SaveDataCode.Text))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
+                return;
+            }
+            SessionHandler.SaveId = TextBox_SaveDataCode.Text;
+            string[] filesPath = Directory.GetFiles(Server.MapPath("~/PlayerSaveData/"), SessionHandler.SaveId);
+            for(int i = 0; i < filesPath.Length; i++)
+            {
+                if(Path.GetFileName(filesPath[i]).Equals(SessionHandler.SaveId))
+                {
+                    string savedata = File.ReadAllText(filesPath[i]);
+                    Save savefile = JsonConvert.DeserializeObject<Save>(savedata);
+                    SessionHandler.Loading = true;
+                    SessionHandler.SaveFile = savefile;
+                    Response.Redirect("MainScene.aspx");
+                    return;
+                }
+            }
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
         }
     }
 }

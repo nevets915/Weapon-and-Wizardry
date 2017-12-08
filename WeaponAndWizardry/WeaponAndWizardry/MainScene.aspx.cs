@@ -29,19 +29,25 @@ namespace WeaponAndWizardry
             Page.Title = "MA's Weapon & Wizardry";
             List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };
             List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck, Label_Alignment, Label_Gold };
+            if (SessionHandler.Loading)
+            {
+                SessionHandler.GameEngine = new WebGameEngine(ImageDisplay, TextDisplay, choiceButtons, stats);
+                SessionHandler.GameEngine.LoadGame(SessionHandler.SaveFile);
+                SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
+                SessionHandler.Loading = false;
+            }
             // check the postback and session handler of script engine is null
-            if (SessionHandler.ScriptEngine == null)
+            if (SessionHandler.GameEngine == null)
             {
                 // if it is, assign new game
-
-                SessionHandler.ScriptEngine = new WebGameEngine(ImageDisplay, TextDisplay, choiceButtons, stats);
-                SessionHandler.ScriptEngine.ExecuteLine(0);
+                SessionHandler.GameEngine = new WebGameEngine(ImageDisplay, TextDisplay, choiceButtons, stats);
+                SessionHandler.GameEngine.ExecuteLine(0);
                 SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
             }
             else
             {
                 SessionHandler.RestoreGuiState(ImageDisplay, TextDisplay, choiceButtons, stats);
-                SessionHandler.ScriptEngine.UpdateReferences(ImageDisplay, TextDisplay, choiceButtons, stats);
+                SessionHandler.GameEngine.UpdateReferences(ImageDisplay, TextDisplay, choiceButtons, stats);
             }
             SessionHandler.MainScene = this;
         }
@@ -57,7 +63,7 @@ namespace WeaponAndWizardry
             List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck, Label_Alignment, Label_Gold };
             Button button = (Button)sender;
             string choice = new string(button.ID.Last(), 1);
-            SessionHandler.ScriptEngine.ExecuteLine(uint.Parse(choice));
+            SessionHandler.GameEngine.ExecuteLine(uint.Parse(choice));
             SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
         }
 
@@ -68,7 +74,7 @@ namespace WeaponAndWizardry
         /// <param name="e"></param>
         protected void Button_Quit_Click(object sender, EventArgs e)
         {
-            SessionHandler.ScriptEngine.QuitGame(this);
+            SessionHandler.GameEngine.QuitGame(this);
         }
 
         /// <summary>
@@ -78,9 +84,8 @@ namespace WeaponAndWizardry
         /// <param name="e"></param>
         protected void Button_Save_Click(object sender, EventArgs e)
         {
-            Save save = SessionHandler.ScriptEngine.SaveGame();
-            string savestring = Newtonsoft.Json.JsonConvert.SerializeObject(save);
-            System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/PlayerSaveData/" + "123"), savestring); // Do database save
+            Save save = SessionHandler.GameEngine.SaveGame();
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Sucess! Your Password is: " + save.Id + "');", true);            
         }
 
         /// <summary>
@@ -90,12 +95,10 @@ namespace WeaponAndWizardry
         /// <param name="e"></param>
         protected void Button_Load_Click(object sender, EventArgs e)
         {
-            string save = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/PlayerSaveData/" + "123"), System.Text.Encoding.ASCII); // Do database load
-            Save s = Newtonsoft.Json.JsonConvert.DeserializeObject<Save>(save);
-            SessionHandler.ScriptEngine.LoadGame(s);
             List<Button> choiceButtons = new List<Button> { ButtonChoice1, ButtonChoice2, ButtonChoice3, ButtonChoice4 };
             List<Label> stats = new List<Label> { Label_HP, Label_Str, Label_Dex, Label_Int, Label_Luck, Label_Alignment, Label_Gold };
             SessionHandler.SaveGuiState(ImageDisplay, TextDisplay.Text, choiceButtons, stats);
+            Response.Redirect("LoadGame.aspx");
         }
     }
 }
