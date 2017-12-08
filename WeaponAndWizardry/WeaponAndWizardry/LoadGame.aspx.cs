@@ -37,19 +37,26 @@ namespace WeaponAndWizardry
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
                 return;
             }
-            SessionHandler.SaveId = TextBox_SaveDataCode.Text;
-            string[] filesPath = Directory.GetFiles(Server.MapPath("~/PlayerSaveData/"), SessionHandler.SaveId);
-            for(int i = 0; i < filesPath.Length; i++)
+            try
             {
-                if(Path.GetFileName(filesPath[i]).Equals(SessionHandler.SaveId))
+                SessionHandler.SaveId = TextBox_SaveDataCode.Text;
+                string[] filesPath = Directory.GetFiles(Server.MapPath("~/PlayerSaveData/"), SessionHandler.SaveId);
+                for (int i = 0; i < filesPath.Length; i++)
                 {
-                    string savedata = File.ReadAllText(filesPath[i]);
-                    Save savefile = JsonConvert.DeserializeObject<Save>(savedata);
-                    SessionHandler.Loading = true;
-                    SessionHandler.SaveFile = savefile;
-                    Response.Redirect("MainScene.aspx");
-                    return;
+                    if (Path.GetFileName(filesPath[i]).Equals(SessionHandler.SaveId))
+                    {
+                        string savedata = File.ReadAllText(filesPath[i]);
+                        Save savefile = JsonConvert.DeserializeObject<Save>(savedata);
+                        SessionHandler.Loading = true;
+                        SessionHandler.SaveFile = savefile;
+                        Response.Redirect("MainScene.aspx");
+                        return;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
             }
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
         }
