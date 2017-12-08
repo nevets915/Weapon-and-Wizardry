@@ -32,7 +32,7 @@
             <tr>
                 <td style="width: 100%" align="center">
                     <br />
-                    <asp:Button ID="Button_Credits" CssClass="image_button_credits" runat="server" Text="Credits" OnClientClick="playSound(); return false;" class="playSound"/>
+                    <asp:Button ID="Button_Credits" CssClass="image_button_credits" runat="server" Text="Credits" PostBackUrl="~/Credits.aspx"/>
                 </td>
             </tr>
             <tr><td><div class="row"><br /><br /><br /><br /><br /><br /><br /></div></td></tr>
