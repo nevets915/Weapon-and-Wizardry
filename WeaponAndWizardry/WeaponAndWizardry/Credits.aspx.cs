@@ -10,8 +10,10 @@ using System.Web.UI.WebControls;
 /// Description: This page is for Credits page of the game
 /// Author: 
 ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-27
+///	Modified:
+///	 Name: Dongwon(Shawn) Kim Update: Credit added  Date: 2017-12-07
 /// Based on:
-///  https://css-tricks.com/snippets/css/star-wars-crawl-text/
+///  N/A
 /// </summary>
 namespace WeaponAndWizardry
 {
