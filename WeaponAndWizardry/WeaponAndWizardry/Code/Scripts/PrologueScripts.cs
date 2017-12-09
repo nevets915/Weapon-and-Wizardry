@@ -1205,6 +1205,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue70()
         {
+            ClearForegroundImages();
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("After sprinting for a while, you begin to relax as the beast is out of sight.\n" +
                 "Panting from exhaustion, you decide to rest by one of the forest trees.");
