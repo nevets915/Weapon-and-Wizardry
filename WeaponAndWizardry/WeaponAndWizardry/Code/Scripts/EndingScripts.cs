@@ -209,6 +209,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("19.png");
+            PlayBackgroundSound(Sounds.PeaceTheme);
             PrintTextDialogue("You awake in your royal styled chambers.\n" +
                 "It has been several weeks since you saved the kingdom from calamity.\n" +
                 "Since then, you've been crowned a hero of the era.");
@@ -346,6 +347,7 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine25()
         {
+            PlayBackgroundSound(Sounds.BattleTheme);
             ClearImageDisplay();
             SetBackgroundImage("69.png");
             PrintTextDialogue("CLANK! CLASH! WOOSH!");
@@ -418,6 +420,7 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine34()
         {
+            PlayBackgroundSound(Sounds.PeaceTheme);
             ClearForegroundImages();
             PrintTextDialogue("It's been several weeks since you've saved the kingdom.\n" +
                 "Since then, you've been keeping busy by training your sword skills, earning monster bounties and travelling the world.");
