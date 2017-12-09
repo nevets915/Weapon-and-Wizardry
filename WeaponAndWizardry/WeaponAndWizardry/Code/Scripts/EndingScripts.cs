@@ -88,6 +88,7 @@ namespace WeaponAndWizardry.Code
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Suddenly a flash of light blinds your eyes.\n" +
                 "You've felt this sensation before.");
+            _currentExecutingLine++;
         }
 
         private void EndingLine2()
