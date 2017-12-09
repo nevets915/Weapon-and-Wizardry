@@ -42,8 +42,13 @@ function handleLoad(event) {
         playbgm("content/sounds/bgm/OpeningTheme1.mp3");
     }
     loadCount++;
+    if (loadCount <= 5) {
+        var percent = Number(localStorage.getItem("percentLoaded"));
+        percent += 20;
+        localStorage.setItem("percentLoaded", percent);
+    }
     console.log("Loading: " + event.src);
-    if(loadCount == totalElements)
+    if(loadCount == 5)
     {
         console.log("load complete!");
         localStorage.setItem("soundLoaded", "true");
