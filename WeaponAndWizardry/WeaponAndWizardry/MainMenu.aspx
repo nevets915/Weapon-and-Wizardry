@@ -12,7 +12,7 @@
             N/A
     -->
     <div id="load">
-        <p>Loading...Please Wait...</p>
+        <p id="loadingText">Loading...<span id ="percentText">0</span>%</p>
     </div>
     <div id="contents">
 
@@ -28,11 +28,14 @@
                 sound.blur();
                 localStorage.setItem("soundLoaded", "false");
                 var soundLoaded = localStorage.getItem("soundLoaded");
+                var elapsed = 0;
+                var percentText = document.getElementById('percentText');
+                localStorage.setItem("percentLoaded", Number(percentText.innerHTML));
                 document.getElementById('contents').style.visibility = "hidden";
                 var interval = setInterval(checkIfLoadCompleted, 1000);
                 function checkIfLoadCompleted()
                 {
-                    if(soundLoaded === "true")
+                    if(soundLoaded === "true" || elapsed == 5)
                     {
                         clearInterval(interval);
                         document.getElementById('interactive');
@@ -43,7 +46,9 @@
                     else
                     {
                         soundLoaded = localStorage.getItem("soundLoaded");
+                        percentText.innerHTML = localStorage.getItem("percentLoaded");
                         console.log("Loading sounds...");
+                        elapsed++;
                     }
                 }
 
