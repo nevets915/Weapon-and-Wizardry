@@ -119,7 +119,7 @@ namespace WeaponAndWizardry.Code
             ClearForegroundImages();
             AddForegroundImage("Ilias_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
-            PrintTextDialogue("\"If you had a good experience so far, please comment in the following survey provided by one of the developers.\n" +
+            PrintTextDialogue("\"If you had a good experience so far, please comment in the following survey provided in the bottom of your internet browser.\n" +
                 "Project Lead: George Lee\nStory Designer: Steven Ma\nGame Visuals Designer: Shawn Kim\"");
             _currentExecutingLine++;
         }

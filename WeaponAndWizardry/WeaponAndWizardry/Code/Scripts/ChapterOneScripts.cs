@@ -155,7 +155,7 @@ namespace WeaponAndWizardry.Code
             SetBackgroundImage("55.png");
             AddForegroundImage("Guard.png", 100, 20, 12, 640, 480);
             PrintTextDialogue("Eventually the guards, lead you into the royal hearing room to be seated.\n" +
-                "\"Please mind your manners when addressing royalty.  You may keep your weaopn, but know that you will watched\"\n" +
+                "\"Please mind your manners when addressing royalty.  You may keep your weapon, but know that you will watched\"\n" +
                 "The guards return to their posts and only the royal guards remain at the entrace of the room.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -372,7 +372,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Princess_happy.png", 100, 20, 12, 640, 480);
-            PrintTextDialogue("\"You will be of course, rewarded for your time and effort.\n" +
+            PrintTextDialogue("\"You will be of course, get a bigger reward after you've helped my people.\n" +
                 "Please do your best.\"\n" +
                 "The princess gives you one last smile before you take your leave.");
             SetChoiceButtons(nextChoice);
