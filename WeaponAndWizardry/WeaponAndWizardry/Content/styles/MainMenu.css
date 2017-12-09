@@ -5,7 +5,7 @@
  * Author:
  *  	 Name: Dongwon(Shawn) Kim    Date: 2017-11-06
  * Modified by:
- *  	 Name: N/A  Change:	N/A Date: N/A
+ *  	 Name: Dongwon(Shawn) Kim   Changes: loading styled Date: 2017-12-08
  * Based on:
  * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
 **/
@@ -65,18 +65,18 @@
     font-weight: 600;
 }
 
-    #MainContent_Button_Credits:hover {
-        background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
-        border: 0;
-        background-size: 100%;
-        width: 20%;
-        height: 65px;
-        color: #ffffff;
-        font-weight: 600;
-        outline: none;
-        border-color: #9ecaed;
-        box-shadow: 0 0 10px #ffd800;
-    }
+#MainContent_Button_Credits:hover {
+    background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 65px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #ffd800;
+}
 
 #MainContent_Button_Load_Back:hover {
     background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
@@ -104,9 +104,20 @@
 #load {
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 9999;
+    /*    background: url("../Images/ui/loading.gif") no-repeat center center rgba(0,0,0,0.25);*/
     background: url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0,0,0,0.25);
+}
+
+#load p {
+    font-size: x-large;
+    position: absolute;
+    top: 40%;
+    left: 42%;
+    color: #ffffff;
 }
 
 .center {
