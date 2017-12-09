@@ -335,7 +335,7 @@
     <Content Include="Content\images\characters\Minotaur_neutral.png" />
     <Content Include="Content\images\characters\Monster_neutral.png" />
     <Content Include="Content\images\characters\Monster_scared.png" />
-    <Content Include="Content\images\characters\Princesss_blush.png" />
+    <Content Include="Content\images\characters\Princess_blush.png" />
     <Content Include="Content\images\characters\Princess_happy.png" />
     <Content Include="Content\images\characters\Princess_kiss.png" />
     <Content Include="Content\images\characters\Princess_neutral.png" />

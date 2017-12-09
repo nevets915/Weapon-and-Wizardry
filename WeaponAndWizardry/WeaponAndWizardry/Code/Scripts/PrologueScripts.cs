@@ -450,8 +450,9 @@ namespace WeaponAndWizardry.Code
                     PlayBackgroundSound(Sounds.BattleTheme);
                     ClearImageDisplay();
                     SetBackgroundImage("11.png");
-                    AddForegroundImage("Redgoblin_neutral.png", -100, 20, 12, 640, 480);
-                    AddForegroundImage("Redgoblin_neutral.png", 300, 20, 12, 640, 480);
+                    AddForegroundImage("Redgoblin_neutral.png", -100, 20, 2, 640, 480);
+                    AddForegroundImage("Redgoblin_neutral.png", 100, 20, 12, 640, 480);
+                    AddForegroundImage("Redgoblin_neutral.png", 300, 20, 2, 640, 480);
                     SetChoiceButtons(nextChoice);
                     PrintTextDialogue("You rush over with your sword in hand. The goblins are alerted to your presence.\n"
                         + "\"KREEE! KREEE!\"");
@@ -522,8 +523,8 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("11.png");
-            AddForegroundImage("Redgoblin_neutral.png", -100, 20, 12, 640, 480);
-            AddForegroundImage("Redgoblin_scared.png", 300, 20, 12, 640, 480);
+            AddForegroundImage("Redgoblin_scared.png", -100, 20, 2, 640, 480);
+            AddForegroundImage("Redgoblin_scared.png", 300, 20, 2, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("The goblin is now badly wounded and is open " +
                 "for your next attack which cleaves the goblin in two.\n\"KREEE !Kree... \"");
@@ -544,8 +545,9 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("11.png");
-            AddForegroundImage("Redgoblin_scared.png", -100, 20, 12, 640, 480);
-            AddForegroundImage("Redgoblin_scared.png", 300, 20, 12, 640, 480);
+            AddForegroundImage("Redgoblin_neutral.png", -100, 20, 2, 640, 480);
+            AddForegroundImage("Redgoblin_neutral.png", 100, 20, 12, 640, 480);
+            AddForegroundImage("Redgoblin_neutral.png", 300, 20, 2, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"COME FORTH YOU SHALL FIND NO HONOUR IN DEATH!\"");
             _currentExecutingLine++;
@@ -778,7 +780,7 @@ namespace WeaponAndWizardry.Code
             ClearImageDisplay();
             SetBackgroundImage("58.png");
             AddForegroundImage("Elder_neutral.png", 100, 20, 12, 640, 480);
-            SetChoiceButtons(new Choices("\"Double the reward or I walk, old man.\" (Luck Check)", "\"I accept the contract.\""));
+            SetChoiceButtons(new Choices("\"Double the reward or I walk, old man.\" (Intelligence Check)", "\"I accept the contract.\""));
             PrintTextDialogue("\"As you know, our village is currently being attacked by an unknown monster.\n" +
                 "It seems to happen at random times.  The most recent attack was near the stables of our village.\n" +
                 "Please I beg you to help us.\nThe reward of 500 gold pieces.\"");
@@ -1330,7 +1332,7 @@ namespace WeaponAndWizardry.Code
             ClearForegroundImages();
             if (Str > Strength.Average)
             {
-                SetChoiceButtons(new Choices("Run away as fast as you can!", "Attempt a chokehold", "Stay very still"));
+                SetChoiceButtons(new Choices("Run away as fast as you can!", "Attempt a chokehold (Strength)", "Stay very still"));
             }
             else
             {
