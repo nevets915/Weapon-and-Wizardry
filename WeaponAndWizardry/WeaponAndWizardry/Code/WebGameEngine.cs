@@ -494,7 +494,7 @@ namespace WeaponAndWizardry.Code
         /// <param name="loop">Keep the sound looping for a specified amount. 0 for none, -1 for infinite loop</param>
         public void PlaySoundEffect(string soundUrl, int loop)
         {
-            if (SessionHandler.SoundHubConnectionId != null)
+            if (SessionHandler.SoundHubConnectionId != null && !SessionHandler.Loading)
             {
                 SessionHandler.Clients.Client(SessionHandler.SoundHubConnectionId).playSfx(soundUrl, loop);
             }
