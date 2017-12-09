@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Credits.aspx.cs" Inherits="WeaponAndWizardry.Credits" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <!--
+        Module: Credits.aspx
+        Description: Credits View of game
+        Author:
+            Name: Dongwon(Shawn) Kim  Change: Updated layout     Date: 2017-12-07
+        Based On:
+            N/A
+    -->
     <link href="../Content/styles/MainMenu.css" rel="stylesheet" type="text/css" />
     <style>
         .profile {

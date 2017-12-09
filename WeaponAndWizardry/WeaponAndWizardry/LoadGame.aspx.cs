@@ -7,8 +7,10 @@ using WeaponAndWizardry.Code;
 /// <summary>
 /// Module: MainMenu
 /// Description: This page is for Loading the save data of the game
-/// Author: 
+/// Author:
 ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-27
+///	Modified:
+///  Name: Jia Qi Lee           Date: 2017-12-05
 /// Based on:
 ///    http://www.dotnetcurry.com/aspnet/89/aspnet-redirect-go-back-to-previous-page
 
@@ -32,7 +34,7 @@ namespace WeaponAndWizardry
 
         protected void Button_Load_Game_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrWhiteSpace(TextBox_SaveDataCode.Text))
+            if (String.IsNullOrWhiteSpace(TextBox_SaveDataCode.Text))
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
                 return;
@@ -56,7 +58,6 @@ namespace WeaponAndWizardry
             }
             catch (Exception ex)
             {
-
             }
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
         }

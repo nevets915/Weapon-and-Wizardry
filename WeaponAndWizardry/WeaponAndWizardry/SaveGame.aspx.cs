@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 /// <summary>
 /// Module: MainMenu
 /// Description: This page is for Saving the save data of the game
-/// Author: 
+/// Author:
 ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-27
 /// Based on:
 ///  N/A
@@ -19,7 +19,6 @@ namespace WeaponAndWizardry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
