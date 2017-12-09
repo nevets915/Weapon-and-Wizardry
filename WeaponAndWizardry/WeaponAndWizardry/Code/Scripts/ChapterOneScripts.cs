@@ -336,7 +336,7 @@ namespace WeaponAndWizardry.Code
                         ClearForegroundImages();
                         AddForegroundImage("Princess_blush.png", 100, 20, 12, 640, 480);
                         PrintTextDialogue("\"I'll do it... for a date.\"");
-                        PrintTextDialogue("\"Please don't joke around with a maiden's heart.\"" +
+                        PrintTextDialogue("\"Please don't joke around with a maiden's heart.\"\n" +
                             "You feel the angry stares intensify from the two guards behind you.");
                         _currentExecutingLine = _currentExecutingLine + 2;
                     }
@@ -422,6 +422,7 @@ namespace WeaponAndWizardry.Code
         private void Ch1Line30()
         {
             ClearImageDisplay();
+            SetBackgroundImage("81.png");
             PrintTextDialogue("On your way there, you ponder why someone as powerful as a wizard would request help.\n" +
                 "Considering that a court wizard is a person wielding magic for the royal family, they should be able to easily get able-bodies to help them.\n" +
                 "You put your thoughts on hold before entering the wizard's home.");
