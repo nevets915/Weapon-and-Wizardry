@@ -19,12 +19,15 @@ namespace WeaponAndWizardry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Session["referrer"] = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void Button_Load_Back_Click(object sender, EventArgs e)
         {
-            Response.Redirect(Request.UrlReferrer.ToString());
+            Response.Redirect((string)Session["referrer"]);
         }
 
         protected void Button_Load_Game_Click(object sender, EventArgs e)
@@ -34,19 +37,26 @@ namespace WeaponAndWizardry
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
                 return;
             }
-            SessionHandler.SaveId = TextBox_SaveDataCode.Text;
-            string[] filesPath = Directory.GetFiles(Server.MapPath("~/PlayerSaveData/"), SessionHandler.SaveId);
-            for(int i = 0; i < filesPath.Length; i++)
+            try
             {
-                if(Path.GetFileName(filesPath[i]).Equals(SessionHandler.SaveId))
+                SessionHandler.SaveId = TextBox_SaveDataCode.Text;
+                string[] filesPath = Directory.GetFiles(Server.MapPath("~/PlayerSaveData/"), SessionHandler.SaveId);
+                for (int i = 0; i < filesPath.Length; i++)
                 {
-                    string savedata = File.ReadAllText(filesPath[i]);
-                    Save savefile = JsonConvert.DeserializeObject<Save>(savedata);
-                    SessionHandler.Loading = true;
-                    SessionHandler.SaveFile = savefile;
-                    Response.Redirect("MainScene.aspx");
-                    return;
+                    if (Path.GetFileName(filesPath[i]).Equals(SessionHandler.SaveId))
+                    {
+                        string savedata = File.ReadAllText(filesPath[i]);
+                        Save savefile = JsonConvert.DeserializeObject<Save>(savedata);
+                        SessionHandler.Loading = true;
+                        SessionHandler.SaveFile = savefile;
+                        Response.Redirect("MainScene.aspx");
+                        return;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
             }
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Your Save Game Cannot Be Found! Please Make Sure Your Password Is Correct!');", true);
         }
