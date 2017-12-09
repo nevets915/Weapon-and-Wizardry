@@ -2,6 +2,7 @@
 
 var effectPlaying;
 var backgroundPlaying;
+var loadCount = 0; 
 var bgm = [
     { src: "content/sounds/bgm/OpeningTheme1.mp3", id: "content/sounds/bgm/OpeningTheme1.mp3" },
     { src: "content/sounds/bgm/OpeningTheme2.mp3", id: "content/sounds/bgm/OpeningTheme2.mp3" },
@@ -25,6 +26,8 @@ var sfx = [
     { src: "content/sounds/sfx/helpme.mp3", id: "content/sounds/sfx/helpme.mp3" },
 ];
 
+var totalElements = bgm.length + sfx.length;
+console.log(totalElements + " Sound files detected.");
 //Loads all the sounds into SoundJs
 function loadSound() {
     createjs.Sound.addEventListener("fileload", handleLoad);
@@ -37,6 +40,13 @@ function handleLoad(event) {
     // Do something with the loaded sound
     if (event.src == "content/sounds/bgm/OpeningTheme1.mp3") {
         playbgm("content/sounds/bgm/OpeningTheme1.mp3");
+    }
+    loadCount++;
+    console.log("Loading: " + event.src);
+    if(loadCount == totalElements)
+    {
+        console.log("load complete!");
+        localStorage.setItem("soundLoaded", "true");
     }
 }
 

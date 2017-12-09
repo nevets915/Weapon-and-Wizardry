@@ -11,14 +11,15 @@ namespace WeaponAndWizardry
     /// <summary>
     /// Module: MainMenu
     /// Description: This page is for Main Menu of the game
-    /// Author: 
+    /// Author:
     ///	 Name: Dongwon(Shawn) Kim   Date: 2017-11-15
+    ///	Modified:
+    ///  Name: Jia Qi Lee           Date: 2017-12-05
     /// Based on:
     ///     https://stackoverflow.com/questions/23976683/asp-net-button-to-redirect-to-another-page
     /// </summary>
     public partial class MainMenu : System.Web.UI.Page
     {
-
         /// <summary>
         /// When the page is loaded
         /// </summary>

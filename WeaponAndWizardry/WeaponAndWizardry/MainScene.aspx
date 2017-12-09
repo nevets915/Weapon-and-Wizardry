@@ -1,6 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MainScene.aspx.cs" Inherits="WeaponAndWizardry.MainScene" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <!--
+        Module: MainScene.aspx
+        Description: Main View of game
+        Author:
+            Name: Dongwon(Shawn) Kim  Change: Updated layout     Date: 2017-12-07
+        Modified:
+            Name: Jia Qi Lee (George) Date: 2017-11-15
+        Based On:
+            N/A
+    -->
     <link href="../Content/styles/MainMenu.css" rel="stylesheet" type="text/css" />
 
     <div style="background: url(../Content/Images/backgrounds/main_menu_bg.png) no-repeat; width: 100% 0; height: 100% 0; background-position: right center;">
