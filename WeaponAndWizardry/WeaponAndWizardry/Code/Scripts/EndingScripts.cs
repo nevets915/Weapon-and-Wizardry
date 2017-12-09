@@ -83,6 +83,7 @@ namespace WeaponAndWizardry.Code
         private void EndingLine1()
         {
             ClearImageDisplay();
+            StopBackgroundSound();
             SetBackgroundImage("87.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Suddenly a flash of light blinds your eyes.\n" +

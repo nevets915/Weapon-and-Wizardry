@@ -150,7 +150,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue1()
         {
-            PlayBackgroundSound(Sounds.IliasTheme);
+            StopBackgroundSound();
             _monsterSlain = false;
             _haggledReward = false;
             HP = 100;
@@ -170,6 +170,7 @@ namespace WeaponAndWizardry.Code
 
         private void Prologue2()
         {
+            PlayBackgroundSound(Sounds.IliasTheme);
             AddForegroundImage("Ilias_neutral.png", 100, 20, 12, 640, 480);
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("\"Oh brave hero…\"\nYou hear a beautiful voice begin to call you.\n"

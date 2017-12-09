@@ -151,6 +151,7 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line7()
         {
+            PlayBackgroundSound(Sounds.CastleTheme);
             SetBackgroundImage("55.png");
             AddForegroundImage("Guard.png", 100, 20, 12, 640, 480);
             PrintTextDialogue("Eventually the guards, lead you into the royal hearing room to be seated.\n" +
@@ -381,6 +382,7 @@ namespace WeaponAndWizardry.Code
         private void Ch1Line27()
         {
             ClearImageDisplay();
+            PlayBackgroundSound(Sounds.TownTheme);
             SetBackgroundImage("44.png");
             PrintTextDialogue("With your quest given, you decide to head over to the notice board.\n" +
                 "You see quite a few requests for problems with monsters.");
@@ -409,11 +411,11 @@ namespace WeaponAndWizardry.Code
                 case 2:
                     PrintTextDialogue("You decide to go and help find the missing adventurer.\n" +
                         "You head towards the town bar to get information.");
-                    _currentExecutingLine = _currentExecutingLine + 26;
+                    _currentExecutingLine = _currentExecutingLine + 25;
                     break;
                 case 3:
                     PrintTextDialogue("You decide to try your hand at becoming a noble escort. You head to the location specified by the contract.");
-                    _currentExecutingLine = _currentExecutingLine + 26;
+                    _currentExecutingLine = _currentExecutingLine + 25;
                     break;
             }
             SetChoiceButtons(nextChoice);
@@ -433,6 +435,7 @@ namespace WeaponAndWizardry.Code
         private void Ch1Line31()
         {
             ClearImageDisplay();
+            PlayBackgroundSound(Sounds.MysteryTheme);
             SetBackgroundImage("82.png");
             PrintTextDialogue("You knock before entering, but find out that no one appears to be home. You decide to wait for the wizard.\n" +
                 "You see a couple of coloured potions sitting with the label, \"Highly experimental enhancers. Do NOT drink.\"\n" +
@@ -689,7 +692,7 @@ namespace WeaponAndWizardry.Code
 
         private void Ch1Line51()
         {
-
+            PlayBackgroundSound(Sounds.BossBuildUpTheme);
             PrintTextDialogue("\"My, my. What do we have here?\"\n" +
                 "You turn around to the source of the voice.\n" +
                 "A couple of adventures have come into my grasp at last.");
@@ -711,11 +714,12 @@ namespace WeaponAndWizardry.Code
         private void Ch1Line53()
         {
             ClearForegroundImages();
+            PlayBackgroundSound(Sounds.BossTheme);
             AddForegroundImage("Spider_happy.png", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"Oooo, that sword looks sharp, you could hurt someone with that.\"" +
                 "\nThe spider monster hisses and mocks you as your ready yourself.");
             SetChoiceButtons(new Choices("Attempt to strike first (Dexterity Check)", "Stay on the defensive", "Talk to her."));
-            _currentExecutingLine = _currentExecutingLine + 2;
+            _currentExecutingLine = _currentExecutingLine + 1;
         }
         /*
        private void Ch1Line54()
