@@ -44,6 +44,30 @@ namespace WeaponAndWizardry.Code
             _scriptLines.Add(EndingLine22);
             _scriptLines.Add(EndingLine23);
             _scriptLines.Add(EndingLine24);
+            _scriptLines.Add(EndingLine25);
+            _scriptLines.Add(EndingLine26);
+            _scriptLines.Add(EndingLine27);
+            _scriptLines.Add(EndingLine28);
+            _scriptLines.Add(EndingLine29);
+            _scriptLines.Add(EndingLine30);
+            _scriptLines.Add(EndingLine31);
+            _scriptLines.Add(EndingLine32);
+            _scriptLines.Add(EndingLine33);
+            _scriptLines.Add(EndingLine34);
+            _scriptLines.Add(EndingLine35);
+            _scriptLines.Add(EndingLine36);
+            _scriptLines.Add(EndingLine37);
+            _scriptLines.Add(EndingLine38);
+            _scriptLines.Add(EndingLine39);
+            _scriptLines.Add(EndingLine40);
+            _scriptLines.Add(EndingLine41);
+            _scriptLines.Add(EndingLine42);
+            _scriptLines.Add(EndingLine43);
+            _scriptLines.Add(EndingLine44);
+            _scriptLines.Add(EndingLine45);
+            _scriptLines.Add(EndingLine46);
+            _scriptLines.Add(EndingLine47);
+            _scriptLines.Add(EndingLine48);
 
         }
 
@@ -59,14 +83,17 @@ namespace WeaponAndWizardry.Code
         private void EndingLine1()
         {
             ClearImageDisplay();
+            StopBackgroundSound();
             SetBackgroundImage("87.png");
             SetChoiceButtons(nextChoice);
             PrintTextDialogue("Suddenly a flash of light blinds your eyes.\n" +
                 "You've felt this sensation before.");
+            _currentExecutingLine++;
         }
 
         private void EndingLine2()
         {
+            PlayBackgroundSound(Sounds.IliasTheme);
             ClearImageDisplay();
             SetBackgroundImage("01.png");
             AddForegroundImage("Ilias_neutral.png", 100, 20, 12, 640, 480);
@@ -101,7 +128,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Ilias_happy.png", 100, 20, 12, 640, 480);
-            SetChoiceButtons(new Choices("Princess Melty"));
+            SetChoiceButtons(new Choices("Princess Melty", "Hero Damian"));
             PrintTextDialogue("\"Before we end off, I would like to show you just a glimpse of one of the possible endings to this game as a thank you.\"");
             PrintTextDialogue("\"Please select a character ending you wish to view.\"");
             _currentExecutingLine = _currentExecutingLine + 2;
@@ -183,8 +210,9 @@ namespace WeaponAndWizardry.Code
         private void EndingLine10()
         {
             ClearImageDisplay();
-            SetBackgroundImage("11.png");
-            PrintLineTextDialogue("You awake in your royal styled chambers.\n" +
+            SetBackgroundImage("19.png");
+            PlayBackgroundSound(Sounds.CastleTheme);
+            PrintTextDialogue("You awake in your royal styled chambers.\n" +
                 "It has been several weeks since you saved the kingdom from calamity.\n" +
                 "Since then, you've been crowned a hero of the era.");
             SetChoiceButtons(nextChoice);
@@ -193,38 +221,36 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine11()
         {
-            PrintLineTextDialogue("This of course came with castles, money and everything you could ever hope for.");
+            PrintTextDialogue("This of course came with castles, money and everything you could ever hope for.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine12()
         {
-            PrintLineTextDialogue("You attempt to stand up from your bed, but are stopped by a very familiar soft embrace.");
+            PrintTextDialogue("You attempt to stand up from your bed, but are stopped by a very familiar soft embrace.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine13()
         {
-            PrintLineTextDialogue("\"Nnnn, 5 more minutes, honey.\"");
+            PrintTextDialogue("\"Nnnn, 5 more minutes, honey.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine14()
         {
-            PrintLineTextDialogue("Oh, and you got married to the princess.");
+            PrintTextDialogue("Oh, and you got married to the princess.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine15()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("11.png");
             AddForegroundImage("Princess_blush.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"The kingdom can wait a little bit longer.\n" +
+            PrintTextDialogue("\"The kingdom can wait a little bit longer.\n" +
                 "I'll give you a kiss if you stay.\"" +
                 "The princess smiles playfully at you.");
             SetChoiceButtons(new Choices("Kiss her.", "Don't kiss her."));
@@ -236,11 +262,11 @@ namespace WeaponAndWizardry.Code
             switch (_choicePicked)
             {
                 case 1:
-                    PrintLineTextDialogue("You chuckle lightly and bring the princess close to you.\n" +
+                    PrintTextDialogue("You chuckle lightly and bring the princess close to you.\n" +
                         "Your lips slowly close in to meet the princess's");
                     break;
             }
-            PrintLineTextDialogue("Suddenly you hear a knock at the door.");
+            PrintTextDialogue("Suddenly you hear a knock at the door.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -249,7 +275,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Guard.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"My lord and my lady. Your presence is required for your royal coronation. \n" +
+            PrintTextDialogue("\"My lord and my lady. Your presence is required for your royal coronation. \n" +
                 "Please hurry as we are already behind schedule.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -259,7 +285,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Princess_happy.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("You sigh and the princess giggles gleefully as you reluctantly get dressed.\n" +
+            PrintTextDialogue("You sigh and the princess giggles gleefully as you reluctantly get dressed.\n" +
                 "\"Don't worry, love. We can spend more time together once we're done our royal duties.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -269,7 +295,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Princess_neutral.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("You smile back at the princess and make your way to the door of your chambers.");
+            PrintTextDialogue("You smile back at the princess and make your way to the door of your chambers.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -278,7 +304,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Princess_blush.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"Oh and don't forget this.\"");
+            PrintTextDialogue("\"Oh and don't forget this.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -287,7 +313,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Princess_kiss.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("You turn around and before you know it, the princess gives you a sweet, loving kiss and a soft embrace.");
+            PrintTextDialogue("You turn around and before you know it, the princess gives you a sweet, loving kiss and a soft embrace.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -296,7 +322,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Princess_blush.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("The princess whispers softly in your ear before sending you on your way.\n" +
+            PrintTextDialogue("The princess whispers softly in your ear before sending you on your way.\n" +
                 "\"I love you.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -305,7 +331,7 @@ namespace WeaponAndWizardry.Code
         private void EndingLine23()
         {
             ClearForegroundImages();
-            PrintLineTextDialogue("You leave your chambers with a big grin on your face as your royal guards escort you.");
+            PrintTextDialogue("You leave your chambers with a big grin on your face as your royal guards escort you.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -314,16 +340,17 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("88.png");
-            PrintLineTextDialogue("A king's job is never done.");
+            PrintTextDialogue("A king's job is never done.");
             SetChoiceButtons(new Choices("Back to Main menu."));
-            _currentExecutingLine = _currentExecutingLine + 11;
+            _currentExecutingLine = _currentExecutingLine + 23;
         }
 
         private void EndingLine25()
         {
+            PlayBackgroundSound(Sounds.BattleTheme);
             ClearImageDisplay();
             SetBackgroundImage("69.png");
-            PrintLineTextDialogue("CLANK! CLASH! WOOSH!");
+            PrintTextDialogue("CLANK! CLASH! WOOSH!");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -331,14 +358,14 @@ namespace WeaponAndWizardry.Code
         private void EndingLine26()
         {
             AddForegroundImage("Minotaur_neutral.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"GRAWWWWW!\"");
+            PrintTextDialogue("\"GRAWWWWW!\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine27()
         {
-            PrintLineTextDialogue("You deal a savage blow to the minotuar, but it's still not going down.\n" +
+            PrintTextDialogue("You deal a savage blow to the minotuar, but it's still not going down.\n" +
                 "You prep yourself for another attack.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -346,21 +373,21 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine28()
         {
-            PrintLineTextDialogue("\"ME SMASH PUNY MAN!\"");
+            PrintTextDialogue("\"ME SMASH PUNY MAN!\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine29()
         {
-            PrintLineTextDialogue("The minotaur lunges at you with a desperate rush attack.");
+            PrintTextDialogue("The minotaur lunges at you with a desperate rush attack.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine30()
         {
-            PrintLineTextDialogue("However, just before the attack comes near, a familiar figure appears in front of you.\n" +
+            PrintTextDialogue("However, just before the attack comes near, a familiar figure appears in front of you.\n" +
                 "\"Dibs!\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -370,14 +397,14 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Damian_shouting.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"This one's mine, love.\"");
+            PrintTextDialogue("\"This one's mine, love.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine32()
         {
-            PrintLineTextDialogue("\"Single sword: Lion strike!\"");
+            PrintTextDialogue("\"Single sword: Lion strike!\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -386,15 +413,16 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Minotaur_defeat.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("The minotaur howls in pain before crashing downwards.");
+            PrintTextDialogue("The minotaur howls in pain before crashing downwards.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine34()
         {
+            PlayBackgroundSound(Sounds.PeaceTheme);
             ClearForegroundImages();
-            PrintLineTextDialogue("It's been several weeks since you've saved the kingdom.\n" +
+            PrintTextDialogue("It's been several weeks since you've saved the kingdom.\n" +
                 "Since then, you've been keeping busy by training your sword skills, earning monster bounties and travelling the world.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -402,7 +430,7 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine35()
         {
-            PrintLineTextDialogue("To keep you company, you've decided to party with the great hero, Damian.\n" +
+            PrintTextDialogue("To keep you company, you've decided to party with the great hero, Damian.\n" +
                 "Since the two of you met, you've accomplished great things together and become monster-slaying partners, comrades and..." +
                 "possible lovers?");
             SetChoiceButtons(nextChoice);
@@ -413,7 +441,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Damian_happy.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"Yes! I finally beat you too it, love. \n" +
+            PrintTextDialogue("\"Yes! I finally beat you too it, love. \n" +
                 "Dinner's on me.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
@@ -421,14 +449,14 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine37()
         {
-            PrintLineTextDialogue("\"You may be known as the Hero of Legend, but tonight I get to treat you.\"");
+            PrintTextDialogue("\"You may be known as the Hero of Legend, but tonight I get to treat you.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine38()
         {
-            PrintLineTextDialogue("\"So, what do you think? Should fetch a pretty penny.\"\n" +
+            PrintTextDialogue("\"So, what do you think? Should fetch a pretty penny.\"\n" +
                 "Damian holds out the minotaur's head.");
             SetChoiceButtons(new Choices("Tease him"));
             _currentExecutingLine++;
@@ -438,16 +466,16 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Damian_blush.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"Hehe, not bad, hero. Perhaps you deserve a kiss.\n" +
+            PrintTextDialogue("\"Hehe, not bad, hero. Perhaps you deserve a kiss.\n" +
                 "Not many people get to experience a kiss from the Hero of Legend.\"");
-            PrintLineTextDialogue("\"Damian begins to blush in anticipation.");
+            PrintTextDialogue("\"Damian begins to blush in anticipation.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine40()
         {
-            PrintLineTextDialogue("\"Y-you mean it? For real?!\"");
+            PrintTextDialogue("\"Y-you mean it? For real?!\"");
             SetChoiceButtons(new Choices("Kiss him", "Troll him"));
             _currentExecutingLine++;
         }
@@ -457,13 +485,13 @@ namespace WeaponAndWizardry.Code
             switch (_choicePicked)
             {
                 case 1:
-                    PrintLineTextDialogue("You giggle slyly and lean close to your embarassed companion.\n" +
+                    PrintTextDialogue("You giggle slyly and lean close to your embarassed companion.\n" +
                         "You give him a light kiss and a quick embrace.");
                     SetChoiceButtons(nextChoice);
                     _currentExecutingLine++;
                     break;
                 case 2:
-                    PrintLineTextDialogue("You giggle slyly and lean close to your embarassed companion.\n" +
+                    PrintTextDialogue("You giggle slyly and lean close to your embarassed companion.\n" +
                         "You poke his cheek lightly and look deeply into his embarssed eyes.");
                     SetChoiceButtons(nextChoice);
                     _currentExecutingLine++;
@@ -476,16 +504,16 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Damian_embarass.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("Minutes pass before the two of you separate.");
-            PrintLineTextDialogue("\"That was nice. I-I uhh, don't know what else to say.\"");
+            PrintTextDialogue("Minutes pass before the two of you separate.");
+            PrintTextDialogue("\"That was nice. I-I uhh, don't know what else to say.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
 
         private void EndingLine43()
         {
-            PrintLineTextDialogue("\"I love you. You're a hero similar to my calibur\", you confess to Damian.");
-            PrintLineTextDialogue("Embarassed by your own feelings, you try to think of a way of skipping the awkwardness of new couples.");
+            PrintTextDialogue("\"I love you. You're a hero similar to my calibur\", you confess to Damian.");
+            PrintTextDialogue("Embarassed by your own feelings, you try to think of a way of skipping the awkwardness of new couples.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -493,8 +521,8 @@ namespace WeaponAndWizardry.Code
         private void EndingLine44()
         {
             ClearForegroundImages();
-            PrintLineTextDialogue("Quickly, you snatch the minotaur head from the infatuated hero's grasp and take off for the bounty.");
-            PrintLineTextDialogue("\"But, you haven't caught my heart yet\", you shout back at Damian as you speed ahead.");
+            PrintTextDialogue("Quickly, you snatch the minotaur head from the infatuated hero's grasp and take off for the bounty.");
+            PrintTextDialogue("\"But, you haven't caught my heart yet\", you shout back at Damian as you speed ahead.");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -503,7 +531,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Damian_happy.png", 100, 20, 12, 640, 480);
-            PrintLineTextDialogue("\"Heh, that's the one I know and love.\"");
+            PrintTextDialogue("\"Heh, that's the one I know and love.\"");
             SetChoiceButtons(nextChoice);
             _currentExecutingLine++;
         }
@@ -512,7 +540,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("88.png");
-            PrintLineTextDialogue("\"My hero.\"");
+            PrintTextDialogue("\"My hero.\"");
             SetChoiceButtons(new Choices("Back to Main menu."));
             _currentExecutingLine++;
         }
@@ -520,6 +548,11 @@ namespace WeaponAndWizardry.Code
         private void EndingLine47()
         {
             QuitGame(SessionHandler.MainScene);
+        }
+
+        private void EndingLine48()
+        {
+            
         }
         #endregion
     }
