@@ -93,6 +93,7 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine2()
         {
+            PlayBackgroundSound(Sounds.IliasTheme);
             ClearImageDisplay();
             SetBackgroundImage("01.png");
             AddForegroundImage("Ilias_neutral.png", 100, 20, 12, 640, 480);
@@ -127,7 +128,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearForegroundImages();
             AddForegroundImage("Ilias_happy.png", 100, 20, 12, 640, 480);
-            SetChoiceButtons(new Choices("Princess Melty"));
+            SetChoiceButtons(new Choices("Princess Melty", "Hero Damian"));
             PrintTextDialogue("\"Before we end off, I would like to show you just a glimpse of one of the possible endings to this game as a thank you.\"");
             PrintTextDialogue("\"Please select a character ending you wish to view.\"");
             _currentExecutingLine = _currentExecutingLine + 2;
@@ -210,7 +211,7 @@ namespace WeaponAndWizardry.Code
         {
             ClearImageDisplay();
             SetBackgroundImage("19.png");
-            PlayBackgroundSound(Sounds.PeaceTheme);
+            PlayBackgroundSound(Sounds.CastleTheme);
             PrintTextDialogue("You awake in your royal styled chambers.\n" +
                 "It has been several weeks since you saved the kingdom from calamity.\n" +
                 "Since then, you've been crowned a hero of the era.");
@@ -248,8 +249,6 @@ namespace WeaponAndWizardry.Code
 
         private void EndingLine15()
         {
-            ClearImageDisplay();
-            SetBackgroundImage("11.png");
             AddForegroundImage("Princess_blush.png", 100, 20, 12, 640, 480);
             PrintTextDialogue("\"The kingdom can wait a little bit longer.\n" +
                 "I'll give you a kiss if you stay.\"" +
@@ -343,7 +342,7 @@ namespace WeaponAndWizardry.Code
             SetBackgroundImage("88.png");
             PrintTextDialogue("A king's job is never done.");
             SetChoiceButtons(new Choices("Back to Main menu."));
-            _currentExecutingLine = _currentExecutingLine + 11;
+            _currentExecutingLine = _currentExecutingLine + 23;
         }
 
         private void EndingLine25()
